@@ -1,0 +1,784 @@
+/* Fonts are bundled in fonts/ so the game works offline (both are SIL Open Font License) */
+@font-face {
+	font-family: 'Fredoka';
+	src: url('fonts/fredoka.woff2') format('woff2');
+	font-weight: 500 700;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Nunito';
+	src: url('fonts/nunito.woff2') format('woff2');
+	font-weight: 600 800;
+	font-display: swap;
+}
+
+:root {
+	--sky: #DFF1FF;
+	--ink: #17264A;
+	--muted: #4A5B7D;
+	--coral: #D24A2E;
+	--coral-dark: #8F2C17;
+	--sun: #FFC93C;
+	--green: #2E9E6A;
+	--purple: #5B3FB8;
+	--card-shadow: #B9D9F2;
+	--line: #E6EEF7;
+}
+
+[hidden] {
+	display: none !important;  /* hidden wins over display: flex */
+}
+
+body {
+	margin: 0;
+	font-family: 'Nunito', Arial, sans-serif;
+	font-weight: 700;
+	background-color: var(--sky);
+	color: var(--ink);
+}
+
+button {
+	font-family: 'Fredoka', 'Nunito', sans-serif;
+	cursor: pointer;
+}
+
+button:disabled {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.card {
+	background: white;
+	border-radius: 24px;
+	box-shadow: 0 5px 0 var(--card-shadow);
+	box-sizing: border-box;
+}
+
+.smallHeading {
+	font-size: 14px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	color: var(--muted);
+}
+
+.mutedText {
+	margin: 0;
+	font-size: 16px;
+	color: var(--muted);
+}
+
+/* ---- Top bar ---- */
+.topBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	padding: 22px 40px;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.brandIcon {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: var(--sun);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	margin: 0;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 34px;
+}
+
+.chips {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.chip {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: white;
+	border-radius: 999px;
+	padding: 10px 20px;
+	font-weight: 800;
+	font-size: 18px;
+	box-shadow: 0 3px 0 var(--card-shadow);
+	font-variant-numeric: tabular-nums;
+}
+
+.accent { color: var(--coral); }
+
+.modeChip {
+	background: var(--ink);
+	color: white;
+	box-shadow: none;
+}
+
+/* ---- Start: pick a Mode ---- */
+#start {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+	padding: 40px 16px;
+	text-align: center;
+}
+
+.modeCards {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 28px;
+}
+
+.modeCard {
+	width: 300px;
+	max-width: 100%;
+	padding: 30px 26px;
+	border: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	color: var(--ink);
+}
+
+.modeCard:hover { transform: translateY(-3px); }
+.modeCard:active { transform: translateY(3px); box-shadow: none; }
+
+.modeIcon {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modeIconCountry { background: var(--sun); }
+.modeIconCapital { background: #DDF3E8; color: #1F7A50; }
+.modeIconPopulation { background: #E9E3FA; color: var(--purple); }
+
+.modeTitle {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+}
+
+/* ---- Progress: 4 stops per level ---- */
+.progressStops {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 18px;
+}
+
+.levelStops {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+	font-size: 13px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	color: var(--muted);
+}
+
+.levelStops.current { color: var(--ink); }
+.levelStops.super { color: var(--purple); }
+
+.stops {
+	display: flex;
+	gap: 6px;
+}
+
+.stop {
+	width: 34px;
+	height: 14px;
+	border-radius: 7px;
+	background: white;
+}
+
+.levelStops.super .stop {
+	outline: 2px dashed #7C5CD6;
+	outline-offset: 1px;
+}
+
+.stop.correct { background: var(--green); }
+.stop.missed { background: #F2A99A; }
+.stop.now {
+	background: var(--coral);
+	box-shadow: 0 0 0 3px white;
+}
+
+/* ---- Stage: level card | flag | clues ---- */
+.stage {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 36px;
+	margin-top: 34px;
+	padding: 0 16px;
+}
+
+.levelCard {
+	width: 230px;
+	padding: 22px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.levelPill {
+	align-self: flex-start;
+	background: var(--sun);
+	border-radius: 999px;
+	padding: 6px 14px;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.levelPill.super {
+	background: var(--purple);
+	color: white;
+}
+
+.worthNumber {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 44px;
+	line-height: 1;
+}
+
+.cardDivider {
+	height: 2px;
+	background: var(--line);
+}
+
+.hearts {
+	display: flex;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.flagArea {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+}
+
+.postcard {
+	background: white;
+	border-radius: 22px;
+	padding: 16px;
+	box-shadow: 0 10px 24px rgba(23, 38, 74, 0.18);
+}
+
+/* Fixed frame; the flag keeps its own shape inside it, with a thin edge so white parts show */
+.flagFrame {
+	--flag-width: 420px;
+	width: var(--flag-width);
+	height: calc(var(--flag-width) * 2 / 3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* The flag waves: script.js redraws it on a canvas every frame. The hidden img underneath
+   only gives the flag its size; the canvas sits over it with room above and below. */
+.flagCloth {
+	position: relative;
+}
+
+#flag {
+	display: block;
+	max-width: var(--flag-width);
+	max-height: calc(var(--flag-width) * 2 / 3);
+	visibility: hidden;
+}
+
+#flagCanvas {
+	position: absolute;
+	left: 0;
+	pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#flag {
+		visibility: visible;
+		border-radius: 10px;
+		box-shadow: 0 0 0 1px rgba(23, 38, 74, 0.2);
+	}
+	#flagCanvas { display: none; }
+}
+
+.question {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 26px;
+	margin-top: 10px;
+}
+
+.clueArea {
+	width: 230px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.clues {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.clue {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	border-radius: 18px;
+	padding: 14px 16px;
+	text-align: left;
+	color: var(--ink);
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.clue.revealed {
+	background: white;
+	box-shadow: 0 4px 0 var(--card-shadow);
+}
+
+.clue.next {
+	background: #FFF6DB;
+	border: 3px dashed #E0A912;
+	padding: 11px 13px;
+	font-family: 'Nunito', sans-serif;
+}
+
+.clue.next:hover { background: #FFEFC0; }
+
+.clue.locked {
+	background: rgba(255, 255, 255, 0.55);
+	color: var(--muted);
+}
+
+.clueIcon {
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.clue.revealed .clueIcon { background: #DDF3E8; color: #1F7A50; }
+.clue.next .clueIcon { background: var(--sun); color: var(--ink); }
+.clue.locked .clueIcon { background: var(--line); color: var(--muted); }
+
+.clueLabel {
+	font-size: 13px;
+	font-weight: 800;
+}
+
+.clueValue {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.2;
+}
+
+.clueAction {
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.clueCost { color: #A8361F; }
+
+/* ---- Answer box and dropdown ---- */
+.answerArea {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 30px;
+	padding: 0 16px 40px;
+}
+
+.answerBox {
+	position: relative;
+	width: 520px;
+	max-width: 100%;
+}
+
+#userAnswer {
+	width: 100%;
+	height: 64px;
+	box-sizing: border-box;
+	border: 3px solid var(--ink);
+	border-radius: 18px;
+	padding: 0 22px;
+	font-family: 'Nunito', sans-serif;
+	font-weight: 800;
+	font-size: 26px;
+	color: var(--ink);
+	background: white;
+	box-shadow: 0 5px 0 var(--ink);
+	outline: none;
+}
+
+#userAnswer:focus { border-color: var(--coral); }
+#userAnswer:disabled { opacity: 1; background: #F4F9FF; }
+
+#suggestions {
+	position: absolute;
+	top: calc(100% + 12px);
+	left: 0;
+	right: 0;
+	z-index: 10;
+	margin: 0;
+	padding: 8px;
+	list-style: none;
+	background: white;
+	border: 3px solid var(--ink);
+	border-radius: 18px;
+	box-shadow: 0 14px 30px rgba(23, 38, 74, 0.25);
+}
+
+#suggestions li {
+	padding: 9px 16px;
+	border-radius: 12px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#suggestions li.highlighted {
+	background-color: var(--coral);
+	color: white;
+}
+
+#suggestions li.divider {
+	padding: 0;
+	margin: 8px 10px;
+	border-top: 2px dashed #B9C6D8;
+	border-radius: 0;
+	cursor: default;
+}
+
+/* ---- Population Choices: five buttons, smallest first ---- */
+.choiceRow {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 12px;
+	max-width: 900px;
+}
+
+.choiceButton {
+	min-width: 150px;
+	height: 64px;
+	padding: 0 18px;
+	border: 3px solid var(--ink);
+	border-radius: 18px;
+	background: white;
+	color: var(--ink);
+	font-weight: 600;
+	font-size: 22px;
+	box-shadow: 0 5px 0 var(--ink);
+}
+
+.choiceButton:hover:not(:disabled) { background: #FFF6DB; }
+.choiceButton:active:not(:disabled) { transform: translateY(3px); box-shadow: none; }
+
+.choiceButton.crossed {
+	text-decoration: line-through;
+	text-decoration-thickness: 3px;
+	color: var(--muted);
+	border-color: #B9C6D8;
+	box-shadow: none;
+	opacity: 1;
+}
+
+.choiceButton.shown {
+	background: var(--green);
+	border-color: var(--green);
+	color: white;
+	box-shadow: 0 5px 0 #1F7A50;
+	opacity: 1;
+}
+
+#message {
+	min-height: 1.4em;  /* keeps the layout from jumping when the message appears */
+	margin-top: 16px;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 26px;
+	text-align: center;
+}
+
+.correct { color: #1F7A50; }
+.incorrect { color: #B23A22; }
+
+.buttonRow {
+	display: flex;
+	justify-content: center;
+	gap: 14px;
+	margin-top: 10px;
+}
+
+.secondaryButton {
+	font-weight: 600;
+	font-size: 20px;
+	height: 54px;
+	padding: 0 26px;
+	border-radius: 16px;
+	border: 3px solid var(--ink);
+	background: white;
+	color: var(--ink);
+	box-shadow: 0 4px 0 var(--ink);
+}
+
+.linkButton {
+	font-weight: 600;
+	font-size: 18px;
+	height: 54px;
+	padding: 0 18px;
+	border: none;
+	background: transparent;
+	color: var(--muted);
+	text-decoration: underline;
+}
+
+.primaryButton {
+	font-weight: 600;
+	font-size: 24px;
+	height: 62px;
+	padding: 0 44px;
+	border: none;
+	border-radius: 18px;
+	background: var(--coral);
+	color: white;
+	box-shadow: 0 5px 0 var(--coral-dark);
+}
+
+.secondaryButton:active:not(:disabled), .primaryButton:active {
+	transform: translateY(3px);
+	box-shadow: none;
+}
+
+/* ---- End of quiz ---- */
+#results {
+	padding: 0 16px 40px;
+}
+
+.resultsRow {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+	gap: 28px;
+	margin-top: 10px;
+	margin-bottom: 28px;
+}
+
+.scoreCard {
+	width: 440px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	border-radius: 28px;
+}
+
+.bigHeading {
+	margin: 0;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 38px;
+}
+
+.ring {
+	position: relative;
+	width: 180px;
+	height: 180px;
+}
+
+.ringLabel {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 44px;
+}
+
+.statRow {
+	display: flex;
+	gap: 12px;
+}
+
+.stat {
+	border-radius: 16px;
+	padding: 10px 18px;
+	text-align: center;
+}
+
+.statPoints { background: #FFF6DB; }
+.statTime { background: #E6F4FF; }
+
+.statValue {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 28px;
+	font-variant-numeric: tabular-nums;
+}
+
+.learnCard {
+	width: 520px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	border-radius: 28px;
+}
+
+.cardHeading {
+	margin: 0;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 28px;
+}
+
+#flagsToLearn {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-height: 420px;
+	overflow-y: auto;
+}
+
+#flagsToLearn li {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	background: #F4F9FF;
+	border-radius: 16px;
+	padding: 10px 14px;
+}
+
+.thumb {
+	flex: 0 0 84px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.thumb img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 6px;
+	box-shadow: 0 0 0 1px rgba(23, 38, 74, 0.2);
+}
+
+.learnName {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 22px;
+}
+
+.learnDetail {
+	font-size: 15px;
+	color: var(--muted);
+}
+
+.modeTabs {
+	display: flex;
+	justify-content: center;
+	gap: 6px;
+	margin: 0 auto 18px;
+	padding: 6px;
+	width: fit-content;
+	background: white;
+	border-radius: 999px;
+	box-shadow: 0 3px 0 var(--card-shadow);
+}
+
+.modeTabs button {
+	font-weight: 600;
+	font-size: 18px;
+	padding: 8px 22px;
+	border: none;
+	border-radius: 999px;
+	background: transparent;
+	color: var(--muted);
+}
+
+.modeTabs button[aria-selected="true"] {
+	background: var(--ink);
+	color: white;
+}
+
+.chartCard {
+	width: 466px;
+	padding: 20px 24px;
+}
+
+.chartHeading {
+	margin: 0 0 12px;
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.chartBox {
+	position: relative;
+	height: 160px;
+}
+
+#maxPointsDisplay {
+	font-size: 8px;
+	text-align: center;
+	color: var(--muted);
+}
+
+/* ---- Narrow screens: flag, then the answer box, then the level card and clues ---- */
+@media (max-width: 1040px) {
+	#quiz {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 20px;
+		padding: 0 16px 40px;
+	}
+	.stage { display: contents; }  /* lets its cards be ordered around the answer box */
+	.progressStops { order: 0; width: 100%; }
+	.flagArea { order: 1; width: 100%; margin-top: 10px; }
+	.answerArea { order: 2; width: 100%; margin-top: 0; padding: 0; }
+	.levelCard { order: 3; }
+	.clueArea { order: 4; }
+	.flagFrame { --flag-width: min(420px, 80vw); }
+}
