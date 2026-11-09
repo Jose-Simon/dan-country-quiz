@@ -143,6 +143,8 @@ button:disabled {
 	justify-content: center;
 	flex-wrap: wrap;
 	gap: 28px;
+	max-width: 956px;  /* three cards to a row */
+	margin: 0 auto;
 }
 
 .modeCard {
@@ -172,6 +174,8 @@ button:disabled {
 .modeIconCountry { background: var(--sun); }
 .modeIconCapital { background: #DDF3E8; color: #1F7A50; }
 .modeIconPopulation { background: #E9E3FA; color: var(--purple); }
+.modeIconCurrency { background: #FFF1CC; color: #A86B00; }
+.modeIconMap { background: #DDEBFF; color: #2557A7; }
 
 .modeTitle {
 	font-family: 'Fredoka', sans-serif;
@@ -523,6 +527,71 @@ button:disabled {
 	opacity: 1;
 }
 
+/* ---- Map Mode: a smaller flag, the message above the map ---- */
+
+.mapMode .stage { margin-top: 20px; }
+.mapMode .flagFrame { --flag-width: 240px; }
+.mapMode .question { font-size: 22px; margin-top: 0; }
+.mapMode .answerArea { margin-top: 12px; }
+.mapMode #message { order: -1; margin: 0 0 10px; }
+
+.mapBox {
+	position: relative;
+	width: min(1100px, 100%, (100vh - 480px) * 2);  /* fits on screen below the flag */
+	min-width: min(560px, 100%);
+	aspect-ratio: 2 / 1;
+	background: #BFE0F7;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 4px 0 var(--card-shadow);
+}
+
+.worldMap {
+	display: block;
+	width: 100%;
+	height: 100%;
+	touch-action: none;  /* the map handles its own dragging and pinching */
+	cursor: crosshair;
+	user-select: none;
+}
+
+.worldMap .land {
+	fill: #FFFDF6;
+	stroke: #8A9BB8;
+	stroke-width: 0.6px;
+	stroke-linejoin: round;
+}
+
+.worldMap .land.found { fill: var(--green); stroke: #1F7A50; stroke-width: 1.5px; }
+.worldMap .land.missed { fill: #E8734F; stroke: var(--coral-dark); stroke-width: 1.5px; }
+.worldMap .clickMark { fill: var(--ink); stroke: white; }
+
+.mapButtons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.mapButtons button {
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 12px;
+	background: white;
+	color: var(--ink);
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 3px 0 var(--card-shadow);
+	cursor: pointer;
+}
+
 #message {
 	min-height: 1.4em;  /* keeps the layout from jumping when the message appears */
 	margin-top: 16px;
@@ -781,4 +850,11 @@ button:disabled {
 	.levelCard { order: 3; }
 	.clueArea { order: 4; }
 	.flagFrame { --flag-width: min(420px, 80vw); }
+}
+
+@media (max-width: 560px) {
+	.modeTabs { gap: 2px; padding: 4px; flex-wrap: wrap; border-radius: 22px; }
+	.modeTabs button { font-size: 14px; padding: 7px 9px; }
+	.mapBox { width: 100%; aspect-ratio: 4 / 3; }  /* taller on a phone, so there's room to zoom into */
+	.mapMode .flagFrame { --flag-width: min(200px, 60vw); }
 }

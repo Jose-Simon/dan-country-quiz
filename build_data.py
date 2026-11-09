@@ -1,4 +1,4 @@
-"""Builds countries.js and the flags/ folder for the Flag Game.
+"""Builds countries.js, world.js and the flags/ folder for the Flag Game.
 
 Run once (needs internet):  python build_data.py
 Re-download every flag too:  python build_data.py --refresh-flags
@@ -14,8 +14,10 @@ import re
 import sys
 import urllib.request
 
-from overrides import (CAPITAL_OTHER_NAMES, CAPITALS, DISPLAY_NAMES, EXTRA_COUNTRIES,
-                       ISLAND_NEIGHBOURS, OTHER_NAMES, SAME_FLAG_AS_COUNTRY, TERRITORY_OWNERS)
+from build_map import write_world_map
+from overrides import (CAPITAL_OTHER_NAMES, CAPITALS, CURRENCIES, CURRENCY_NAMES,
+                       CURRENCY_OTHER_NAMES, DISPLAY_NAMES, EXTRA_COUNTRIES, ISLAND_NEIGHBOURS,
+                       OTHER_NAMES, SAME_FLAG_AS_COUNTRY, TERRITORY_OWNERS)
 
 SOURCE_URL = "https://raw.githubusercontent.com/egbakou/RESTCountries.NET/main/src/RESTCountries.NET/Services/data.json"
 FLAG_URL = "https://flagcdn.com/{}.svg"
@@ -86,7 +88,7 @@ def main():
                               ("OTHER_NAMES", OTHER_NAMES), ("TERRITORY_OWNERS", TERRITORY_OWNERS),
                               ("ISLAND_NEIGHBOURS", ISLAND_NEIGHBOURS),
                               ("SAME_FLAG_AS_COUNTRY", SAME_FLAG_AS_COUNTRY), ("CAPITALS", CAPITALS),
-                              ("CAPITAL_OTHER_NAMES", CAPITAL_OTHER_NAMES)]:
+                              ("CAPITAL_OTHER_NAMES", CAPITAL_OTHER_NAMES), ("CURRENCIES", CURRENCIES)]:
         for code in table:
             if code not in by_code:
                 problems.append(f"{table_name}: unknown code {code}")
@@ -106,6 +108,7 @@ def main():
         problems.append(f"Expected {EXPECTED_COUNTRIES} Countries, found {len(countries)}")
 
     capital_owner = {}
+    currency_codes = set()
     entries = []
     for c in sorted(source, key=lambda c: display_name(c["cca3"])):
         code = c["cca3"]
@@ -162,7 +165,22 @@ def main():
                 capital_names += saint_variants(n)
             entry["capitals"] = capitals
             entry["capitalOtherNames"] = [n for n in dict.fromkeys(capital_names) if n not in capitals]
+            currencies = CURRENCIES.get(code) or [(currency_code, currency["name"], currency.get("symbol", ""))
+                                                  for currency_code, currency in (c.get("currencies") or {}).items()]
+            if not currencies:
+                problems.append(f"Country {code} ({name}) has no currency - add it to CURRENCIES")
+            entry["currencies"] = [{"code": currency_code,
+                                    "name": CURRENCY_NAMES.get(currency_code, currency_name),
+                                    "symbol": symbol.strip(),
+                                    "otherNames": CURRENCY_OTHER_NAMES.get(currency_code, [])}
+                                   for currency_code, currency_name, symbol in currencies]
+            currency_codes.update(currency_code for currency_code, _, _ in currencies)
         entries.append(entry)
+
+    for table_name, table in [("CURRENCY_NAMES", CURRENCY_NAMES), ("CURRENCY_OTHER_NAMES", CURRENCY_OTHER_NAMES)]:
+        for currency_code in table:
+            if currency_code not in currency_codes:
+                problems.append(f"{table_name}: no Country uses currency {currency_code}")
 
     if problems:
         print("\nPlease fix these in overrides.py:")
@@ -201,6 +219,11 @@ def main():
 
     territories = sum(e["kind"] == "territory" for e in entries)
     print(f"Wrote countries.js: {len(entries)} Flag Entries ({len(countries)} Countries, {territories} Territories)")
+
+    # Map Mode asks the 100 Countries with the best Population Rank
+    country_codes = {e["code"] for e in entries if e["kind"] == "country"}
+    asked_codes = {e["code"] for e in entries if e["kind"] == "country" and e["rank"] <= 100}
+    write_world_map(os.path.join(HERE, "world.js"), country_codes, asked_codes, {e["code"] for e in entries})
 
 
 if __name__ == "__main__":

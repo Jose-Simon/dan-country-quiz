@@ -45,12 +45,26 @@
 				<span class="modeTitle">Name the capital</span>
 				<span class="mutedText">See a flag, name that country's capital city</span>
 			</button>
+			<button class="card modeCard" onclick="startQuiz('currency')">
+				<span class="modeIcon modeIconCurrency">
+					<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.5c-.4-1-1.4-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1.1 0-2.1-.5-2.5-1.5"></path><path d="M12 6.5v1.5M12 16v1.5"></path></svg>
+				</span>
+				<span class="modeTitle">Name the currency</span>
+				<span class="mutedText">See a flag, name the money used there</span>
+			</button>
 			<button class="card modeCard" onclick="startQuiz('population')">
 				<span class="modeIcon modeIconPopulation">
 					<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M17 14c2.4 0 4 1.5 4.5 4"></path></svg>
 				</span>
 				<span class="modeTitle">Guess the population</span>
 				<span class="mutedText">See a flag, pick how many people live there</span>
+			</button>
+			<button class="card modeCard" onclick="startQuiz('map')">
+				<span class="modeIcon modeIconMap">
+					<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"></path><path d="M9 4v14"></path><path d="M15 6v14"></path></svg>
+				</span>
+				<span class="modeTitle">Find it on the map</span>
+				<span class="mutedText">See a flag, click that country on a world map</span>
 			</button>
 		</div>
 	</main>
@@ -91,6 +105,15 @@
 				<ul id="suggestions" hidden></ul>
 			</div>
 			<div id="populationChoices" class="choiceRow" hidden></div>
+			<div id="mapBox" class="mapBox" hidden>
+				<div class="mapButtons">
+					<button onclick="zoomMap(1.6)" aria-label="Zoom in">+</button>
+					<button onclick="zoomMap(1 / 1.6)" aria-label="Zoom out">−</button>
+					<button onclick="setMapView(mapWorld)" aria-label="Whole world">
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"></path></svg>
+					</button>
+				</div>
+			</div>
 			<div id="message"></div>
 			<div class="buttonRow">
 				<button id="skipButton" class="secondaryButton" onclick="skipQuestion()">Skip</button>
@@ -135,7 +158,9 @@
 		<div class="modeTabs" role="tablist" aria-label="Trends for">
 			<button role="tab" data-mode="country" onclick="showTrends('country')">Countries</button>
 			<button role="tab" data-mode="capital" onclick="showTrends('capital')">Capitals</button>
+			<button role="tab" data-mode="currency" onclick="showTrends('currency')">Currencies</button>
 			<button role="tab" data-mode="population" onclick="showTrends('population')">Population</button>
+			<button role="tab" data-mode="map" onclick="showTrends('map')">Map</button>
 		</div>
 		<div class="resultsRow">
 			<section class="card chartCard" id="progressTrend">
@@ -153,6 +178,8 @@
 
     <script src="lib/chart.umd.min.js"></script>
     <script src="countries.js"></script>
+    <script src="world.js"></script>
+    <script src="map.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

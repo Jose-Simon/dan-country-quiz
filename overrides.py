@@ -121,3 +121,35 @@ CAPITAL_OTHER_NAMES = {
     "SMR": ["San Marino"],
     "ISL": ["Reykjavík"],
 }
+
+# Currencies that differ from the source data (code, name, symbol), keyed by Country.
+CURRENCIES = {
+    "BGR": [("EUR", "Euro", "€")],                   # Euro since January 2026
+    "CUB": [("CUP", "Cuban peso", "$")],             # convertible peso withdrawn in 2021
+    "ZWE": [("ZWG", "Zimbabwe Gold", "ZiG")],        # replaced the Zimbabwean dollar in 2024
+}
+
+# Currency names that read better than the source data's, keyed by currency code.
+CURRENCY_NAMES = {
+    "VES": "Venezuelan bolívar",
+    "SLE": "Sierra Leonean leone",
+    "MMK": "Myanmar kyat",
+}
+
+# Other names a currency is known by, accepted as answers and searched by the dropdown.
+# The currency code (e.g. "INR") is always searched too.
+CURRENCY_OTHER_NAMES = {
+    "USD": ["US dollar", "American dollar"],
+    "GBP": ["Pound sterling", "Sterling"],
+    "CNY": ["Renminbi", "RMB"],
+    "VND": ["Vietnamese dong"],
+    "PLN": ["Polish zloty"],
+    "UZS": ["Uzbek som"],
+    "KRW": ["Korean won"],
+    "MMK": ["Burmese kyat"],
+    "CZK": ["Czech crown"],
+    "SEK": ["Swedish crown"],
+    "ZWG": ["ZiG"],
+    "TJS": ["Somoni"],
+    "AZN": ["Manat"],
+}

@@ -8,6 +8,7 @@ const STORAGE_PREFIX = 'flagQuiz.';  // keeps stats separate from other local qu
 const ICONS = {
     globe: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20z"></path></svg>',
     people: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"></path><circle cx="17" cy="9" r="2.5"></circle><path d="M17 14c2.4 0 4 1.5 4.5 4"></path></svg>',
+    coin: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.5c-.4-1-1.4-1.5-2.5-1.5-1.4 0-2.5.8-2.5 2s1.1 1.7 2.5 2 2.5.8 2.5 2-1.1 2-2.5 2c-1.1 0-2.1-.5-2.5-1.5"></path><path d="M12 6.5v1.5M12 16v1.5"></path></svg>',
     compass: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M16 8l-2.5 5.5L8 16l2.5-5.5z"></path></svg>',
     lock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>',
     heartFull: '<svg width="30" height="30" viewBox="0 0 24 24" fill="#D24A2E" stroke="#D24A2E" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.4 5 6.8 5c2 0 3.6 1.1 5.2 3 1.6-1.9 3.2-3 5.2-3 3.4 0 5.8 3.3 4.3 6.8C19.5 16.4 12 21 12 21z"></path></svg>',
@@ -20,6 +21,23 @@ function normalize(text) {
 
 function capitalText(entry) {
     return entry.capitals.join(' / ');
+}
+
+function currencyText(entry) {
+    return entry.currencies.map(currency => currency.name).join(' or ');
+}
+
+// One choice per currency, however many Countries use it (e.g. the Euro)
+function currencyChoices() {
+    const byCode = new Map();
+    FLAG_ENTRIES.filter(entry => entry.kind === 'country').forEach(entry => {
+        entry.currencies.forEach(currency => byCode.set(currency.code, {
+            text: currency.name,
+            searchNames: [currency.name, currency.code, ...currency.otherNames].map(normalize),
+            code: currency.code
+        }));
+    });
+    return [...byCode.values()];
 }
 
 // Rounded to two significant figures, e.g. 1.4 billion, 68 million, 9.3 million
@@ -55,6 +73,8 @@ const POPULATION_CLUE = { label: 'Population', value: entry => entry.population,
 const NEIGHBOUR_CLUE = { label: 'Neighbour', value: entry => entry.neighbour, icon: ICONS.compass };
 const COUNTRY_CLUE = { label: 'Country', value: entry => entry.name, icon: ICONS.compass };
 const SIMILAR_CLUE = { label: 'Similar population', value: entry => similarCountry(entry).name, icon: ICONS.people };
+const MAP_CONTINENT_CLUE = { ...CONTINENT_CLUE, onReveal: entry => zoomMapToContinent(entry.continent) };
+const SYMBOL_CLUE ={ label: 'Symbol', value: entry => entry.currencies.map(currency => currency.symbol).join(' / '), icon: ICONS.coin };
 
 // Each choice is one line in the dropdown: what it shows, the names it is found by
 // (lower case, no accents) and the Flag Entry it stands for
@@ -99,6 +119,23 @@ const MODES = {
             entry
         }))
     },
+    // A currency can belong to several Countries, so a choice is right if this Country
+    // uses it, and a Quiz never asks two Countries that share a currency
+    currency: {
+        chip: 'Currencies',
+        question: 'What currency does this country use?',
+        placeholder: 'Start typing a currency...',
+        learnHeading: 'Currencies to learn',
+        learnNote: 'Missed, skipped, or needed a paid clue',
+        learnName: entry => currencyText(entry),
+        learnDetail: (entry, level) => `Currency of ${entry.name} · ${level.type}`,
+        levels: top100Levels([1, 2, 3, 4, 5]),
+        clues: [CONTINENT_CLUE, COUNTRY_CLUE, SYMBOL_CLUE],
+        answer: entry => `${currencyText(entry)} (${entry.name})`,
+        answerKeys: entry => entry.currencies.map(currency => currency.code),
+        isRight: (choice, entry) => entry.currencies.some(currency => currency.code === choice.code),
+        choices: currencyChoices()
+    },
     // Picked from five Population Choices instead of the dropdown; Clues are free and a
     // right second Try is worth one point less
     population: {
@@ -121,7 +158,23 @@ const MODES = {
         clues: [CONTINENT_CLUE, COUNTRY_CLUE, SIMILAR_CLUE],
         answer: entry => populationText(entry.populationCount),
         pickFromChoices: true,
+        secondTryCosts: true,
         freeClues: true,
+        choices: []
+    },
+    // Answered by clicking the World Map; a wrong first Try gets a Nudge
+    map: {
+        chip: 'Map',
+        question: 'Where is this country? Click it on the map.',
+        learnHeading: 'Countries to find',
+        learnNote: 'Missed, skipped, needed a second try or a paid clue',
+        learnName: entry => entry.name,
+        learnDetail: (entry, level) => `${entry.continent} · ${level.type}`,
+        levels: top100Levels([1, 2, 3, 4, 5]),
+        clues: [MAP_CONTINENT_CLUE, NEIGHBOUR_CLUE, COUNTRY_CLUE],
+        answer: entry => entry.name,
+        clickOnMap: true,
+        secondTryCosts: true,
         choices: []
     }
 };
@@ -197,11 +250,20 @@ function shuffle(list) {
 }
 
 function buildQuestions() {
+    const answerKeys = MODES[mode].answerKeys;
+    const usedKeys = new Set();
     const result = [];
     levels().forEach(level => {
-        shuffle(levelPool(level)).slice(0, QUESTIONS_PER_LEVEL).forEach(entry => {
+        let picked = 0;
+        for (const entry of shuffle(levelPool(level))) {
+            if (picked === QUESTIONS_PER_LEVEL) break;
+            // Leave out a Country whose answer an earlier Question already had
+            const keys = answerKeys ? answerKeys(entry) : [];
+            if (keys.some(key => usedKeys.has(key))) continue;
+            keys.forEach(key => usedKeys.add(key));
             result.push({ entry, level });
-        });
+            picked++;
+        }
     });
     return result;
 }
@@ -226,8 +288,10 @@ function startQuiz(newMode) {
     document.getElementById('userAnswer').placeholder = settings.placeholder || '';
     document.getElementById('learnHeading').textContent = settings.learnHeading;
     document.getElementById('learnNote').textContent = settings.learnNote;
-    document.querySelector('.answerBox').hidden = !!settings.pickFromChoices;
+    document.querySelector('.answerBox').hidden = !!(settings.pickFromChoices || settings.clickOnMap);
     document.getElementById('populationChoices').hidden = !settings.pickFromChoices;
+    document.getElementById('quiz').classList.toggle('mapMode', !!settings.clickOnMap);
+    document.getElementById('mapBox').hidden = !settings.clickOnMap;
     displayMaxPoints();
 
     questions = buildQuestions();
@@ -273,6 +337,12 @@ function nextQuestion() {
 
     if (MODES[mode].pickFromChoices) {
         renderPopulationChoices(populationChoices(question.entry, question.level));
+        setControlsEnabled(true);
+        return;
+    }
+    if (MODES[mode].clickOnMap) {
+        setUpWorldMap(document.getElementById('mapBox'), pickOnMap);
+        resetMap();
         setControlsEnabled(true);
         return;
     }
@@ -398,8 +468,8 @@ function paidClues() {
 
 function questionWorth() {
     const points = questions[currentQuestion - 1].level.points;
-    if (MODES[mode].pickFromChoices) return points - tries;  // a right second Try is worth one less
-    return Math.max(0, points - paidClues());
+    const tryCost = MODES[mode].secondTryCosts ? tries : 0;  // a right second Try is worth one less
+    return Math.max(0, points - tryCost - paidClues());
 }
 
 function updatePointsDisplay() {
@@ -608,9 +678,10 @@ function pickAnswer(choice) {
     answeredAny = true;
     hideSuggestions();
     const input = document.getElementById('userAnswer');
-    const entry = choice.entry;
+    const entry = currentEntry();
+    const isRight = MODES[mode].isRight || ((choice, entry) => choice.entry === entry);
 
-    if (entry === currentEntry()) {
+    if (isRight(choice, entry)) {
         const points = questionWorth();
         totalPoints += points;
         updatePointsDisplay();
@@ -637,6 +708,10 @@ function revealAnswer(text) {
     showMessage(text, 'incorrect');
     document.getElementById('userAnswer').value = MODES[mode].answer(entry);
     document.querySelectorAll('#populationChoices button.isRight').forEach(button => button.classList.add('shown'));
+    if (MODES[mode].clickOnMap) {
+        fillMapCountry(entry.code, 'missed');
+        zoomMapToCountry(entry.code);
+    }
     flagsToLearn.push(entry);
     questionResults[currentQuestion - 1] = 'missed';
     updateProgressStops();
@@ -661,7 +736,9 @@ function showClue() {
     cluesShown++;
     renderClues();
     renderLevelCard();
-    if (!MODES[mode].pickFromChoices) document.getElementById('userAnswer').focus();
+    const clue = MODES[mode].clues[cluesShown - 1];
+    if (clue.onReveal) clue.onReveal(currentEntry());
+    if (!MODES[mode].pickFromChoices && !MODES[mode].clickOnMap) document.getElementById('userAnswer').focus();
 }
 
 // ---- Population Choices ----
@@ -717,6 +794,44 @@ function pickPopulation(button, choice) {
         showMessage(higher ? 'More people than that! ↑' : 'Fewer people than that! ↓', 'incorrect');
     } else {
         showMessage('Not quite! Try again.', 'incorrect');
+    }
+}
+
+// ---- Clicking the World Map ----
+
+const MAP_FOUND_DELAY_MS = 1200;  // how long a found Country stays green before the next flag
+
+function pickOnMap(lon, lat) {
+    if (waiting || quizOver || !MODES[mode].clickOnMap) return;
+    answeredAny = true;
+    startTimerOnce();
+    const entry = currentEntry();
+    markMapClick(lon, lat);
+
+    if (isMapHit(entry.code, lon, lat)) {
+        const points = questionWorth();
+        totalPoints += points;
+        updatePointsDisplay();
+        showMessage(`Correct! +${points}`, 'correct');
+        if (tries > 0 || paidClues() > 0) flagsToLearn.push(entry);
+        questionResults[currentQuestion - 1] = 'correct';
+        updateProgressStops();
+        fillMapCountry(entry.code, 'found');
+        waiting = true;
+        setControlsEnabled(false);
+        setTimeout(() => {
+            waiting = false;
+            if (!quizOver) nextQuestion();
+        }, MAP_FOUND_DELAY_MS);
+        return;
+    }
+
+    tries++;
+    renderLevelCard();
+    if (tries >= MAX_TRIES) {
+        revealAnswer(`Not quite! It was ${MODES[mode].answer(entry)}`);
+    } else {
+        showMessage(`Not quite! Try further ${mapNudge(entry.code, lon, lat)}.`, 'incorrect');
     }
 }
 
