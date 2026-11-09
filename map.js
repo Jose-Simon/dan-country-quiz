@@ -9,6 +9,8 @@ const MAP_TAP_PIXELS = 6;        // a press that moves further than this is a dr
 const MAP_MOST_ZOOM = 40;        // how far in the player can zoom (times the whole world)
 const MAP_MARK_PIXELS = 6;       // size of the dots marking the player's clicks
 const MAP_REVEAL_DEGREES = 40;   // the Reveal shows at least this much of the world across
+const CAPITAL_HIT_KM = 150;      // a click this close to a capital counts
+const CAPITAL_MARK_TIMES = 1.6;  // capital marks are this much bigger than click marks
 const EARTH_KM = 6371;
 
 const mapShapes = new Map(WORLD_MAP.map(shape => [shape.code, shape]));
@@ -86,8 +88,9 @@ function setMapView(view) {
     mapSvg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
     const markSize = MAP_MARK_PIXELS / mapPixelsPerUnit();
     mapMarks.querySelectorAll('circle').forEach(mark => {
-        mark.setAttribute('r', markSize);
-        mark.setAttribute('stroke-width', markSize / 3);
+        const size = markSize * (Number(mark.dataset.times) || 1);
+        mark.setAttribute('r', size);
+        mark.setAttribute('stroke-width', size / 3);
     });
 }
 
@@ -122,7 +125,17 @@ function homeBounds(codes) {
 
 // Shows the Country with its surroundings and the player's clicks, so it's clear where it lies
 function zoomMapToCountry(code) {
-    let [west, south, east, north] = homeBounds([code]);
+    zoomMapAround(...homeBounds([code]));
+}
+
+function zoomMapToCapitals(places) {
+    const lons = places.map(([lon]) => lon), lats = places.map(([, lat]) => lat);
+    zoomMapAround(Math.min(...lons), Math.min(...lats), Math.max(...lons), Math.max(...lats));
+}
+
+// Shows a box given in longitude and latitude together with the player's clicks, and at
+// least MAP_REVEAL_DEGREES across
+function zoomMapAround(west, south, east, north) {
     mapClicks.forEach(([lon, lat]) => {
         west = Math.min(west, lon); east = Math.max(east, lon);
         south = Math.min(south, lat); north = Math.max(north, lat);
@@ -144,7 +157,7 @@ function zoomMapToContinent(continent) {
 function resetMap() {
     mapMarks.innerHTML = '';
     mapClicks = [];
-    mapLand.querySelectorAll('.found, .missed').forEach(path => path.classList.remove('found', 'missed'));
+    mapLand.querySelectorAll('.found, .missed, .outlined').forEach(path => path.classList.remove('found', 'missed', 'outlined'));
     setMapView(mapWorld);
 }
 
@@ -225,7 +238,43 @@ function fillMapCountry(code, className) {
     }
 }
 
+// The Outline Clue: shows the Country's border and brings it into view
+function outlineMapCountry(code) {
+    const path = mapLand.querySelector(`path[data-code="${code}"]`);
+    if (path) {
+        path.classList.add('outlined');
+        mapLand.appendChild(path);
+    }
+    zoomMapTo(...homeBounds([code]));
+}
+
+// Marks each capital, 'found' (green) or 'missed' (red-orange), with the circle a click had to land in
+function markCapitals(places, className) {
+    places.forEach(([lon, lat]) => {
+        const ring = [];
+        for (let bearing = 0; bearing < 360; bearing += 5) {
+            const [x, y] = pointAway(lon, lat, bearing, CAPITAL_HIT_KM);
+            ring.push(`${bearing ? 'L' : 'M'}${x},${millerY(y)}`);
+        }
+        mapMarks.prepend(svgElement('path', { d: ring.join('') + 'Z', class: `capitalArea ${className}`, 'vector-effect': 'non-scaling-stroke' }));
+        const size = CAPITAL_MARK_TIMES * MAP_MARK_PIXELS / mapPixelsPerUnit();
+        const mark = svgElement('circle', { cx: lon, cy: millerY(lat), r: size, 'stroke-width': size / 3, class: `capitalMark ${className}` });
+        mark.dataset.times = CAPITAL_MARK_TIMES;
+        mapMarks.appendChild(mark);
+    });
+}
+
 // ---- Hit Area and Nudge ----
+
+// The place this many km from a point along a compass bearing (degrees), on the globe
+function pointAway(lon, lat, bearing, km) {
+    const rad = Math.PI / 180, angle = km / EARTH_KM;
+    const lat1 = lat * rad, turn = bearing * rad;
+    const lat2 = Math.asin(Math.sin(lat1) * Math.cos(angle) + Math.cos(lat1) * Math.sin(angle) * Math.cos(turn));
+    const lon2 = lon * rad + Math.atan2(Math.sin(turn) * Math.sin(angle) * Math.cos(lat1),
+                                        Math.cos(angle) - Math.sin(lat1) * Math.sin(lat2));
+    return [lon2 / rad, lat2 / rad];
+}
 
 function distanceKm(lon1, lat1, lon2, lat2) {
     const rad = Math.PI / 180;
@@ -274,14 +323,28 @@ function isMapHit(code, lon, lat) {
     return nearest <= MAP_SEA_KM;
 }
 
-// The compass direction from the click towards the nearest point of the Country,
-// measured on the globe so it points the short way round
+// A Country with more than one capital counts any of them
+function isCapitalHit(places, lon, lat) {
+    return places.some(([x, y]) => distanceKm(lon, lat, x, y) <= CAPITAL_HIT_KM);
+}
+
+// The compass direction from the click towards the nearest point of the Country
 function mapNudge(code, lon, lat) {
     let nearest = Infinity, target;
     homeVertices(mapShapes.get(code), (x, y) => {
         const gap = distanceKm(lon, lat, x, y);
         if (gap < nearest) { nearest = gap; target = [x, y]; }
     });
+    return compassTowards(lon, lat, target);
+}
+
+function capitalNudge(places, lon, lat) {
+    const gap = ([x, y]) => distanceKm(lon, lat, x, y);
+    return compassTowards(lon, lat, places.reduce((best, place) => gap(place) < gap(best) ? place : best));
+}
+
+// Measured on the globe, so it points the short way round
+function compassTowards(lon, lat, target) {
     const rad = Math.PI / 180;
     const lat1 = lat * rad, lat2 = target[1] * rad, deltaLon = (target[0] - lon) * rad;
     const bearing = Math.atan2(Math.sin(deltaLon) * Math.cos(lat2),

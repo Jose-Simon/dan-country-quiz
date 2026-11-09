@@ -104,6 +104,21 @@ CAPITALS = {
     "GRD": ["Saint George's"],
 }
 
+# Where each Capital is, as (latitude, longitude), for "Find the capital". The source data
+# places only a Country's first capital, so every further one is listed here, as is any it
+# places wrongly (it puts Grenada's St. George's in Bermuda).
+CAPITAL_PLACES = {
+    "GRD": {"Saint George's": (12.05, -61.75)},
+    "ZAF": {"Bloemfontein": (-29.12, 26.21), "Cape Town": (-33.92, 18.42)},
+    "BOL": {"La Paz": (-16.50, -68.15)},
+    "NLD": {"The Hague": (52.08, 4.30)},
+    "BEN": {"Cotonou": (6.37, 2.43)},
+    "CIV": {"Abidjan": (5.36, -4.01)},
+    "LKA": {"Colombo": (6.93, 79.86)},
+    "MYS": {"Putrajaya": (2.93, 101.69)},
+    "SWZ": {"Lobamba": (-26.45, 31.21)},
+}
+
 # Other names a Capital is known by, accepted as answers and searched by the dropdown.
 # ("Saint ..." names automatically also accept "St ..." and "St. ...")
 CAPITAL_OTHER_NAMES = {

@@ -31,24 +31,28 @@ _Avoid_: Difficulty score
 ## Playing
 
 **Mode**:
-What the player is asked about the flag, chosen before each Quiz: Country Mode, Capital Mode, Currency Mode or Population Mode.
+What the player is asked about the flag, chosen before each Quiz: Country Mode, Capital Mode, Currency Mode, Population Mode, Map Mode or Capital Map Mode.
 _Avoid_: Game type, variant
 
 **Country Mode**:
 The player names the Flag Entry. Questions come from every Flag Entry.
 
 **Capital Mode**:
-The player names the Country's capital city. Questions come only from the 100 Countries with the best Population Rank; Territories are never asked.
+The player names the Country's capital city. Questions come from the Countries ranked 21–170 by Population Rank, leaving out the 20 best known; Territories are never asked.
 
 **Currency Mode**:
-The player names the Currency the Country uses. Questions come from the same 100 Countries as Capital Mode, but a Quiz never asks two Countries that share a Currency (e.g. at most one Euro Country).
+The player names the Currency the Country uses. Questions come from the 100 Countries with the best Population Rank, but a Quiz never asks two Countries that share a Currency (e.g. at most one Euro Country).
 
 **Currency**:
-The money a Country uses (e.g. "Indian rupee", "Euro"). Several Countries may share one Currency, and a Country that uses two (e.g. Cambodia: Cambodian riel and United States dollar) accepts either. Every Currency is offered as one choice, found by its name, its three-letter code (e.g. "INR") or an Other Name (e.g. "Renminbi").
+The money a Country uses (e.g. "Indian rupee", "Euro"). Several Countries may share one Currency, and a Country that uses two (e.g. Cambodia: Cambodian riel and United States dollar) accepts either. Every Currency is offered as one choice, found only by the last word of its name or an Other Name (e.g. "rupee", "Renminbi"), never by the Country's name, so typing "Indian" or "INR" finds nothing; typing "dollar" lists every dollar.
 _Avoid_: Money, denomination
 
 **Map Mode**:
-The player finds the Country on the World Map by clicking it. Questions come from the same 100 Countries as Capital Mode, with Levels worth 1–5 points. A wrong first Try gets a Nudge; a right second Try is worth one point less than a right first Try (so nothing at Level 1).
+The player finds the Country on the World Map by clicking it. Questions come from the same Countries as Capital Mode (ranks 21–170), with Levels worth 1–5 points. A wrong first Try gets a Nudge; a right second Try is worth one point less than a right first Try (so nothing at Level 1).
+
+**Capital Map Mode**:
+The player sees only the flag and clicks that Country's Capital on the World Map ("Find the capital"). Questions come from the 100 Countries with the best Population Rank. A click counts if it is within about 150 km of the Capital (any of them, for a Country with more than one). Tries, Nudge and points work as in Map Mode; the Reveal marks the Capital, green or red-orange, with the circle a click had to land in.
+_Avoid_: Capital position mode
 
 **World Map**:
 The map in Map Mode: every Country's outline drawn with thin borders and no names, which the player can zoom into and move around. Only a Country's Home Parts count as that Country; disputed areas belong to whichever Country the map shows controlling them, except that breakaway regions no Country recognises (Somaliland, Northern Cyprus) are part of the Country the world recognises (Somalia, Cyprus).
@@ -69,7 +73,7 @@ _Avoid_: Target, tolerance
 When a Question ends, the Country's true outline is filled in: green if the player found it, red-orange if they missed twice or Skipped (and the map moves to show it, with the player's clicks marked).
 
 **Population Mode**:
-The player picks the Country's population from five Population Choices. Only the flag is shown. Questions come from the same 100 Countries as Capital Mode.
+The player picks the Country's population from five Population Choices. Only the flag is shown. Questions come from the 100 Countries with the best Population Rank.
 
 **Population Choice**:
 One of the values offered for a Question in Population Mode, shown smallest to largest: five at Levels 1–4, three at Level 5. The Choices are evenly spaced, with the same gap between each pair of neighbours, and one of them is the Country's actual population (rounded) at a random position. Neighbouring Choices always differ by at least a fifth of the larger one, so no two look alike.
@@ -87,7 +91,7 @@ _Avoid_: Game, session, round
 One flag shown to the player, to be named.
 
 **Level**:
-A band of Flag Entries that Questions are drawn from at random, worth a fixed number of points (Levels 1–5 are worth 1–5 points, except in Population Mode where they are worth 2, 2, 2, 4 and 5; either way a Quiz is out of 60). In Country Mode, Levels 1–4 are bands of Population Rank and Level 5 is every Territory. In Capital Mode, Currency Mode and Population Mode, each Level is a band of 20 Population Ranks (1–20, 21–40 … 81–100). A Quiz splits its Questions evenly across all five Levels, easiest first. Every Level, including Level 5, is shown to the player simply by its number.
+A band of Flag Entries that Questions are drawn from at random, worth a fixed number of points (Levels 1–5 are worth 1–5 points, except in Population Mode where they are worth 2, 2, 2, 4 and 5; either way a Quiz is out of 60). In Country Mode, Levels 1–4 are bands of Population Rank and Level 5 is every Territory. In Currency Mode, Population Mode and Capital Map Mode, each Level is a band of 20 Population Ranks (1–20, 21–40 … 81–100). In Capital Mode and Map Mode, each Level is a band of 30 starting at rank 21 (21–50, 51–80, 81–110, 111–140, 141–170). A Quiz splits its Questions evenly across all five Levels, easiest first. Every Level, including Level 5, is shown to the player simply by its number.
 _Avoid_: Stage, tier, category, "Super Difficult"
 
 **Try**:
@@ -106,9 +110,10 @@ A hint the player may reveal for the current Question, always in a fixed order t
 - Capital Mode: Continent Clue, Population Clue, Country Clue.
 - Currency Mode: Continent Clue, Country Clue, Symbol Clue.
 - Map Mode: Continent Clue (which also brings that continent into view), Neighbour Clue, Country Clue.
+- Capital Map Mode: Continent Clue (which also brings that continent into view), Country Clue, Outline Clue.
 - Population Mode: Continent Clue, Country Clue, Similar Country Clue.
 
-The first Clue is free. In Country Mode, Capital Mode, Currency Mode and Map Mode each later Clue costs one point from that Question, never going below zero; in Population Mode Clues are free.
+The first Clue is free. In Country Mode, Capital Mode, Currency Mode, Map Mode and Capital Map Mode each later Clue costs one point from that Question, never going below zero; in Population Mode Clues are free.
 _Avoid_: Hint, help
 
 **Continent Clue**:
@@ -123,6 +128,9 @@ _Avoid_: Border clue
 
 **Country Clue**:
 The Display Name of the Country whose flag is shown.
+
+**Outline Clue**:
+Shows the Country's border on the World Map and brings it into view, without naming it.
 
 **Similar Country Clue**:
 Another Country with a population close to this one's, named without its population.

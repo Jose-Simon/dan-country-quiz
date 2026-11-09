@@ -27,13 +27,14 @@ function currencyText(entry) {
     return entry.currencies.map(currency => currency.name).join(' or ');
 }
 
-// One choice per currency, however many Countries use it (e.g. the Euro)
+// One choice per currency, however many Countries use it (e.g. the Euro). It is found only
+// by the last word of its names ("dollar", not "Canadian"), so typing the Country gives nothing away.
 function currencyChoices() {
     const byCode = new Map();
     FLAG_ENTRIES.filter(entry => entry.kind === 'country').forEach(entry => {
         entry.currencies.forEach(currency => byCode.set(currency.code, {
             text: currency.name,
-            searchNames: [currency.name, currency.code, ...currency.otherNames].map(normalize),
+            searchNames: [currency.name, ...currency.otherNames].map(name => normalize(name.split(' ').pop())),
             code: currency.code
         }));
     });
@@ -60,10 +61,10 @@ function similarCountry(entry) {
     return nearby.sort((a, b) => gap(a) - gap(b))[0];
 }
 
-// The 100 Countries with the best Population Rank, 20 to a Level
-function top100Levels(points) {
+// One Level per entry in points, each a band of perLevel Population Ranks starting at firstRank
+function rankLevels(firstRank, perLevel, points) {
     return points.map((levelPoints, i) => ({
-        type: `Level ${i + 1}`, fromRank: i * 20 + 1, toRank: i * 20 + 20, points: levelPoints
+        type: `Level ${i + 1}`, fromRank: firstRank + i * perLevel, toRank: firstRank + (i + 1) * perLevel - 1, points: levelPoints
     }));
 }
 
@@ -74,6 +75,7 @@ const NEIGHBOUR_CLUE = { label: 'Neighbour', value: entry => entry.neighbour, ic
 const COUNTRY_CLUE = { label: 'Country', value: entry => entry.name, icon: ICONS.compass };
 const SIMILAR_CLUE = { label: 'Similar population', value: entry => similarCountry(entry).name, icon: ICONS.people };
 const MAP_CONTINENT_CLUE = { ...CONTINENT_CLUE, onReveal: entry => zoomMapToContinent(entry.continent) };
+const OUTLINE_CLUE = { label: 'Outline', value: () => 'Shown on the map', icon: ICONS.globe, onReveal: entry => outlineMapCountry(entry.code) };
 const SYMBOL_CLUE ={ label: 'Symbol', value: entry => entry.currencies.map(currency => currency.symbol).join(' / '), icon: ICONS.coin };
 
 // Each choice is one line in the dropdown: what it shows, the names it is found by
@@ -110,7 +112,8 @@ const MODES = {
         learnNote: 'Missed, skipped, or needed a paid clue',
         learnName: entry => capitalText(entry),
         learnDetail: (entry, level) => `Capital of ${entry.name} · ${level.type}`,
-        levels: top100Levels([1, 2, 3, 4, 5]),
+        // The 20 best-known Countries are left out, so Level 1 starts at rank 21
+        levels: rankLevels(21, 30, [1, 2, 3, 4, 5]),
         clues: [CONTINENT_CLUE, POPULATION_CLUE, COUNTRY_CLUE],
         answer: entry => `${capitalText(entry)} (${entry.name})`,
         choices: FLAG_ENTRIES.filter(entry => entry.kind === 'country').map(entry => ({
@@ -129,11 +132,12 @@ const MODES = {
         learnNote: 'Missed, skipped, or needed a paid clue',
         learnName: entry => currencyText(entry),
         learnDetail: (entry, level) => `Currency of ${entry.name} · ${level.type}`,
-        levels: top100Levels([1, 2, 3, 4, 5]),
+        levels: rankLevels(1, 20, [1, 2, 3, 4, 5]),
         clues: [CONTINENT_CLUE, COUNTRY_CLUE, SYMBOL_CLUE],
         answer: entry => `${currencyText(entry)} (${entry.name})`,
         answerKeys: entry => entry.currencies.map(currency => currency.code),
         isRight: (choice, entry) => entry.currencies.some(currency => currency.code === choice.code),
+        maxSuggestions: 25,  // all 21 dollars show at once
         choices: currencyChoices()
     },
     // Picked from five Population Choices instead of the dropdown; Clues are free and a
@@ -148,7 +152,7 @@ const MODES = {
         // Population Choices are evenly spaced multiples of one step; starting higher than
         // 1x keeps neighbouring Choices further apart by factor. Level 5 has no Higher/Lower
         // hint, since with three Choices it would give the answer away.
-        levels: top100Levels([2, 2, 2, 4, 5]).map((level, i) => ({ ...level, ...[
+        levels: rankLevels(1, 20, [2, 2, 2, 4, 5]).map((level, i) => ({ ...level, ...[
             { choiceCount: 5, lowestMultiple: 1, hint: true },
             { choiceCount: 5, lowestMultiple: 1, hint: true },
             { choiceCount: 5, lowestMultiple: 2, hint: true },
@@ -170,10 +174,37 @@ const MODES = {
         learnNote: 'Missed, skipped, needed a second try or a paid clue',
         learnName: entry => entry.name,
         learnDetail: (entry, level) => `${entry.continent} · ${level.type}`,
-        levels: top100Levels([1, 2, 3, 4, 5]),
+        levels: rankLevels(21, 30, [1, 2, 3, 4, 5]),
         clues: [MAP_CONTINENT_CLUE, NEIGHBOUR_CLUE, COUNTRY_CLUE],
         answer: entry => entry.name,
         clickOnMap: true,
+        isHitOnMap: (entry, lon, lat) => isMapHit(entry.code, lon, lat),
+        nudgeOnMap: (entry, lon, lat) => mapNudge(entry.code, lon, lat),
+        showOnMap: (entry, found) => {
+            fillMapCountry(entry.code, found ? 'found' : 'missed');
+            if (!found) zoomMapToCountry(entry.code);
+        },
+        secondTryCosts: true,
+        choices: []
+    },
+    // Like Map Mode, but the player clicks the capital city, seeing only the flag
+    capitalMap: {
+        chip: 'Capital on map',
+        question: 'Where is the capital of this country? Click it on the map.',
+        learnHeading: 'Capitals to find',
+        learnNote: 'Missed, skipped, needed a second try or a paid clue',
+        learnName: entry => capitalText(entry),
+        learnDetail: (entry, level) => `Capital of ${entry.name} · ${level.type}`,
+        levels: rankLevels(1, 20, [1, 2, 3, 4, 5]),
+        clues: [MAP_CONTINENT_CLUE, COUNTRY_CLUE, OUTLINE_CLUE],
+        answer: entry => `${capitalText(entry)} (${entry.name})`,
+        clickOnMap: true,
+        isHitOnMap: (entry, lon, lat) => isCapitalHit(entry.capitalPlaces, lon, lat),
+        nudgeOnMap: (entry, lon, lat) => capitalNudge(entry.capitalPlaces, lon, lat),
+        showOnMap: (entry, found) => {
+            markCapitals(entry.capitalPlaces, found ? 'found' : 'missed');
+            if (!found) zoomMapToCapitals(entry.capitalPlaces);
+        },
         secondTryCosts: true,
         choices: []
     }
@@ -616,9 +647,10 @@ function findSuggestions(typed) {
         }
     });
     const byName = (a, b) => a.text.localeCompare(b.text);
+    const most = MODES[mode].maxSuggestions || MAX_SUGGESTIONS;
     return {
-        starting: starting.sort(byName).slice(0, MAX_SUGGESTIONS),
-        inbetween: inbetween.sort(byName).slice(0, MAX_SUGGESTIONS)
+        starting: starting.sort(byName).slice(0, most),
+        inbetween: inbetween.sort(byName).slice(0, most)
     };
 }
 
@@ -662,6 +694,7 @@ function setHighlight(index) {
     highlighted = index;
     document.querySelectorAll('#suggestions li[data-index]').forEach(li => {
         li.classList.toggle('highlighted', Number(li.dataset.index) === index);
+        if (Number(li.dataset.index) === index) li.scrollIntoView({ block: 'nearest' });
     });
 }
 
@@ -708,10 +741,7 @@ function revealAnswer(text) {
     showMessage(text, 'incorrect');
     document.getElementById('userAnswer').value = MODES[mode].answer(entry);
     document.querySelectorAll('#populationChoices button.isRight').forEach(button => button.classList.add('shown'));
-    if (MODES[mode].clickOnMap) {
-        fillMapCountry(entry.code, 'missed');
-        zoomMapToCountry(entry.code);
-    }
+    if (MODES[mode].clickOnMap) MODES[mode].showOnMap(entry, false);
     flagsToLearn.push(entry);
     questionResults[currentQuestion - 1] = 'missed';
     updateProgressStops();
@@ -799,16 +829,17 @@ function pickPopulation(button, choice) {
 
 // ---- Clicking the World Map ----
 
-const MAP_FOUND_DELAY_MS = 1200;  // how long a found Country stays green before the next flag
+const MAP_FOUND_DELAY_MS = 1200;  // how long a found Country or capital stays green before the next flag
 
 function pickOnMap(lon, lat) {
-    if (waiting || quizOver || !MODES[mode].clickOnMap) return;
+    const settings = MODES[mode];
+    if (waiting || quizOver || !settings.clickOnMap) return;
     answeredAny = true;
     startTimerOnce();
     const entry = currentEntry();
     markMapClick(lon, lat);
 
-    if (isMapHit(entry.code, lon, lat)) {
+    if (settings.isHitOnMap(entry, lon, lat)) {
         const points = questionWorth();
         totalPoints += points;
         updatePointsDisplay();
@@ -816,7 +847,7 @@ function pickOnMap(lon, lat) {
         if (tries > 0 || paidClues() > 0) flagsToLearn.push(entry);
         questionResults[currentQuestion - 1] = 'correct';
         updateProgressStops();
-        fillMapCountry(entry.code, 'found');
+        settings.showOnMap(entry, true);
         waiting = true;
         setControlsEnabled(false);
         setTimeout(() => {
@@ -829,9 +860,9 @@ function pickOnMap(lon, lat) {
     tries++;
     renderLevelCard();
     if (tries >= MAX_TRIES) {
-        revealAnswer(`Not quite! It was ${MODES[mode].answer(entry)}`);
+        revealAnswer(`Not quite! It was ${settings.answer(entry)}`);
     } else {
-        showMessage(`Not quite! Try further ${mapNudge(entry.code, lon, lat)}.`, 'incorrect');
+        showMessage(`Not quite! Try further ${settings.nudgeOnMap(entry, lon, lat)}.`, 'incorrect');
     }
 }
 

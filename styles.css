@@ -176,6 +176,7 @@ button:disabled {
 .modeIconPopulation { background: #E9E3FA; color: var(--purple); }
 .modeIconCurrency { background: #FFF1CC; color: #A86B00; }
 .modeIconMap { background: #DDEBFF; color: #2557A7; }
+.modeIconCapitalMap { background: #FDE2DA; color: var(--coral-dark); }
 
 .modeTitle {
 	font-family: 'Fredoka', sans-serif;
@@ -463,6 +464,8 @@ button:disabled {
 	border: 3px solid var(--ink);
 	border-radius: 18px;
 	box-shadow: 0 14px 30px rgba(23, 38, 74, 0.25);
+	max-height: min(420px, 50vh);  /* long lists, e.g. every dollar, scroll */
+	overflow-y: auto;
 }
 
 #suggestions li {
@@ -565,6 +568,13 @@ button:disabled {
 .worldMap .land.found { fill: var(--green); stroke: #1F7A50; stroke-width: 1.5px; }
 .worldMap .land.missed { fill: #E8734F; stroke: var(--coral-dark); stroke-width: 1.5px; }
 .worldMap .clickMark { fill: var(--ink); stroke: white; }
+.worldMap .land.outlined { fill: #FFE7A3; stroke: #A86B00; stroke-width: 1.5px; }
+.worldMap .capitalMark { stroke: white; }
+.worldMap .capitalMark.found { fill: #1F7A50; }
+.worldMap .capitalMark.missed { fill: var(--coral-dark); }
+.worldMap .capitalArea { stroke-width: 1.5px; stroke-dasharray: 4 3; }
+.worldMap .capitalArea.found { fill: rgba(46, 158, 106, 0.18); stroke: #1F7A50; }
+.worldMap .capitalArea.missed { fill: rgba(232, 115, 79, 0.18); stroke: var(--coral-dark); }
 
 .mapButtons {
 	position: absolute;

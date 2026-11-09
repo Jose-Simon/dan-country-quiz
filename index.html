@@ -66,6 +66,13 @@
 				<span class="modeTitle">Find it on the map</span>
 				<span class="mutedText">See a flag, click that country on a world map</span>
 			</button>
+			<button class="card modeCard" onclick="startQuiz('capitalMap')">
+				<span class="modeIcon modeIconCapitalMap">
+					<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"></path><path d="M12 7l.9 1.9 2.1.3-1.5 1.4.4 2.1-1.9-1-1.9 1 .4-2.1-1.5-1.4 2.1-.3z"></path></svg>
+				</span>
+				<span class="modeTitle">Find the capital</span>
+				<span class="mutedText">See a flag, click its capital city on the map</span>
+			</button>
 		</div>
 	</main>
 
@@ -161,6 +168,7 @@
 			<button role="tab" data-mode="currency" onclick="showTrends('currency')">Currencies</button>
 			<button role="tab" data-mode="population" onclick="showTrends('population')">Population</button>
 			<button role="tab" data-mode="map" onclick="showTrends('map')">Map</button>
+			<button role="tab" data-mode="capitalMap" onclick="showTrends('capitalMap')">Capital on map</button>
 		</div>
 		<div class="resultsRow">
 			<section class="card chartCard" id="progressTrend">
