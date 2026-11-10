@@ -72,6 +72,12 @@ function mapPixelsPerUnit() {
     return mapSvg.getBoundingClientRect().width / mapView.w;
 }
 
+// A mark's size in map units; on a hidden map it is 0 until setMapView sizes it once shown
+function markSize(pixels) {
+    const perUnit = mapPixelsPerUnit();
+    return perUnit > 0 ? pixels / perUnit : 0;
+}
+
 // Shows the given area (in map units), keeping the box's shape and staying over the world
 function setMapView(view) {
     const box = mapSvg.getBoundingClientRect();
@@ -86,9 +92,8 @@ function setMapView(view) {
                         : Math.min(Math.max(centreY - h / 2, mapWorld.y), mapWorld.y + mapWorld.h - h);
     mapView = { x, y, w, h };
     mapSvg.setAttribute('viewBox', `${x} ${y} ${w} ${h}`);
-    const markSize = MAP_MARK_PIXELS / mapPixelsPerUnit();
     mapMarks.querySelectorAll('circle').forEach(mark => {
-        const size = markSize * (Number(mark.dataset.times) || 1);
+        const size = markSize(MAP_MARK_PIXELS) * (Number(mark.dataset.times) || 1);
         mark.setAttribute('r', size);
         mark.setAttribute('stroke-width', size / 3);
     });
@@ -225,7 +230,7 @@ function listenForMapGestures() {
 
 function markMapClick(lon, lat) {
     mapClicks.push([lon, lat]);
-    const size = MAP_MARK_PIXELS / mapPixelsPerUnit();
+    const size = markSize(MAP_MARK_PIXELS);
     mapMarks.appendChild(svgElement('circle', { cx: lon, cy: millerY(lat), r: size, 'stroke-width': size / 3, class: 'clickMark' }));
 }
 
@@ -257,7 +262,7 @@ function markCapitals(places, className) {
             ring.push(`${bearing ? 'L' : 'M'}${x},${millerY(y)}`);
         }
         mapMarks.prepend(svgElement('path', { d: ring.join('') + 'Z', class: `capitalArea ${className}`, 'vector-effect': 'non-scaling-stroke' }));
-        const size = CAPITAL_MARK_TIMES * MAP_MARK_PIXELS / mapPixelsPerUnit();
+        const size = markSize(CAPITAL_MARK_TIMES * MAP_MARK_PIXELS);
         const mark = svgElement('circle', { cx: lon, cy: millerY(lat), r: size, 'stroke-width': size / 3, class: `capitalMark ${className}` });
         mark.dataset.times = CAPITAL_MARK_TIMES;
         mapMarks.appendChild(mark);

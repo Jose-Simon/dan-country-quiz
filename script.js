@@ -454,12 +454,27 @@ function stopTimer() {
     clearInterval(timerInterval);
 }
 
-// Like the multiplication quiz, the clock waits for the player's first action
+// Like the multiplication quiz, the clock waits for the player's first action. Until then
+// the player can go back to all Modes; after it, End quiz takes over.
 function startTimerOnce() {
     if (!timerStarted && !quizOver) {
         startTimer();
         timerStarted = true;
+        showQuizExit(true);
     }
+}
+
+function showQuizExit(started) {
+    document.getElementById('backButton').hidden = started;
+    document.getElementById('endButton').hidden = !started;
+}
+
+// Leaves a Quiz that hasn't started, without saving anything
+function leaveQuiz() {
+    quizOver = true;
+    stopTimer();
+    hideSuggestions();
+    showStart();
 }
 
 function levels() {
@@ -646,6 +661,7 @@ function startQuiz(newMode) {
     showMessage('', '');
     showScreen('quiz');
     document.getElementById('endButton').disabled = false;
+    showQuizExit(false);
 
     stopTimer();
     timerStarted = false;
