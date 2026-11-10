@@ -1,6 +1,6 @@
 # Flag Game
 
-A quiz in which the player is shown a flag and must name the place it belongs to (or its capital), starting with easy places and getting harder as the quiz goes on.
+A quiz about the world's flags and the places they belong to: naming the place, its capital or currency, finding it on a map, or picking flags by name, color, size or population, starting with easy places and getting harder as the quiz goes on.
 
 ## Language
 
@@ -31,7 +31,7 @@ _Avoid_: Difficulty score
 ## Playing
 
 **Mode**:
-What the player is asked about the flag, chosen before each Quiz: Country Mode, Capital Mode, Currency Mode, Population Mode, Map Mode or Capital Map Mode.
+What the player is asked, chosen before each Quiz: Country Mode, Capital Mode, Currency Mode, Population Mode, Map Mode, Capital Map Mode, Pick the Flag Mode, Flag Color Mode, Bigger Land Mode or More People Mode.
 _Avoid_: Game type, variant
 
 **Country Mode**:
@@ -53,6 +53,34 @@ The player finds the Country on the World Map by clicking it. Questions come fro
 **Capital Map Mode**:
 The player sees only the flag and clicks that Country's Capital on the World Map ("Find the capital"). Questions come from the 100 Countries with the best Population Rank. A click counts if it is within about 150 km of the Capital (any of them, for a Country with more than one). Tries, Nudge and points work as in Map Mode; the Reveal marks the Capital, green or red-orange, with the circle a click had to land in.
 _Avoid_: Capital position mode
+
+**Pick the Flag Mode**:
+The player sees a Flag Entry's Display Name and picks its flag from four. The three wrong flags come from the same continent where possible, and never one that Looks Alike. Levels and Territories work as in Country Mode. A right second Try is worth one point less than a right first Try. When the Question ends, every flag is named.
+
+**Looks Alike**:
+Two flags whose Flag Colors take up almost the same share of each (e.g. Indonesia and Monaco, Poland and Indonesia). They are never offered side by side.
+
+**Flag Color Mode**:
+The player sees a Flag Color and picks, from four Display Names, the one whose flag has it ("Spot the color"). Exactly one of the four flags has the color and the other three Lack it. Levels and Territories work as in Country Mode, and the three wrong names come from the same Level where possible. A right second Try is worth one point less. When the Question ends, every name shows its flag.
+_Avoid_: Color match (the player matches a color to names, not to flags)
+
+**Flag Color**:
+One of red, orange, yellow, green, blue, white or black. A flag Has a color when at least a tenth of it is that color, and Lacks it when none of it is. A flag with only a trace (e.g. Turkey's white crescent, about 6%) neither Has nor Lacks white, so it is never asked about white. Shades count as their color (Qatar's maroon is red, Argentina's light blue is blue). Purple, brown and grey count as none.
+
+**Bigger Land Mode** / **More People Mode**:
+The player sees two flags, with no names, and picks the Country with more land ("Which is bigger?") or more people ("Which has more people?"). There is only one Try, since there are only two flags. When the Question ends, both flags are named with their area or population. The Level depends on how close the two Countries are: Level 1 is at least 4 times, then 2.5, 1.6, 1.25, and Level 5 is under 1.25 times. Countries closer than 5% are never paired. In Whole World both come from the 100 Countries with the best Population Rank. A Country comes up at most twice in a Quiz.
+_Avoid_: Higher or lower
+
+**Area** (setting):
+Where a Quiz's Questions come from, chosen on the start screen: Whole World, Africa, Americas (North and South), Asia & Oceania, Europe, or Territories Only. Each group has at least 20 Countries; Oceania alone is too small, so it joins Asia. Russia and Turkey are in both Europe and Asia. A continent group asks only its Countries, and ignores the Mode's own rank limits (e.g. Capital Mode in Europe also asks the best-known Countries). Territories Only is offered only in Country Mode, Pick the Flag Mode and Flag Color Mode, and orders Territories by population.
+_Avoid_: Region, continent filter
+
+**Difficulty** (setting):
+Easy or Difficult, chosen on the start screen. In Whole World, Easy keeps each Mode's own Levels. Difficult spreads that Mode's Levels 3–5 over five Levels (e.g. Capital Mode: ranks 81–170 in bands of 18). Where Level 5 is Territories, it stays Territories and ranks 71–197 make Levels 1–4. With a continent group or Territories Only, Easy splits the Area's Flag Entries into five equal Levels, and Difficult leaves out the easiest two fifths first. In Bigger Land and More People Modes, Difficult spreads closeness from 2.5 times down to 5% over the five Levels. Points per Level stay the same.
+
+**Badge**:
+An award kept on that Mode's start card and in the badge list on the start screen, with the date first earned and how many times. A Perfect Score badge is for a 100% Quiz. A Hat Trick badge is for three 100% Quizzes in a row; every third one in an unbroken run earns another. Both are earned per Mode and Difficulty, in any Area, and a Quiz below 100% in that Mode and Difficulty breaks the run. Resetting stats keeps badges.
+_Avoid_: Achievement, trophy
 
 **World Map**:
 The map in Map Mode: every Country's outline drawn with thin borders and no names, which the player can zoom into and move around. Only a Country's Home Parts count as that Country; disputed areas belong to whichever Country the map shows controlling them, except that breakaway regions no Country recognises (Somaliland, Northern Cyprus) are part of the Country the world recognises (Somalia, Cyprus).
@@ -91,7 +119,7 @@ _Avoid_: Game, session, round
 One flag shown to the player, to be named.
 
 **Level**:
-A band of Flag Entries that Questions are drawn from at random, worth a fixed number of points (Levels 1–5 are worth 1–5 points, except in Population Mode where they are worth 2, 2, 2, 4 and 5; either way a Quiz is out of 60). In Country Mode, Levels 1–4 are bands of Population Rank and Level 5 is every Territory. In Currency Mode, Population Mode and Capital Map Mode, each Level is a band of 20 Population Ranks (1–20, 21–40 … 81–100). In Capital Mode and Map Mode, each Level is a band of 30 starting at rank 21 (21–50, 51–80, 81–110, 111–140, 141–170). A Quiz splits its Questions evenly across all five Levels, easiest first. Every Level, including Level 5, is shown to the player simply by its number.
+A band of Flag Entries that Questions are drawn from at random, worth a fixed number of points (Levels 1–5 are worth 1–5 points, except in Population Mode where they are worth 2, 2, 2, 4 and 5; either way a Quiz is out of 60). In Country Mode, Levels 1–4 are bands of Population Rank and Level 5 is every Territory. In Currency Mode, Population Mode and Capital Map Mode, each Level is a band of 20 Population Ranks (1–20, 21–40 … 81–100). In Capital Mode and Map Mode, each Level is a band of 30 starting at rank 21 (21–50, 51–80, 81–110, 111–140, 141–170). A Quiz splits its Questions evenly across all five Levels, easiest first. This is for Whole World on Easy; the Area and Difficulty settings can change the bands. A Level with too few usable Flag Entries (e.g. Currency Mode in Europe, where many Countries share the Euro) borrows from the harder Levels, then the easier ones. Every Level, including Level 5, is shown to the player simply by its number.
 _Avoid_: Stage, tier, category, "Super Difficult"
 
 **Try**:
@@ -112,8 +140,11 @@ A hint the player may reveal for the current Question, always in a fixed order t
 - Map Mode: Continent Clue (which also brings that continent into view), Neighbour Clue, Country Clue.
 - Capital Map Mode: Continent Clue (which also brings that continent into view), Country Clue, Outline Clue.
 - Population Mode: Continent Clue, Country Clue, Similar Country Clue.
+- Pick the Flag Mode: Colors Clue, Cross One Out Clue.
+- Flag Color Mode: Continent Clue, Cross One Out Clue.
+- Bigger Land and More People Modes: no Clues.
 
-The first Clue is free. In Country Mode, Capital Mode, Currency Mode, Map Mode and Capital Map Mode each later Clue costs one point from that Question, never going below zero; in Population Mode Clues are free.
+The first Clue is free. In every Mode except Population Mode, each later Clue costs one point from that Question, never going below zero; in Population Mode Clues are free.
 _Avoid_: Hint, help
 
 **Continent Clue**:
@@ -131,6 +162,12 @@ The Display Name of the Country whose flag is shown.
 
 **Outline Clue**:
 Shows the Country's border on the World Map and brings it into view, without naming it.
+
+**Colors Clue**:
+The Flag Colors the right flag Has (e.g. "Red and white"). Free.
+
+**Cross One Out Clue**:
+Crosses out one wrong choice.
 
 **Similar Country Clue**:
 Another Country with a population close to this one's, named without its population.

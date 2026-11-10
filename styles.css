@@ -159,8 +159,123 @@ button:disabled {
 	color: var(--ink);
 }
 
-.modeCard:hover { transform: translateY(-3px); }
-.modeCard:active { transform: translateY(3px); box-shadow: none; }
+.modeCard:hover:not(:disabled) { transform: translateY(-3px); }
+.modeCard:active:not(:disabled) { transform: translateY(3px); box-shadow: none; }
+.modeCard:disabled { opacity: 0.45; }
+
+.cardNote {
+	font-size: 15px;
+	color: var(--coral-dark);
+}
+
+.cardBadges {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px;
+}
+
+.cardBadges:empty { display: none; }
+
+.badgePill {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding: 3px 10px 3px 6px;
+	border-radius: 999px;
+	background: #FFF6DB;
+	font-size: 14px;
+	color: #7A5600;
+}
+
+.badgeIcon {
+	display: flex;
+	flex: 0 0 auto;
+}
+
+/* ---- Start: Area and Difficulty ---- */
+.settingsRow {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 18px 28px;
+}
+
+.setting {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+.segmented {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 4px;
+	padding: 5px;
+	background: white;
+	border-radius: 22px;
+	box-shadow: 0 3px 0 var(--card-shadow);
+}
+
+.segmented button {
+	font-weight: 600;
+	font-size: 17px;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 999px;
+	background: transparent;
+	color: var(--muted);
+}
+
+.segmented button[aria-checked="true"] {
+	background: var(--ink);
+	color: white;
+}
+
+/* ---- Start: badges earned ---- */
+.badgeShelf {
+	width: 956px;
+	max-width: 100%;
+	padding: 24px 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	text-align: left;
+}
+
+.badgeList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 10px;
+}
+
+.badgeList:empty { display: none; }
+
+.badgeList li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 14px;
+	border-radius: 16px;
+	background: #FFF6DB;
+}
+
+.badgeList .badgeIcon svg,
+.badgeEarned .badgeIcon svg {
+	width: 36px;
+	height: 36px;
+}
+
+.badgeTitle {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+}
 
 .modeIcon {
 	width: 80px;
@@ -177,6 +292,10 @@ button:disabled {
 .modeIconCurrency { background: #FFF1CC; color: #A86B00; }
 .modeIconMap { background: #DDEBFF; color: #2557A7; }
 .modeIconCapitalMap { background: #FDE2DA; color: var(--coral-dark); }
+.modeIconPickFlag { background: #DFF1FF; color: #1F5F99; }
+.modeIconFlagColor { background: #FCE4F1; color: #A12F6C; }
+.modeIconBiggerLand { background: #E3F4D9; color: #3D7A1F; }
+.modeIconMorePeople { background: #E9E3FA; color: var(--purple); }
 
 .modeTitle {
 	font-family: 'Fredoka', sans-serif;
@@ -331,6 +450,31 @@ button:disabled {
 		box-shadow: 0 0 0 1px rgba(23, 38, 74, 0.2);
 	}
 	#flagCanvas { display: none; }
+}
+
+/* The name or Flag Color asked about, in place of the flag */
+.promptCard {
+	min-width: min(420px, 80vw);
+	box-sizing: border-box;
+	padding: 34px 28px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+.promptSwatch {
+	width: 160px;
+	height: 100px;
+	border-radius: 16px;
+	box-shadow: inset 0 0 0 2px rgba(23, 38, 74, 0.25);
+}
+
+.promptText {
+	font-family: 'Fredoka', sans-serif;
+	font-weight: 700;
+	font-size: 44px;
+	text-align: center;
 }
 
 .question {
@@ -530,6 +674,48 @@ button:disabled {
 	opacity: 1;
 }
 
+/* Without clues, their empty column still balances the level card, so the rest stays centred */
+.noClues .clueArea { visibility: hidden; }
+
+/* Flags as Choices: four in a row, or two big ones; whose they are shows at the end */
+.flagChoices .choiceButton {
+	height: auto;
+	min-width: 0;
+	width: 200px;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+}
+
+.flagChoices.twoFlags .choiceButton { width: 300px; }
+
+.flagChoices .choiceButton img {
+	width: 100%;
+	aspect-ratio: 3 / 2;
+	object-fit: contain;
+	border-radius: 6px;
+}
+
+.flagChoices .choiceButton.crossed { text-decoration: none; }  /* the name under it stays readable */
+.flagChoices .choiceButton.crossed img { opacity: 0.25; }
+.choiceRow.revealed .choiceButton:disabled { opacity: 1; }
+
+.choiceCaption {
+	font-size: 17px;
+	line-height: 1.2;
+}
+
+/* A name's flag, shown once the Question ends */
+.choiceButton img.choiceCaption {
+	height: 26px;
+	margin-left: 10px;
+	vertical-align: middle;
+	border-radius: 3px;
+	box-shadow: 0 0 0 1px rgba(23, 38, 74, 0.2);
+}
+
 /* ---- Map Mode: a smaller flag, the message above the map ---- */
 
 .mapMode .stage { margin-top: 20px; }
@@ -722,6 +908,37 @@ button:disabled {
 }
 
 .statPoints { background: #FFF6DB; }
+
+/* A 100% Quiz: the badges earned pop in */
+.badgeBanner {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}
+
+.badgeEarned {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 16px;
+	border-radius: 18px;
+	background: #FFF1CC;
+	box-shadow: 0 0 0 3px var(--sun);
+	text-align: left;
+	animation: badgePop 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+
+.badgeEarned + .badgeEarned { animation-delay: 0.25s; }
+
+@keyframes badgePop {
+	from { transform: scale(0.4); opacity: 0; }
+	to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.badgeEarned { animation: none; }
+}
 .statTime { background: #E6F4FF; }
 
 .statValue {
@@ -795,13 +1012,15 @@ button:disabled {
 
 .modeTabs {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: 6px;
 	margin: 0 auto 18px;
 	padding: 6px;
 	width: fit-content;
+	max-width: 960px;
 	background: white;
-	border-radius: 999px;
+	border-radius: 26px;
 	box-shadow: 0 3px 0 var(--card-shadow);
 }
 
@@ -860,11 +1079,15 @@ button:disabled {
 	.levelCard { order: 3; }
 	.clueArea { order: 4; }
 	.flagFrame { --flag-width: min(420px, 80vw); }
+	.noClues .clueArea { display: none; }
 }
 
 @media (max-width: 560px) {
 	.modeTabs { gap: 2px; padding: 4px; flex-wrap: wrap; border-radius: 22px; }
 	.modeTabs button { font-size: 14px; padding: 7px 9px; }
+	.flagChoices .choiceButton { width: calc(50% - 6px); }
+	.flagChoices.twoFlags .choiceButton { width: calc(50% - 6px); }
+	.promptText { font-size: 34px; }
 	.mapBox { width: 100%; aspect-ratio: 4 / 3; }  /* taller on a phone, so there's room to zoom into */
 	.mapMode .flagFrame { --flag-width: min(200px, 60vw); }
 }

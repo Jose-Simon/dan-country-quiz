@@ -1,0 +1,2086 @@
+{
+ "flags/ad.svg": {
+  "hash": "f341663585fd634fcabf7c92c02c0e8a41550864",
+  "colors": {
+   "red": 0.333,
+   "orange": 0.063,
+   "yellow": 0.278,
+   "blue": 0.32
+  }
+ },
+ "flags/ae.svg": {
+  "hash": "c5e54922f80425f875e9c2ee6175cd42492d7c7b",
+  "colors": {
+   "red": 0.25,
+   "green": 0.25,
+   "white": 0.25,
+   "black": 0.25
+  }
+ },
+ "flags/af.svg": {
+  "hash": "1516594392a4cf5aea2d36c8bfbfc54014a4baf5",
+  "colors": {
+   "red": 0.294,
+   "green": 0.322,
+   "white": 0.045,
+   "black": 0.311
+  }
+ },
+ "flags/ag.svg": {
+  "hash": "691a8fe00d092fbe6897ae44a0e20c264f2326c5",
+  "colors": {
+   "red": 0.501,
+   "yellow": 0.057,
+   "blue": 0.11,
+   "white": 0.075,
+   "black": 0.256
+  }
+ },
+ "flags/ai.svg": {
+  "hash": "69fbb3ed548407c57de0dcc10e7dc4c2468080eb",
+  "colors": {
+   "red": 0.096,
+   "orange": 0.016,
+   "blue": 0.762,
+   "white": 0.124
+  }
+ },
+ "flags/al.svg": {
+  "hash": "c12e9c18f934203c181d37c1ac8f32d9ff4e2076",
+  "colors": {
+   "red": 0.887,
+   "black": 0.113
+  }
+ },
+ "flags/am.svg": {
+  "hash": "2ba6c196ed404719dee7241621a53fc895b26ba2",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "blue": 0.333
+  }
+ },
+ "flags/ao.svg": {
+  "hash": "c5f44dd724b13499ab406da577d70a77c91133ba",
+  "colors": {
+   "red": 0.481,
+   "yellow": 0.045,
+   "black": 0.471
+  }
+ },
+ "flags/aq.svg": {
+  "hash": "1df5a82846140b7aeade1a6307eae23a298abb78",
+  "colors": {
+   "blue": 0.684,
+   "white": 0.315
+  }
+ },
+ "flags/ar.svg": {
+  "hash": "83cc49501307864472a3ffefbd5d6daed4c1f0f1",
+  "colors": {
+   "orange": 0.019,
+   "yellow": 0.005,
+   "blue": 0.67,
+   "white": 0.305
+  }
+ },
+ "flags/as.svg": {
+  "hash": "c65cffcf2d7924601a72c411409d6189d5fd64fb",
+  "colors": {
+   "red": 0.101,
+   "yellow": 0.019,
+   "blue": 0.497,
+   "white": 0.319,
+   "black": 0.009
+  }
+ },
+ "flags/at.svg": {
+  "hash": "2ab5aad0d55339714d30c723759055eece5b4fe2",
+  "colors": {
+   "red": 0.67,
+   "white": 0.33
+  }
+ },
+ "flags/au.svg": {
+  "hash": "c2d36db374741d138d15328998aa84c87633bcc1",
+  "colors": {
+   "red": 0.096,
+   "blue": 0.792,
+   "white": 0.107
+  }
+ },
+ "flags/aw.svg": {
+  "hash": "27c5820abedf1625ab1b2c55ecd1ac5459cbd1ec",
+  "colors": {
+   "red": 0.011,
+   "yellow": 0.11,
+   "green": 0.01,
+   "blue": 0.863,
+   "white": 0.006
+  }
+ },
+ "flags/ax.svg": {
+  "hash": "191efb81184cbe9e5aa7db7ed14c29567b137f7f",
+  "colors": {
+   "red": 0.177,
+   "orange": 0.015,
+   "yellow": 0.239,
+   "blue": 0.568
+  }
+ },
+ "flags/az.svg": {
+  "hash": "f9dd8b0368b51cf3cbee830cfb5743d291509c59",
+  "colors": {
+   "red": 0.318,
+   "green": 0.333,
+   "blue": 0.333,
+   "white": 0.015
+  }
+ },
+ "flags/ba.svg": {
+  "hash": "1c43a2478b97bb29ea1290bb637e58d2795e35bf",
+  "colors": {
+   "yellow": 0.252,
+   "blue": 0.71,
+   "white": 0.037
+  }
+ },
+ "flags/bb.svg": {
+  "hash": "7e45acd5ca2cfcd7041c645f366b20625f7838b9",
+  "colors": {
+   "yellow": 0.297,
+   "blue": 0.667,
+   "black": 0.036
+  }
+ },
+ "flags/bd.svg": {
+  "hash": "a98388de0aac5acbc8eba5b43b97811735269763",
+  "colors": {
+   "red": 0.21,
+   "green": 0.789
+  }
+ },
+ "flags/be.svg": {
+  "hash": "e72c4a39075c4816de6d1b87dce2fdd7a3be398a",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "black": 0.333
+  }
+ },
+ "flags/bf.svg": {
+  "hash": "5bb82cfdd3cfbb4c718e2c6c0dd8399acc6de340",
+  "colors": {
+   "red": 0.489,
+   "yellow": 0.02,
+   "green": 0.491
+  }
+ },
+ "flags/bg.svg": {
+  "hash": "c02f48bc5c65935b11a3ca14eb0b2eb9a62dbeb0",
+  "colors": {
+   "red": 0.333,
+   "green": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/bh.svg": {
+  "hash": "ec51701a1ad2bb201aadc06f165e934f45dcb747",
+  "colors": {
+   "red": 0.677,
+   "white": 0.323
+  }
+ },
+ "flags/bi.svg": {
+  "hash": "f6c64ea79b7cc80aa9425fcc62891ae1c2f2fea1",
+  "colors": {
+   "red": 0.31,
+   "green": 0.346,
+   "white": 0.342
+  }
+ },
+ "flags/bj.svg": {
+  "hash": "1f76ffc927e228a24ef30bc1702629203741bd73",
+  "colors": {
+   "red": 0.3,
+   "yellow": 0.3,
+   "green": 0.4
+  }
+ },
+ "flags/bl.svg": {
+  "hash": "247456d5244c7d2d0f1a42f07446b0c64d6e4c7b",
+  "colors": {
+   "red": 0.048,
+   "yellow": 0.084,
+   "blue": 0.059,
+   "white": 0.738
+  }
+ },
+ "flags/bm.svg": {
+  "hash": "c0304d9bf08474c999e6cc184d008b8b618b23b5",
+  "colors": {
+   "red": 0.743,
+   "yellow": 0.011,
+   "green": 0.018,
+   "blue": 0.079,
+   "white": 0.135
+  }
+ },
+ "flags/bn.svg": {
+  "hash": "5bec64e43c07c20423ae6d6c8bb3c1e4ec556262",
+  "colors": {
+   "red": 0.06,
+   "orange": 0.006,
+   "yellow": 0.548,
+   "white": 0.21,
+   "black": 0.171
+  }
+ },
+ "flags/bo.svg": {
+  "hash": "02c47b280953cf90d4e5fe9e3476d191656f74a4",
+  "colors": {
+   "red": 0.345,
+   "orange": 0.008,
+   "yellow": 0.297,
+   "green": 0.34
+  }
+ },
+ "flags/bq.svg": {
+  "hash": "78635b7a704149ac18e49658d2002c60235db00f",
+  "colors": {
+   "red": 0.019,
+   "yellow": 0.087,
+   "blue": 0.501,
+   "white": 0.364,
+   "black": 0.023
+  }
+ },
+ "flags/br.svg": {
+  "hash": "c3cb87274257a160877a5c760e42e32f807d2d92",
+  "colors": {
+   "yellow": 0.176,
+   "green": 0.691,
+   "blue": 0.121,
+   "white": 0.01
+  }
+ },
+ "flags/bs.svg": {
+  "hash": "f792f115f01055d95bed20ab7d2e3699d76110fa",
+  "colors": {
+   "yellow": 0.214,
+   "blue": 0.571,
+   "black": 0.216
+  }
+ },
+ "flags/bt.svg": {
+  "hash": "be9a893ed965909f5b8b5b128ca3dc0b0ca640a6",
+  "colors": {
+   "orange": 0.415,
+   "yellow": 0.443,
+   "white": 0.131
+  }
+ },
+ "flags/bw.svg": {
+  "hash": "deffdd247a70765d27502f35fc1c8f51d1b786d8",
+  "colors": {
+   "blue": 0.75,
+   "white": 0.08,
+   "black": 0.16
+  }
+ },
+ "flags/by.svg": {
+  "hash": "19dcc2311c9078ea7139ff0953ce8652302d4fc1",
+  "colors": {
+   "red": 0.661,
+   "green": 0.294,
+   "white": 0.043
+  }
+ },
+ "flags/bz.svg": {
+  "hash": "881ef27f1ae41d4d9aa6277fb70101d1b174341a",
+  "colors": {
+   "red": 0.204,
+   "orange": 0.008,
+   "yellow": 0.009,
+   "green": 0.037,
+   "blue": 0.655,
+   "white": 0.077
+  }
+ },
+ "flags/ca.svg": {
+  "hash": "e80ce7344e5cecc84a97ef13fc06dd499de7163d",
+  "colors": {
+   "red": 0.64,
+   "white": 0.36
+  }
+ },
+ "flags/cc.svg": {
+  "hash": "7c34d43bf85ba3bfd8a6f403eae4a2e5d4750c4b",
+  "colors": {
+   "yellow": 0.095,
+   "green": 0.903
+  }
+ },
+ "flags/cd.svg": {
+  "hash": "a7d2119ca5a7cd6b606d40c03269f378b7a93793",
+  "colors": {
+   "red": 0.198,
+   "yellow": 0.125,
+   "blue": 0.669
+  }
+ },
+ "flags/cf.svg": {
+  "hash": "a10a7dc4ad73b979eb0913757d39c3b7b3a750c6",
+  "colors": {
+   "red": 0.167,
+   "yellow": 0.218,
+   "green": 0.208,
+   "blue": 0.198,
+   "white": 0.208
+  }
+ },
+ "flags/cg.svg": {
+  "hash": "93b36bfc1ef337b7f391f0bd6dac847ce1dbc486",
+  "colors": {
+   "red": 0.332,
+   "yellow": 0.33,
+   "green": 0.335
+  }
+ },
+ "flags/ch.svg": {
+  "hash": "a573d5b5e766510d10568a13a7be82bb3db20cdb",
+  "colors": {
+   "red": 0.801,
+   "white": 0.197
+  }
+ },
+ "flags/ci.svg": {
+  "hash": "58f67b617fc9e1e6705e751f0d25065d72d3ed74",
+  "colors": {
+   "orange": 0.333,
+   "green": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/ck.svg": {
+  "hash": "0c1f4377442ec47721b1365975bec001a743a2c7",
+  "colors": {
+   "red": 0.096,
+   "blue": 0.775,
+   "white": 0.125
+  }
+ },
+ "flags/cl.svg": {
+  "hash": "22a43c801d3d9f56988f6d9947e5a03e1fc59c4b",
+  "colors": {
+   "red": 0.5,
+   "blue": 0.155,
+   "white": 0.345
+  }
+ },
+ "flags/cm.svg": {
+  "hash": "96cba651aa03f8191107f6fcf185eab93cf2ff39",
+  "colors": {
+   "red": 0.32,
+   "yellow": 0.346,
+   "green": 0.333
+  }
+ },
+ "flags/cn.svg": {
+  "hash": "de69a9e2d70aadcd1083546b5b7cb6d5a887ea57",
+  "colors": {
+   "red": 0.973,
+   "yellow": 0.023
+  }
+ },
+ "flags/co.svg": {
+  "hash": "4bcb5559f04c006198252c6a132ec07e9e288610",
+  "colors": {
+   "red": 0.25,
+   "yellow": 0.5,
+   "blue": 0.25
+  }
+ },
+ "flags/cr.svg": {
+  "hash": "5d28bc57ef0156e6a6797b8f261b9a53bb7d1bcc",
+  "colors": {
+   "red": 0.3,
+   "blue": 0.339,
+   "white": 0.348
+  }
+ },
+ "flags/cu.svg": {
+  "hash": "e99978d36f967a014b8536b70c84d807a1e87479",
+  "colors": {
+   "red": 0.201,
+   "blue": 0.487,
+   "white": 0.311
+  }
+ },
+ "flags/cv.svg": {
+  "hash": "7d4d27e0bfe5616dc2bfd2f137488c24b742116e",
+  "colors": {
+   "red": 0.08,
+   "yellow": 0.013,
+   "blue": 0.741,
+   "white": 0.164
+  }
+ },
+ "flags/cw.svg": {
+  "hash": "d7fb178007c5c96471d15911fb9619e5fcad1569",
+  "colors": {
+   "yellow": 0.125,
+   "blue": 0.861,
+   "white": 0.014
+  }
+ },
+ "flags/cx.svg": {
+  "hash": "c089fb5b876eb55a3ec70056f203c1e78d737829",
+  "colors": {
+   "yellow": 0.067,
+   "green": 0.459,
+   "blue": 0.463,
+   "white": 0.011
+  }
+ },
+ "flags/cy.svg": {
+  "hash": "b74b4e786a702cf0aebf17676056ed5c8e05baab",
+  "colors": {
+   "orange": 0.113,
+   "green": 0.015,
+   "white": 0.865
+  }
+ },
+ "flags/cz.svg": {
+  "hash": "3ac186cdc3e78fba34947a64e09c9557c271ca27",
+  "colors": {
+   "red": 0.375,
+   "blue": 0.249,
+   "white": 0.375
+  }
+ },
+ "flags/de.svg": {
+  "hash": "b9ecc2265d397c12111fa819ad51892842eac8ac",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "black": 0.333
+  }
+ },
+ "flags/dj.svg": {
+  "hash": "b1ec5416cc6f0094164c6b34b22a1fc72a87cbe8",
+  "colors": {
+   "red": 0.015,
+   "green": 0.356,
+   "blue": 0.356,
+   "white": 0.273
+  }
+ },
+ "flags/dk.svg": {
+  "hash": "3be968beed09c06ea47a7039b855879fc2256d07",
+  "colors": {
+   "red": 0.761,
+   "white": 0.234
+  }
+ },
+ "flags/dm.svg": {
+  "hash": "a4f6fb786f3e44a8295d7df643ae3a368da4249d",
+  "colors": {
+   "red": 0.08,
+   "yellow": 0.09,
+   "green": 0.654,
+   "white": 0.083,
+   "black": 0.08
+  }
+ },
+ "flags/do.svg": {
+  "hash": "482480e72d836416f341e832d3313e0594b75bcb",
+  "colors": {
+   "red": 0.351,
+   "green": 0.006,
+   "blue": 0.35,
+   "white": 0.29
+  }
+ },
+ "flags/dz.svg": {
+  "hash": "b00100911544f37779f885fe094dfe142f8f336e",
+  "colors": {
+   "red": 0.061,
+   "green": 0.46,
+   "white": 0.478
+  }
+ },
+ "flags/ec.svg": {
+  "hash": "4641853186234eb967c1cad67b5f4eba36326a86",
+  "colors": {
+   "red": 0.262,
+   "yellow": 0.48,
+   "green": 0.011,
+   "blue": 0.227
+  }
+ },
+ "flags/ee.svg": {
+  "hash": "55b785b9706e803aefd57e79144d7969b7cf355d",
+  "colors": {
+   "blue": 0.335,
+   "white": 0.33,
+   "black": 0.33
+  }
+ },
+ "flags/eg.svg": {
+  "hash": "874640474dd16e029c0a80436d2975fdb33e33f7",
+  "colors": {
+   "red": 0.335,
+   "yellow": 0.023,
+   "white": 0.305,
+   "black": 0.33
+  }
+ },
+ "flags/eh.svg": {
+  "hash": "a2d606f65fec4c343b685f3facc4208480436c60",
+  "colors": {
+   "red": 0.18,
+   "green": 0.296,
+   "white": 0.228,
+   "black": 0.296
+  }
+ },
+ "flags/er.svg": {
+  "hash": "dd70aa954199abc7f8a686e532a94b0cd1458ffe",
+  "colors": {
+   "red": 0.442,
+   "orange": 0.013,
+   "yellow": 0.044,
+   "green": 0.248,
+   "blue": 0.248
+  }
+ },
+ "flags/es.svg": {
+  "hash": "2aee265bf61da83fe4f9ff493bd975efe6ada00e",
+  "colors": {
+   "red": 0.521,
+   "yellow": 0.454
+  }
+ },
+ "flags/et.svg": {
+  "hash": "68eec10a4e3b2940292bc8b86419a98c8ea9980c",
+  "colors": {
+   "red": 0.299,
+   "yellow": 0.252,
+   "green": 0.3,
+   "blue": 0.146
+  }
+ },
+ "flags/fi.svg": {
+  "hash": "0205af5b837d201947eb1f0e9eb55864f8f5e1b3",
+  "colors": {
+   "blue": 0.399,
+   "white": 0.601
+  }
+ },
+ "flags/fj.svg": {
+  "hash": "8b84e2748717be49d30aa7118419bcd2f8bbff6c",
+  "colors": {
+   "red": 0.132,
+   "yellow": 0.011,
+   "green": 0.009,
+   "blue": 0.725,
+   "white": 0.111
+  }
+ },
+ "flags/fk.svg": {
+  "hash": "d898b59639b3144bb1542545ad64844680cf9174",
+  "colors": {
+   "red": 0.098,
+   "orange": 0.017,
+   "yellow": 0.007,
+   "blue": 0.738,
+   "white": 0.108
+  }
+ },
+ "flags/fm.svg": {
+  "hash": "bacb88840c2d7b4307ab02707425101b9d49f5a9",
+  "colors": {
+   "blue": 0.976,
+   "white": 0.023
+  }
+ },
+ "flags/fo.svg": {
+  "hash": "7e7742f2a91843159081d0ea99f64faa5cb56ef1",
+  "colors": {
+   "red": 0.203,
+   "blue": 0.176,
+   "white": 0.614
+  }
+ },
+ "flags/fr.svg": {
+  "hash": "1b0035428d1028228af43f32edbcce344df05dcd",
+  "colors": {
+   "red": 0.333,
+   "blue": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/ga.svg": {
+  "hash": "c2f2a45ff885946a5104d677c05b4b6a3a7909d3",
+  "colors": {
+   "yellow": 0.333,
+   "green": 0.333,
+   "blue": 0.333
+  }
+ },
+ "flags/gb.svg": {
+  "hash": "e6c2ff948790e5d9aafd3530e49171628248cf0f",
+  "colors": {
+   "red": 0.376,
+   "blue": 0.288,
+   "white": 0.336
+  }
+ },
+ "flags/gd.svg": {
+  "hash": "b58f6e45838470a00038f4518a6d243d0739a6f6",
+  "colors": {
+   "red": 0.4,
+   "orange": 0.005,
+   "yellow": 0.311,
+   "green": 0.284
+  }
+ },
+ "flags/ge.svg": {
+  "hash": "ea090bd14638f75863308eb655fbad966e148425",
+  "colors": {
+   "red": 0.365,
+   "white": 0.634
+  }
+ },
+ "flags/gf.svg": {
+  "hash": "7036dc2cd106b3a4404c80cf8aed157e3d66db4a",
+  "colors": {
+   "red": 0.02,
+   "yellow": 0.488,
+   "green": 0.49
+  }
+ },
+ "flags/gg.svg": {
+  "hash": "011836e340fc9c42038aa8e2c869a5e6f40a475f",
+  "colors": {
+   "red": 0.294,
+   "yellow": 0.081,
+   "white": 0.625
+  }
+ },
+ "flags/gh.svg": {
+  "hash": "b9ebfb7b089ebd976ce11dffb3b1a2bfaf2ea2cd",
+  "colors": {
+   "red": 0.335,
+   "yellow": 0.306,
+   "green": 0.335,
+   "black": 0.024
+  }
+ },
+ "flags/gi.svg": {
+  "hash": "119576c65d6ec261efcf42aa97ac347affef4930",
+  "colors": {
+   "red": 0.424,
+   "yellow": 0.007,
+   "white": 0.537,
+   "black": 0.023
+  }
+ },
+ "flags/gl.svg": {
+  "hash": "db151c40abfee19f2902d44576bcb1574a93cda6",
+  "colors": {
+   "red": 0.501,
+   "white": 0.498
+  }
+ },
+ "flags/gm.svg": {
+  "hash": "bc7c00031ca0ca8463580e3330332e7589ec4b01",
+  "colors": {
+   "red": 0.335,
+   "green": 0.335,
+   "blue": 0.22,
+   "white": 0.11
+  }
+ },
+ "flags/gn.svg": {
+  "hash": "f875245fffdc4f51c954976455093b97e2b53e72",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "green": 0.333
+  }
+ },
+ "flags/gp.svg": {
+  "hash": "3f3dffd4f2983e7f966f91eaf1da936c618b7d96",
+  "colors": {
+   "yellow": 0.197,
+   "green": 0.033,
+   "blue": 0.282,
+   "black": 0.486
+  }
+ },
+ "flags/gq.svg": {
+  "hash": "9740f79e403ec7ddd35a7c8e6bc110052b062bc1",
+  "colors": {
+   "red": 0.307,
+   "green": 0.311,
+   "blue": 0.125,
+   "white": 0.246
+  }
+ },
+ "flags/gr.svg": {
+  "hash": "b93fe4df311d962addba89ba9ff1648ca7371277",
+  "colors": {
+   "blue": 0.568,
+   "white": 0.43
+  }
+ },
+ "flags/gs.svg": {
+  "hash": "f444c260fce1f2a447c4997333713d02060c4ef1",
+  "colors": {
+   "red": 0.1,
+   "yellow": 0.017,
+   "green": 0.008,
+   "blue": 0.723,
+   "white": 0.094,
+   "black": 0.015
+  }
+ },
+ "flags/gt.svg": {
+  "hash": "d44f0d1111bf31c6d6688290f667c296b133a64f",
+  "colors": {
+   "yellow": 0.009,
+   "green": 0.014,
+   "blue": 0.667,
+   "white": 0.303
+  }
+ },
+ "flags/gu.svg": {
+  "hash": "5cd2620b7ee383f62408349316d05f7c80b78587",
+  "colors": {
+   "red": 0.144,
+   "yellow": 0.005,
+   "green": 0.007,
+   "blue": 0.828
+  }
+ },
+ "flags/gw.svg": {
+  "hash": "6ea14ad3e2c6a5e2f76cdf409f97583f4aa7d7e1",
+  "colors": {
+   "red": 0.319,
+   "yellow": 0.333,
+   "green": 0.333,
+   "black": 0.015
+  }
+ },
+ "flags/gy.svg": {
+  "hash": "ba7ead2878b91b3360fb74d99f5cf4546235eaf2",
+  "colors": {
+   "red": 0.213,
+   "yellow": 0.187,
+   "green": 0.499,
+   "white": 0.062,
+   "black": 0.035
+  }
+ },
+ "flags/hk.svg": {
+  "hash": "73d72450c8f562a1807dafee91985ffb11d6873a",
+  "colors": {
+   "red": 0.915,
+   "white": 0.083
+  }
+ },
+ "flags/hn.svg": {
+  "hash": "611b96bf5334e975dd0eea97ced09a6780b94525",
+  "colors": {
+   "blue": 0.676,
+   "white": 0.323
+  }
+ },
+ "flags/hr.svg": {
+  "hash": "be840f5b175ccd9e5972dcd5cf580f263b429b6c",
+  "colors": {
+   "red": 0.351,
+   "blue": 0.341,
+   "white": 0.302
+  }
+ },
+ "flags/ht.svg": {
+  "hash": "d104b488eaa1701164d5dec0f88d6ad2f60f2dcc",
+  "colors": {
+   "red": 0.424,
+   "yellow": 0.017,
+   "green": 0.03,
+   "blue": 0.431,
+   "white": 0.082
+  }
+ },
+ "flags/hu.svg": {
+  "hash": "3c3edc122d628d2ce9d1eb25c4c4f147344a8806",
+  "colors": {
+   "red": 0.333,
+   "green": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/id.svg": {
+  "hash": "7dbee4b3371f41a74b8faa48e3b8dc6e321cd3e6",
+  "colors": {
+   "red": 0.5,
+   "white": 0.5
+  }
+ },
+ "flags/ie.svg": {
+  "hash": "ad5aeb1c1640eeae69e1d36012048c3e68c7bb5a",
+  "colors": {
+   "orange": 0.333,
+   "green": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/il.svg": {
+  "hash": "d868a5ee50ce4c59d5227f38d52f05561e8e8ec2",
+  "colors": {
+   "blue": 0.365,
+   "white": 0.635
+  }
+ },
+ "flags/im.svg": {
+  "hash": "ae821c280e306004093da0abd7a487d298c5d45a",
+  "colors": {
+   "red": 0.952,
+   "yellow": 0.006,
+   "white": 0.028
+  }
+ },
+ "flags/in.svg": {
+  "hash": "74ef45ea12621c2e482d3adbf8679f4fa4513562",
+  "colors": {
+   "orange": 0.335,
+   "green": 0.335,
+   "blue": 0.026,
+   "white": 0.302
+  }
+ },
+ "flags/io.svg": {
+  "hash": "992c05f9ff78ab0e81f62046003fea736df7b988",
+  "colors": {
+   "red": 0.1,
+   "orange": 0.005,
+   "yellow": 0.006,
+   "green": 0.031,
+   "blue": 0.426,
+   "white": 0.414
+  }
+ },
+ "flags/iq.svg": {
+  "hash": "39f9929998019a6e703d2a6d248378bfa42c401e",
+  "colors": {
+   "red": 0.335,
+   "green": 0.025,
+   "white": 0.304,
+   "black": 0.33
+  }
+ },
+ "flags/ir.svg": {
+  "hash": "1ea63a2d47d52502bdeb6023a831347515c0c376",
+  "colors": {
+   "red": 0.326,
+   "green": 0.308,
+   "white": 0.36
+  }
+ },
+ "flags/is.svg": {
+  "hash": "5f8dc1b8671e7071d46e18c68e31374b9fb34382",
+  "colors": {
+   "red": 0.182,
+   "blue": 0.653,
+   "white": 0.164
+  }
+ },
+ "flags/it.svg": {
+  "hash": "07b372ea679652a0c1d0b8f77eed93acb75cb512",
+  "colors": {
+   "red": 0.333,
+   "green": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/je.svg": {
+  "hash": "6d1494a51d881b5700c27015e9c20e751e68c183",
+  "colors": {
+   "red": 0.26,
+   "yellow": 0.017,
+   "white": 0.717
+  }
+ },
+ "flags/jm.svg": {
+  "hash": "f4624a07c030eaca5223b5ae52e958149aa8a220",
+  "colors": {
+   "yellow": 0.344,
+   "green": 0.331,
+   "black": 0.325
+  }
+ },
+ "flags/jo.svg": {
+  "hash": "82246e2a128579da43ac273bbbaa58bee906b02b",
+  "colors": {
+   "red": 0.248,
+   "green": 0.278,
+   "white": 0.198,
+   "black": 0.277
+  }
+ },
+ "flags/jp.svg": {
+  "hash": "a45b1793372e7a6b65f82cb67e55fcd1d67a9745",
+  "colors": {
+   "red": 0.189,
+   "white": 0.81
+  }
+ },
+ "flags/ke.svg": {
+  "hash": "35f6e148e97851caccea7ca316f0daf85a3c8d1a",
+  "colors": {
+   "red": 0.301,
+   "green": 0.289,
+   "white": 0.106,
+   "black": 0.301
+  }
+ },
+ "flags/kg.svg": {
+  "hash": "3ce55011014e4b808b50262b45131f615c3b41b3",
+  "colors": {
+   "red": 0.911,
+   "orange": 0.02,
+   "yellow": 0.069
+  }
+ },
+ "flags/kh.svg": {
+  "hash": "1fcd0f7b218220b6ec8315297e366ebd4d0f7093",
+  "colors": {
+   "red": 0.402,
+   "blue": 0.5,
+   "white": 0.045
+  }
+ },
+ "flags/ki.svg": {
+  "hash": "9f0711890e98c7155662d4fb032e6d40c5e9034e",
+  "colors": {
+   "red": 0.448,
+   "orange": 0.006,
+   "yellow": 0.066,
+   "blue": 0.235,
+   "white": 0.238
+  }
+ },
+ "flags/km.svg": {
+  "hash": "66e90c133899536d0f261a0562e3d5b92fa6c287",
+  "colors": {
+   "red": 0.156,
+   "yellow": 0.219,
+   "green": 0.217,
+   "blue": 0.219,
+   "white": 0.189
+  }
+ },
+ "flags/kn.svg": {
+  "hash": "3435408707a6f85a9d216975c6d1922cf420828d",
+  "colors": {
+   "red": 0.279,
+   "yellow": 0.114,
+   "green": 0.28,
+   "white": 0.028,
+   "black": 0.294
+  }
+ },
+ "flags/kp.svg": {
+  "hash": "1ea4accfa53c9ccc51d901523074e9ef190289a9",
+  "colors": {
+   "red": 0.564,
+   "blue": 0.333,
+   "white": 0.103
+  }
+ },
+ "flags/kr.svg": {
+  "hash": "e7708f033a4dda941d1d73a21d0d2cbdcb10c1bf",
+  "colors": {
+   "red": 0.065,
+   "blue": 0.065,
+   "white": 0.783,
+   "black": 0.075
+  }
+ },
+ "flags/kw.svg": {
+  "hash": "3258fdf0f7716585658f8a5c56638d023af68484",
+  "colors": {
+   "red": 0.292,
+   "green": 0.292,
+   "white": 0.25,
+   "black": 0.166
+  }
+ },
+ "flags/ky.svg": {
+  "hash": "0b36b641e3aa32fc822c7f1ff09453cf9e7321ce",
+  "colors": {
+   "red": 0.111,
+   "yellow": 0.025,
+   "green": 0.014,
+   "blue": 0.736,
+   "white": 0.102
+  }
+ },
+ "flags/kz.svg": {
+  "hash": "24842a871633d6d4f2d244e5ec78349048aad36a",
+  "colors": {
+   "yellow": 0.07,
+   "green": 0.045,
+   "blue": 0.885
+  }
+ },
+ "flags/la.svg": {
+  "hash": "4e589f98e3e1a4fae8486f657e1cf97a2ec4b2e1",
+  "colors": {
+   "red": 0.5,
+   "blue": 0.417,
+   "white": 0.083
+  }
+ },
+ "flags/lb.svg": {
+  "hash": "649b63b2ea07251c1a36b6ecce368a3c2d2108a4",
+  "colors": {
+   "red": 0.5,
+   "green": 0.07,
+   "white": 0.429
+  }
+ },
+ "flags/lc.svg": {
+  "hash": "1b73d6055cdd08962114c954a9d467e26379512f",
+  "colors": {
+   "yellow": 0.07,
+   "blue": 0.863,
+   "white": 0.03,
+   "black": 0.035
+  }
+ },
+ "flags/li.svg": {
+  "hash": "6d47686b8057ff9a28bff66c05a9121b23a68436",
+  "colors": {
+   "red": 0.5,
+   "yellow": 0.031,
+   "blue": 0.461,
+   "black": 0.007
+  }
+ },
+ "flags/lk.svg": {
+  "hash": "7850368a96aa1152674ceb067a6524f98d66b890",
+  "colors": {
+   "red": 0.325,
+   "orange": 0.106,
+   "yellow": 0.451,
+   "green": 0.106,
+   "black": 0.006
+  }
+ },
+ "flags/lr.svg": {
+  "hash": "f274c8ede307d715910a584302f078019c645a46",
+  "colors": {
+   "red": 0.479,
+   "blue": 0.098,
+   "white": 0.422
+  }
+ },
+ "flags/ls.svg": {
+  "hash": "cde3925a2200f2849df7d714e62d1401d8abaecc",
+  "colors": {
+   "green": 0.3,
+   "blue": 0.3,
+   "white": 0.364,
+   "black": 0.03
+  }
+ },
+ "flags/lt.svg": {
+  "hash": "b862c1efd7aa3166903f105493541b7e60f1e7a5",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "green": 0.333
+  }
+ },
+ "flags/lu.svg": {
+  "hash": "c5640a362e5cd5262ce24e9daba20853fbe21358",
+  "colors": {
+   "red": 0.333,
+   "blue": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/lv.svg": {
+  "hash": "9739c060afa253703edde74e37d0d35d2e9e6a4f",
+  "colors": {
+   "red": 0.8,
+   "white": 0.2
+  }
+ },
+ "flags/ly.svg": {
+  "hash": "1de88601f3b3b87d4f3b6d89dcde166fbeeace6e",
+  "colors": {
+   "red": 0.253,
+   "green": 0.253,
+   "white": 0.01,
+   "black": 0.48
+  }
+ },
+ "flags/ma.svg": {
+  "hash": "9fe8f591af04c56db372f78d663117ed1686b88f",
+  "colors": {
+   "red": 0.969,
+   "green": 0.028
+  }
+ },
+ "flags/mc.svg": {
+  "hash": "036e64a5683147b9225c0830e65adcdb062ebbf7",
+  "colors": {
+   "red": 0.5,
+   "white": 0.5
+  }
+ },
+ "flags/md.svg": {
+  "hash": "c582340e816eee52e6f12d392ab736f29283a7d2",
+  "colors": {
+   "red": 0.342,
+   "orange": 0.016,
+   "yellow": 0.277,
+   "blue": 0.339,
+   "black": 0.012
+  }
+ },
+ "flags/me.svg": {
+  "hash": "f6f533959b79242ef2114675849e7080dc32d69a",
+  "colors": {
+   "red": 0.748,
+   "orange": 0.051,
+   "yellow": 0.191,
+   "blue": 0.006
+  }
+ },
+ "flags/mg.svg": {
+  "hash": "4df1d559ebf59d3ae8e23ffaad263bbd16ad130f",
+  "colors": {
+   "red": 0.333,
+   "green": 0.333,
+   "white": 0.333
+  }
+ },
+ "flags/mh.svg": {
+  "hash": "2c62ac38eb54f32e3d6f162a70bedbd42758b60c",
+  "colors": {
+   "orange": 0.106,
+   "blue": 0.752,
+   "white": 0.137
+  }
+ },
+ "flags/mk.svg": {
+  "hash": "1fd9720cf44f226ac02288b08f706997000772e5",
+  "colors": {
+   "red": 0.67,
+   "orange": 0.017,
+   "yellow": 0.314
+  }
+ },
+ "flags/ml.svg": {
+  "hash": "e68d58b380f519b892acb191fd89f405977f087b",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "green": 0.333
+  }
+ },
+ "flags/mm.svg": {
+  "hash": "f6a8b662a7eb3de9469ef4d81b2d9150f6eaf673",
+  "colors": {
+   "red": 0.316,
+   "yellow": 0.329,
+   "green": 0.254,
+   "white": 0.101
+  }
+ },
+ "flags/mn.svg": {
+  "hash": "204c370ab47fa2db27391e91dceb505dc4e5dd9a",
+  "colors": {
+   "red": 0.597,
+   "orange": 0.011,
+   "yellow": 0.058,
+   "blue": 0.333
+  }
+ },
+ "flags/mo.svg": {
+  "hash": "2b1de1831814f250e8b5bc2f2793f3e1a2424ffe",
+  "colors": {
+   "yellow": 0.006,
+   "green": 0.926,
+   "white": 0.066
+  }
+ },
+ "flags/mp.svg": {
+  "hash": "9a9722b1bf468b2d3b3ef198a0cb19045c09f129",
+  "colors": {
+   "red": 0.013,
+   "orange": 0.006,
+   "green": 0.014,
+   "blue": 0.823,
+   "white": 0.08
+  }
+ },
+ "flags/mq.svg": {
+  "hash": "4b6b66352c995167f092fff6ea6b99cba69d6e6b",
+  "colors": {
+   "red": 0.252,
+   "green": 0.375,
+   "black": 0.373
+  }
+ },
+ "flags/mr.svg": {
+  "hash": "0a095d7ce6ae61cfc064a935f6648d6bd86757a7",
+  "colors": {
+   "red": 0.4,
+   "yellow": 0.051,
+   "green": 0.549
+  }
+ },
+ "flags/ms.svg": {
+  "hash": "69670a9127e139a728a6e0e513259f5bf09e57c5",
+  "colors": {
+   "red": 0.101,
+   "orange": 0.019,
+   "green": 0.011,
+   "blue": 0.769,
+   "white": 0.089
+  }
+ },
+ "flags/mt.svg": {
+  "hash": "66e08b55945b49c81cdf1698806d02c73ac8b87e",
+  "colors": {
+   "red": 0.504,
+   "white": 0.489
+  }
+ },
+ "flags/mu.svg": {
+  "hash": "929d87d21fd72feea5837991335a685fd75587fb",
+  "colors": {
+   "red": 0.25,
+   "yellow": 0.25,
+   "green": 0.25,
+   "blue": 0.25
+  }
+ },
+ "flags/mv.svg": {
+  "hash": "20d1517d537c8154aedcb8326a0773bd0593c56b",
+  "colors": {
+   "red": 0.667,
+   "green": 0.32,
+   "white": 0.013
+  }
+ },
+ "flags/mw.svg": {
+  "hash": "d877162302cc110741bda117a4fb61305c61f0a8",
+  "colors": {
+   "red": 0.396,
+   "green": 0.335,
+   "black": 0.269
+  }
+ },
+ "flags/mx.svg": {
+  "hash": "c90232421a0c0a3d09d3041369a58e9c47b3323a",
+  "colors": {
+   "red": 0.334,
+   "orange": 0.008,
+   "yellow": 0.01,
+   "green": 0.338,
+   "white": 0.286
+  }
+ },
+ "flags/my.svg": {
+  "hash": "b3868bf87ef50a2544a7a8e692d39d9b16df6c34",
+  "colors": {
+   "red": 0.367,
+   "yellow": 0.038,
+   "blue": 0.242,
+   "white": 0.33
+  }
+ },
+ "flags/mz.svg": {
+  "hash": "9ffa5f43df22da40bb592a6902844fe1a10c6048",
+  "colors": {
+   "red": 0.179,
+   "yellow": 0.288,
+   "green": 0.271,
+   "white": 0.041,
+   "black": 0.207
+  }
+ },
+ "flags/na.svg": {
+  "hash": "83359c9524229f3308d18cbb77500f049e10f663",
+  "colors": {
+   "red": 0.28,
+   "yellow": 0.029,
+   "green": 0.321,
+   "blue": 0.29,
+   "white": 0.08
+  }
+ },
+ "flags/nc.svg": {
+  "hash": "b2007a90a5ca26e73d50bf3b97bf04df6c414613",
+  "colors": {
+   "red": 0.226,
+   "yellow": 0.148,
+   "green": 0.3,
+   "blue": 0.299,
+   "black": 0.025
+  }
+ },
+ "flags/ne.svg": {
+  "hash": "a971c1572673572547a4a3fea747b5cd6f7938cf",
+  "colors": {
+   "orange": 0.389,
+   "green": 0.335,
+   "white": 0.276
+  }
+ },
+ "flags/nf.svg": {
+  "hash": "231163d8eab852550b85607fe8010e7c6127aeec",
+  "colors": {
+   "green": 0.69,
+   "white": 0.308
+  }
+ },
+ "flags/ng.svg": {
+  "hash": "c498244f8f98de6e9034b9eb8d6cf36301b543a0",
+  "colors": {
+   "green": 0.667,
+   "white": 0.333
+  }
+ },
+ "flags/ni.svg": {
+  "hash": "b3b33c32ea9ff9c15d71c1b8ffc00763c187def3",
+  "colors": {
+   "yellow": 0.006,
+   "blue": 0.671,
+   "white": 0.317
+  }
+ },
+ "flags/nl.svg": {
+  "hash": "0b558aefbc1d33cce9c60a8392abab91a2f5de2d",
+  "colors": {
+   "red": 0.335,
+   "blue": 0.335,
+   "white": 0.33
+  }
+ },
+ "flags/no.svg": {
+  "hash": "efe4fdc6cdde2726f8934ad53213cdc9b4ffd177",
+  "colors": {
+   "red": 0.617,
+   "blue": 0.21,
+   "white": 0.173
+  }
+ },
+ "flags/np.svg": {
+  "hash": "1380991ba8c9f3133b4a87baea8155652c88332a",
+  "colors": {
+   "red": 0.362,
+   "blue": 0.137,
+   "white": 0.497
+  }
+ },
+ "flags/nr.svg": {
+  "hash": "860f8b7aec133e79f4171209bbc471274c8a15aa",
+  "colors": {
+   "yellow": 0.08,
+   "blue": 0.899,
+   "white": 0.021
+  }
+ },
+ "flags/nu.svg": {
+  "hash": "59b4c39b17d4d2fd66a18c13210769dd1380efc7",
+  "colors": {
+   "red": 0.078,
+   "yellow": 0.759,
+   "blue": 0.077,
+   "white": 0.081
+  }
+ },
+ "flags/nz.svg": {
+  "hash": "8911067a44113c8e51a4996091873af4e899bfec",
+  "colors": {
+   "red": 0.102,
+   "blue": 0.807,
+   "white": 0.088
+  }
+ },
+ "flags/om.svg": {
+  "hash": "5d33d3d146705d6753f53cf7a9840cbb1f5c7a34",
+  "colors": {
+   "red": 0.551,
+   "green": 0.222,
+   "white": 0.226
+  }
+ },
+ "flags/pa.svg": {
+  "hash": "a8495eb1cb9f0d0ed2d51b781b7e4d61a1d1f230",
+  "colors": {
+   "red": 0.265,
+   "blue": 0.264,
+   "white": 0.47
+  }
+ },
+ "flags/pe.svg": {
+  "hash": "97949e40816f1f461e9309fc6875f70650eaac1d",
+  "colors": {
+   "red": 0.667,
+   "white": 0.333
+  }
+ },
+ "flags/pf.svg": {
+  "hash": "2c83d0e91371e3fb2611724d10e2d8542128b5c7",
+  "colors": {
+   "red": 0.524,
+   "orange": 0.026,
+   "blue": 0.019,
+   "white": 0.428
+  }
+ },
+ "flags/pg.svg": {
+  "hash": "8c7cd55e934df5b6ee29d88189c5614610fe73ca",
+  "colors": {
+   "red": 0.444,
+   "yellow": 0.053,
+   "white": 0.014,
+   "black": 0.48
+  }
+ },
+ "flags/ph.svg": {
+  "hash": "f9e4a6253b8223d99efb69aa2c6ec83f76fe52fe",
+  "colors": {
+   "red": 0.392,
+   "yellow": 0.04,
+   "blue": 0.392,
+   "white": 0.174
+  }
+ },
+ "flags/pk.svg": {
+  "hash": "a9afa78680e8fd37aa4fbc95f7e200dae123b846",
+  "colors": {
+   "green": 0.686,
+   "white": 0.311
+  }
+ },
+ "flags/pl.svg": {
+  "hash": "b16f04d0528991b465cb7727c06a087710fbc210",
+  "colors": {
+   "red": 0.5,
+   "white": 0.5
+  }
+ },
+ "flags/pm.svg": {
+  "hash": "7f7402f0edde462f6ed9cc380dd7f92915b265a4",
+  "colors": {
+   "red": 0.091,
+   "orange": 0.009,
+   "yellow": 0.199,
+   "green": 0.046,
+   "blue": 0.457,
+   "white": 0.129,
+   "black": 0.058
+  }
+ },
+ "flags/pn.svg": {
+  "hash": "42d9fd835f2e0001f1d76e8b23ed9906646ba7fd",
+  "colors": {
+   "red": 0.096,
+   "yellow": 0.04,
+   "green": 0.052,
+   "blue": 0.711,
+   "white": 0.083
+  }
+ },
+ "flags/pr.svg": {
+  "hash": "f86473116cc5133b46cb9d3a75da40dd33d1d650",
+  "colors": {
+   "red": 0.449,
+   "blue": 0.269,
+   "white": 0.281
+  }
+ },
+ "flags/ps.svg": {
+  "hash": "f6fb45d99d68060fd49f80dd64af591457c392fd",
+  "colors": {
+   "red": 0.167,
+   "green": 0.296,
+   "white": 0.24,
+   "black": 0.296
+  }
+ },
+ "flags/pt.svg": {
+  "hash": "4360e1ea1c64f6eff2ddba650ae41b4b97e5c706",
+  "colors": {
+   "red": 0.572,
+   "yellow": 0.053,
+   "green": 0.346,
+   "blue": 0.005,
+   "white": 0.018
+  }
+ },
+ "flags/pw.svg": {
+  "hash": "e7fbf98bc9900aa3611255e4df810ef6dc7d015c",
+  "colors": {
+   "yellow": 0.175,
+   "blue": 0.822
+  }
+ },
+ "flags/py.svg": {
+  "hash": "d3c8168b8b735332ca6ec76300df1a5e387f25d1",
+  "colors": {
+   "red": 0.333,
+   "blue": 0.333,
+   "white": 0.319
+  }
+ },
+ "flags/qa.svg": {
+  "hash": "f42de11ca20a471eb6a38560be383573e98bcce2",
+  "colors": {
+   "red": 0.667,
+   "white": 0.332
+  }
+ },
+ "flags/re.svg": {
+  "hash": "51d519cdadace1c77dfedcda07c6abcde5ff89e4",
+  "colors": {
+   "red": 0.25,
+   "yellow": 0.099,
+   "blue": 0.643
+  }
+ },
+ "flags/ro.svg": {
+  "hash": "f48eb47e09808fea66e78ca4a92c22f26ca8bdb7",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "blue": 0.333
+  }
+ },
+ "flags/rs.svg": {
+  "hash": "e46dfa5ec3935d040f9f17a12ef1cba53ac709b7",
+  "colors": {
+   "red": 0.35,
+   "orange": 0.007,
+   "yellow": 0.021,
+   "blue": 0.247,
+   "white": 0.36
+  }
+ },
+ "flags/ru.svg": {
+  "hash": "82d5af67d5fa23efd124d8a24941f7cc615907d4",
+  "colors": {
+   "red": 0.335,
+   "blue": 0.33,
+   "white": 0.335
+  }
+ },
+ "flags/rw.svg": {
+  "hash": "b306c3a678ffa44313f47a2ce8d4be0822fef843",
+  "colors": {
+   "yellow": 0.262,
+   "green": 0.258,
+   "blue": 0.48
+  }
+ },
+ "flags/sa.svg": {
+  "hash": "395879e06d3a2cad98f4df460e9f8f43358fcbf5",
+  "colors": {
+   "green": 0.952,
+   "white": 0.037
+  }
+ },
+ "flags/sb.svg": {
+  "hash": "fa0a44a775c33f8ed92e9cc0a77c4db6a8bc5f84",
+  "colors": {
+   "yellow": 0.098,
+   "green": 0.451,
+   "blue": 0.425,
+   "white": 0.026
+  }
+ },
+ "flags/sc.svg": {
+  "hash": "23599690b496c541c964fc4bf89805e42783bdc1",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.164,
+   "green": 0.168,
+   "blue": 0.166,
+   "white": 0.164
+  }
+ },
+ "flags/sd.svg": {
+  "hash": "110c754623660b609b5a999dcc92cd8885c03fe9",
+  "colors": {
+   "red": 0.296,
+   "green": 0.166,
+   "white": 0.24,
+   "black": 0.296
+  }
+ },
+ "flags/se.svg": {
+  "hash": "def5cfd15ae4c8d087bbe10a326fb4a228710ce6",
+  "colors": {
+   "yellow": 0.301,
+   "green": 0.005,
+   "blue": 0.694
+  }
+ },
+ "flags/sg.svg": {
+  "hash": "52336626c8a463dc67e5e71db2f8447bc9a6b95c",
+  "colors": {
+   "red": 0.473,
+   "white": 0.527
+  }
+ },
+ "flags/sh.svg": {
+  "hash": "91a62cd2ef7679648c73eda4559ee89bfc418649",
+  "colors": {
+   "red": 0.096,
+   "orange": 0.006,
+   "yellow": 0.023,
+   "blue": 0.773,
+   "white": 0.088
+  }
+ },
+ "flags/si.svg": {
+  "hash": "65343c9800ac2626fbf1c3deaa12616a739cd876",
+  "colors": {
+   "red": 0.336,
+   "blue": 0.339,
+   "white": 0.322
+  }
+ },
+ "flags/sk.svg": {
+  "hash": "05470cb8f1e9ebdaf9c2f58468ff423d9feb89f0",
+  "colors": {
+   "red": 0.395,
+   "blue": 0.266,
+   "white": 0.338
+  }
+ },
+ "flags/sl.svg": {
+  "hash": "6bb138080e9a82c8cc1cb87cc3f63290a37e1cbe",
+  "colors": {
+   "green": 0.335,
+   "blue": 0.335,
+   "white": 0.33
+  }
+ },
+ "flags/sm.svg": {
+  "hash": "4b56f6500bbccce7b289cbde66d277c88f96c66e",
+  "colors": {
+   "orange": 0.008,
+   "yellow": 0.025,
+   "green": 0.031,
+   "blue": 0.458,
+   "white": 0.444,
+   "black": 0.005
+  }
+ },
+ "flags/sn.svg": {
+  "hash": "619e2ac9b112f601b5b8107d49732be382c83ea7",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.312,
+   "green": 0.355
+  }
+ },
+ "flags/so.svg": {
+  "hash": "e002deff7e9b2f382a3c0d44d3174d6f283d7cd3",
+  "colors": {
+   "blue": 0.957,
+   "white": 0.043
+  }
+ },
+ "flags/sr.svg": {
+  "hash": "477397653d2997f59df827633dec80323b9e39eb",
+  "colors": {
+   "red": 0.369,
+   "yellow": 0.028,
+   "green": 0.4,
+   "white": 0.2
+  }
+ },
+ "flags/ss.svg": {
+  "hash": "97329869f4150cc2048d5882295314a60c490071",
+  "colors": {
+   "red": 0.19,
+   "yellow": 0.014,
+   "green": 0.264,
+   "blue": 0.2,
+   "white": 0.076,
+   "black": 0.256
+  }
+ },
+ "flags/st.svg": {
+  "hash": "694dad92da151a1c2e7baded65e9cb4c8eb401e6",
+  "colors": {
+   "red": 0.123,
+   "yellow": 0.313,
+   "green": 0.531,
+   "black": 0.03
+  }
+ },
+ "flags/sv.svg": {
+  "hash": "41c61f4626d78ee61d0d3078e84fcf2c5c4df3b7",
+  "colors": {
+   "yellow": 0.007,
+   "green": 0.008,
+   "blue": 0.669,
+   "white": 0.313
+  }
+ },
+ "flags/sx.svg": {
+  "hash": "7fdbe2ab13b901a656e1727b6641e4620b0b82b7",
+  "colors": {
+   "red": 0.399,
+   "yellow": 0.019,
+   "blue": 0.407,
+   "white": 0.167
+  }
+ },
+ "flags/sy.svg": {
+  "hash": "e6f9cc034d55a4010994b4e26ffc6b788ef91f0d",
+  "colors": {
+   "red": 0.044,
+   "green": 0.335,
+   "white": 0.286,
+   "black": 0.33
+  }
+ },
+ "flags/sz.svg": {
+  "hash": "35b0b6232e08de64d210364129fd1dc1c642804b",
+  "colors": {
+   "red": 0.334,
+   "yellow": 0.141,
+   "blue": 0.388,
+   "white": 0.06,
+   "black": 0.06
+  }
+ },
+ "flags/tc.svg": {
+  "hash": "edbce79ef2299e77071f045c63d4f6628f6e2f6c",
+  "colors": {
+   "red": 0.099,
+   "orange": 0.006,
+   "yellow": 0.036,
+   "green": 0.008,
+   "blue": 0.758,
+   "white": 0.088
+  }
+ },
+ "flags/td.svg": {
+  "hash": "228a81ce9adb18da5a1d443eb5e3979a16a013f2",
+  "colors": {
+   "red": 0.333,
+   "yellow": 0.333,
+   "blue": 0.333
+  }
+ },
+ "flags/tf.svg": {
+  "hash": "3b337db59f6ded05a1e5a0ca70175b23950a2d6b",
+  "colors": {
+   "red": 0.078,
+   "blue": 0.802,
+   "white": 0.119
+  }
+ },
+ "flags/tg.svg": {
+  "hash": "0fbccfbfafe483c9cde81bc24289d5adb3200fb1",
+  "colors": {
+   "red": 0.198,
+   "yellow": 0.325,
+   "green": 0.452,
+   "white": 0.024
+  }
+ },
+ "flags/th.svg": {
+  "hash": "4123670547b862d6d6e59d0724f145e7c696e86d",
+  "colors": {
+   "red": 0.33,
+   "blue": 0.33,
+   "white": 0.33
+  }
+ },
+ "flags/tj.svg": {
+  "hash": "86a674a0f6da38dbf4897c9e27f5592bb2fda56c",
+  "colors": {
+   "red": 0.287,
+   "yellow": 0.015,
+   "green": 0.287,
+   "white": 0.411
+  }
+ },
+ "flags/tk.svg": {
+  "hash": "01eb61ba846f4ee9275d149690c665fe4a3bb0cf",
+  "colors": {
+   "yellow": 0.28,
+   "blue": 0.711,
+   "white": 0.006
+  }
+ },
+ "flags/tl.svg": {
+  "hash": "d113820a5b7378d427932a4a6d4747d5306f409c",
+  "colors": {
+   "red": 0.75,
+   "yellow": 0.081,
+   "white": 0.014,
+   "black": 0.149
+  }
+ },
+ "flags/tm.svg": {
+  "hash": "28c928cfc1e744ea540352eb8c2e8e503c5f57e2",
+  "colors": {
+   "red": 0.097,
+   "orange": 0.018,
+   "yellow": 0.029,
+   "green": 0.836,
+   "white": 0.013
+  }
+ },
+ "flags/tn.svg": {
+  "hash": "33064ab37406498e6430b9d7de9f60597f890275",
+  "colors": {
+   "red": 0.909,
+   "white": 0.09
+  }
+ },
+ "flags/to.svg": {
+  "hash": "e4d5d2b048718e932952f38de832ee2140e43c10",
+  "colors": {
+   "red": 0.832,
+   "white": 0.168
+  }
+ },
+ "flags/tr.svg": {
+  "hash": "63f03f77f918083054b38f90c771b2770a8c1700",
+  "colors": {
+   "red": 0.941,
+   "white": 0.058
+  }
+ },
+ "flags/tt.svg": {
+  "hash": "7df24d3819417d8b2e0e62827317051ced145ec3",
+  "colors": {
+   "red": 0.696,
+   "white": 0.097,
+   "black": 0.201
+  }
+ },
+ "flags/tv.svg": {
+  "hash": "5ab731a7932dedf114a7a4d9b1813c8858210871",
+  "colors": {
+   "red": 0.096,
+   "yellow": 0.036,
+   "green": 0.008,
+   "blue": 0.777,
+   "white": 0.082
+  }
+ },
+ "flags/tw.svg": {
+  "hash": "4883a9f205b2f01d4fd3e7bb98733fa2d5890caf",
+  "colors": {
+   "red": 0.75,
+   "blue": 0.218,
+   "white": 0.031
+  }
+ },
+ "flags/tz.svg": {
+  "hash": "e49bde64e694e11ea4be8b7ab190d41e8977f48f",
+  "colors": {
+   "yellow": 0.12,
+   "green": 0.294,
+   "blue": 0.289,
+   "black": 0.297
+  }
+ },
+ "flags/ua.svg": {
+  "hash": "97fd8be8fea0ed4ad6b17a6757da96b43f981dca",
+  "colors": {
+   "yellow": 0.5,
+   "blue": 0.5
+  }
+ },
+ "flags/ug.svg": {
+  "hash": "77e2d6a9124fdb876178ef951756f8a2debb4545",
+  "colors": {
+   "red": 0.308,
+   "yellow": 0.34,
+   "white": 0.037,
+   "black": 0.309
+  }
+ },
+ "flags/us.svg": {
+  "hash": "aaad0f734694625c31f69fc3d5e205a445b263b6",
+  "colors": {
+   "red": 0.43,
+   "blue": 0.186,
+   "white": 0.377
+  }
+ },
+ "flags/uy.svg": {
+  "hash": "97aad5365e6d9cfcc8076698447a6905b5507121",
+  "colors": {
+   "orange": 0.007,
+   "yellow": 0.021,
+   "blue": 0.367,
+   "white": 0.584
+  }
+ },
+ "flags/uz.svg": {
+  "hash": "3e78235acc9ac4bcc9e65a1f4009208840fe8cf7",
+  "colors": {
+   "red": 0.04,
+   "green": 0.32,
+   "blue": 0.312,
+   "white": 0.327
+  }
+ },
+ "flags/va.svg": {
+  "hash": "00f59cc1e514a05bda490febbedf3c084d8b42f2",
+  "colors": {
+   "red": 0.011,
+   "yellow": 0.534,
+   "white": 0.43
+  }
+ },
+ "flags/vc.svg": {
+  "hash": "e6d329470646a9bdddfbaebc1e1373f8270b716d",
+  "colors": {
+   "yellow": 0.438,
+   "green": 0.312,
+   "blue": 0.25
+  }
+ },
+ "flags/ve.svg": {
+  "hash": "d024321b90202d06ba2d56e5d869a0c215455960",
+  "colors": {
+   "red": 0.335,
+   "yellow": 0.335,
+   "blue": 0.319,
+   "white": 0.011
+  }
+ },
+ "flags/vg.svg": {
+  "hash": "d170dabf4c46540b1501f6f3f02bc20b720afe8f",
+  "colors": {
+   "red": 0.099,
+   "yellow": 0.028,
+   "green": 0.06,
+   "blue": 0.7,
+   "white": 0.099
+  }
+ },
+ "flags/vi.svg": {
+  "hash": "17c3dcb360d54f5dab0f4ae5eb73b95e4b2f4e12",
+  "colors": {
+   "red": 0.022,
+   "yellow": 0.181,
+   "green": 0.016,
+   "blue": 0.065,
+   "white": 0.688
+  }
+ },
+ "flags/vn.svg": {
+  "hash": "1c284c062d1ca0ee59523648549edcdf65a9e173",
+  "colors": {
+   "red": 0.931,
+   "yellow": 0.066
+  }
+ },
+ "flags/vu.svg": {
+  "hash": "7af1fefdeb17820eb41638486f586e86f89efc53",
+  "colors": {
+   "red": 0.313,
+   "yellow": 0.111,
+   "green": 0.313,
+   "black": 0.262
+  }
+ },
+ "flags/wf.svg": {
+  "hash": "e8a3e1011878fe3f778f2dbd272571ee090f2529",
+  "colors": {
+   "red": 0.851,
+   "blue": 0.053,
+   "white": 0.096
+  }
+ },
+ "flags/ws.svg": {
+  "hash": "1a3cc030930b601cd9e5e258422c627a90e22de8",
+  "colors": {
+   "red": 0.75,
+   "blue": 0.241,
+   "white": 0.008
+  }
+ },
+ "flags/xk.svg": {
+  "hash": "43b67e5c0866f4827d087683e274bd70e9538e31",
+  "colors": {
+   "yellow": 0.102,
+   "blue": 0.878,
+   "white": 0.016
+  }
+ },
+ "flags/ye.svg": {
+  "hash": "71e5a98c556e943dab98773790d874677fed80ad",
+  "colors": {
+   "red": 0.335,
+   "white": 0.33,
+   "black": 0.33
+  }
+ },
+ "flags/yt.svg": {
+  "hash": "7793a4258940f338230392c357eed96a9d97e808",
+  "colors": {
+   "red": 0.066,
+   "yellow": 0.005,
+   "blue": 0.039,
+   "white": 0.818,
+   "black": 0.013
+  }
+ },
+ "flags/za.svg": {
+  "hash": "aab4ffbedbf65ba4d3e997e592b7ef8c331db919",
+  "colors": {
+   "red": 0.212,
+   "yellow": 0.055,
+   "green": 0.312,
+   "blue": 0.212,
+   "white": 0.119,
+   "black": 0.089
+  }
+ },
+ "flags/zm.svg": {
+  "hash": "f0e90c06dec9fdfaef7880af6cc2ea09995d38a3",
+  "colors": {
+   "red": 0.077,
+   "orange": 0.095,
+   "green": 0.746,
+   "black": 0.075
+  }
+ },
+ "flags/zw.svg": {
+  "hash": "9b7b0f112c46e6e4917fe3a1bda12f35dc181d34",
+  "colors": {
+   "red": 0.233,
+   "orange": 0.011,
+   "yellow": 0.238,
+   "green": 0.273,
+   "white": 0.134,
+   "black": 0.107
+  }
+ }
+}
