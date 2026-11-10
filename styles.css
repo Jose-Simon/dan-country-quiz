@@ -594,6 +594,12 @@ button:disabled {
 
 #userAnswer:focus { border-color: var(--coral); }
 #userAnswer:disabled { opacity: 1; background: #F4F9FF; }
+#userAnswer.rightAnswer {
+	border-color: var(--green);
+	background: #E3F6EC;
+	color: #1F7A50;
+	box-shadow: 0 5px 0 #1F7A50;
+}
 
 #suggestions {
 	position: absolute;

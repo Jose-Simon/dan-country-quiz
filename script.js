@@ -2,6 +2,7 @@ const QUESTIONS_PER_LEVEL = 4;
 const MAX_TRIES = 2;
 const MAX_SUGGESTIONS = 5;      // per group (starting / in-between)
 const REVEAL_DELAY_MS = 2000;   // how long a revealed answer stays before the next flag
+const RIGHT_SHOWN_DELAY_MS = 1200;  // how long a right answer stays highlighted before the next flag
 const STORAGE_PREFIX = 'flagQuiz.';  // keeps stats separate from other local quizzes
 
 // Inline icons (stroke follows the text colour)
@@ -690,6 +691,7 @@ function nextQuestion() {
     setControlsEnabled(true);
     const input = document.getElementById('userAnswer');
     input.value = '';
+    input.classList.remove('rightAnswer');
     input.focus();
 }
 
@@ -1042,13 +1044,10 @@ function pickAnswer(choice) {
     const isRight = MODES[mode].isRight || ((choice, entry) => choice.entry === entry);
 
     if (isRight(choice, entry)) {
-        const points = questionWorth();
-        totalPoints += points;
-        updatePointsDisplay();
-        showMessage(`Correct! +${points}`, 'correct');
         if (paidClues() > 0) flagsToLearn.push(currentQuestionData());
-        questionResults[currentQuestion - 1] = 'correct';
-        nextQuestion();
+        input.value = answerText();
+        input.classList.add('rightAnswer');
+        answeredRight(RIGHT_SHOWN_DELAY_MS);
         return;
     }
 
@@ -1065,6 +1064,23 @@ function pickAnswer(choice) {
 
 function answerText() {
     return MODES[mode].answer(currentEntry(), currentQuestionData());
+}
+
+// Scores a right answer and names it, then keeps it on screen for a moment before the
+// next flag, in every Mode
+function answeredRight(holdMs) {
+    const points = questionWorth();
+    totalPoints += points;
+    updatePointsDisplay();
+    showMessage(`Correct! +${points} · ${answerText()}`, 'correct');
+    questionResults[currentQuestion - 1] = 'correct';
+    updateProgressStops();
+    waiting = true;
+    setControlsEnabled(false);
+    setTimeout(() => {
+        waiting = false;
+        if (!quizOver) nextQuestion();
+    }, holdMs);
 }
 
 function revealAnswer(text) {
@@ -1178,26 +1194,12 @@ function pickChoice(button, choice) {
     const settings = MODES[mode];
 
     if (choice.right) {
-        const points = questionWorth();
-        totalPoints += points;
-        updatePointsDisplay();
-        showMessage(`Correct! +${points}`, 'correct');
         if (tries > 0 || paidClues() > 0) flagsToLearn.push(currentQuestionData());
-        questionResults[currentQuestion - 1] = 'correct';
-        if (!document.querySelector('#choices .choiceCaption')) {
-            nextQuestion();
-            return;
-        }
-        // Show whose flags they were before moving on
         button.classList.add('shown');
+        // Where flags are involved, a little longer to see whose they all were
+        const captions = !!document.querySelector('#choices .choiceCaption');
         showChoiceCaptions();
-        updateProgressStops();
-        waiting = true;
-        setControlsEnabled(false);
-        setTimeout(() => {
-            waiting = false;
-            if (!quizOver) nextQuestion();
-        }, CHOICE_SHOWN_DELAY_MS);
+        answeredRight(captions ? CHOICE_SHOWN_DELAY_MS : RIGHT_SHOWN_DELAY_MS);
         return;
     }
 
@@ -1224,20 +1226,9 @@ function pickOnMap(lon, lat) {
     markMapClick(lon, lat);
 
     if (settings.isHitOnMap(entry, lon, lat)) {
-        const points = questionWorth();
-        totalPoints += points;
-        updatePointsDisplay();
-        showMessage(`Correct! +${points}`, 'correct');
         if (tries > 0 || paidClues() > 0) flagsToLearn.push(currentQuestionData());
-        questionResults[currentQuestion - 1] = 'correct';
-        updateProgressStops();
         settings.showOnMap(entry, true);
-        waiting = true;
-        setControlsEnabled(false);
-        setTimeout(() => {
-            waiting = false;
-            if (!quizOver) nextQuestion();
-        }, MAP_FOUND_DELAY_MS);
+        answeredRight(MAP_FOUND_DELAY_MS);
         return;
     }
 
