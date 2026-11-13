@@ -17,7 +17,12 @@ const ICONS = {
     palette: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.3-1-1.6-1-2.8 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4c0-4.4-4-7.9-9-7.9z"></path><circle cx="7.5" cy="11" r="1"></circle><circle cx="10" cy="7" r="1"></circle><circle cx="15" cy="7.5" r="1"></circle></svg>',
     crossOut: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M8 9l8 6M16 9l-8 6"></path></svg>',
     medal: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h3l1 5-3.5 1zM16 2h-3l-1 5 3.5 1z" fill="#D24A2E" stroke="#8F2C17"></path><circle cx="12" cy="15" r="6.5"></circle><path d="M12 11.5l1 2.1 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3z" fill="#FFF6DB"></path></svg>',
-    hatTrick: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5l1.1 2.2 2.4.3-1.8 1.7.5 2.4L5 9l-2.2 1.1.5-2.4L1.5 6l2.4-.3zM19 3.5l1.1 2.2 2.4.3-1.8 1.7.5 2.4L19 9l-2.2 1.1.5-2.4L15.5 6l2.4-.3z"></path><path d="M12 9l1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z"></path></svg>'
+    hatTrick: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.2" stroke-linejoin="round" aria-hidden="true"><path d="M5 3.5l1.1 2.2 2.4.3-1.8 1.7.5 2.4L5 9l-2.2 1.1.5-2.4L1.5 6l2.4-.3zM19 3.5l1.1 2.2 2.4.3-1.8 1.7.5 2.4L19 9l-2.2 1.1.5-2.4L15.5 6l2.4-.3z"></path><path d="M12 9l1.6 3.3 3.6.5-2.6 2.5.6 3.6-3.2-1.7-3.2 1.7.6-3.6-2.6-2.5 3.6-.5z"></path></svg>',
+    noClues: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 2.5a6.5 6.5 0 0 0-3.8 11.8c.7.5 1.1 1.3 1.1 2.2h5.4c0-.9.4-1.7 1.1-2.2A6.5 6.5 0 0 0 12 2.5z"></path><path d="M9.5 19.5h5M10.5 22h3" fill="none"></path><path d="M4 4l16 16" fill="none" stroke="#D24A2E" stroke-width="2.4"></path></svg>',
+    levelFiveAce: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 1.8l3 6.2 6.8.9-5 4.7 1.3 6.7L12 17l-6.1 3.3 1.3-6.7-5-4.7L9 8z"></path><text x="12" y="15.2" text-anchor="middle" font-size="7.5" font-family="Fredoka, sans-serif" font-weight="700" fill="#7A5600" stroke="none">5</text></svg>',
+    record: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M10 1.8h4M12 1.8v2.4M18.5 6l1.4-1.4" fill="none"></path><circle cx="12" cy="13.5" r="8.5"></circle><path d="M12 13.5V8.5M12 13.5l3.2 2" fill="none" stroke="#7A5600" stroke-width="1.8"></path></svg>',
+    allModes: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M3 8l4.5 4L12 4.5 16.5 12 21 8l-2 11H5z"></path><circle cx="12" cy="15" r="1.6" fill="#D24A2E" stroke="#8F2C17" stroke-width="1"></circle><path d="M5 21.5h14" fill="none"></path></svg>',
+    milestone: '<svg width="22" height="22" viewBox="0 0 24 24" fill="#FFC93C" stroke="#B7860B" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M1.5 21.5l7.5-12 4 6 2.5-3.5 7 9.5z"></path><path d="M9 9.5V2.5" fill="none" stroke="#8F2C17"></path><path d="M9 2.5h6l-1.5 2 1.5 2H9" fill="#D24A2E" stroke="#8F2C17" stroke-width="1"></path></svg>'
 };
 
 // Flag Colors, and the swatch each is shown as. A flag has a color when at least a tenth of
@@ -71,6 +76,19 @@ function capitalText(entry) {
     return entry.capitals.join(' / ');
 }
 
+// One choice per capital name; a Territory's capital may share a Country's (Kingston), and
+// either one is right
+function capitalChoices() {
+    const byText = new Map();
+    FLAG_ENTRIES.filter(entry => entry.capitals.length > 0).forEach(entry => {
+        const text = capitalText(entry);
+        const searchNames = [...entry.capitals, ...entry.capitalOtherNames].map(normalize);
+        if (byText.has(text)) byText.get(text).searchNames.push(...searchNames);
+        else byText.set(text, { text, searchNames, entry });
+    });
+    return [...byText.values()];
+}
+
 function currencyText(entry) {
     return entry.currencies.map(currency => currency.name).join(' or ');
 }
@@ -79,7 +97,7 @@ function currencyText(entry) {
 // by the last word of its names ("dollar", not "Canadian"), so typing the Country gives nothing away.
 function currencyChoices() {
     const byCode = new Map();
-    FLAG_ENTRIES.filter(entry => entry.kind === 'country').forEach(entry => {
+    FLAG_ENTRIES.forEach(entry => {
         entry.currencies.forEach(currency => byCode.set(currency.code, {
             text: currency.name,
             searchNames: [currency.name, ...currency.otherNames].map(name => normalize(name.split(' ').pop())),
@@ -101,10 +119,11 @@ function populationText(count) {
     return rounded.toLocaleString('en');
 }
 
-// The Country next to this one in Population Rank whose population is closest
+// The Country next to this one in Population Rank whose population is closest. A Territory
+// has no Population Rank, so it gets the Country closest in population.
 function similarCountry(entry) {
     const nearby = FLAG_ENTRIES.filter(other => other.kind === 'country' &&
-                                                Math.abs(other.rank - entry.rank) === 1);
+                                                (entry.kind === 'territory' || Math.abs(other.rank - entry.rank) === 1));
     const gap = other => Math.abs(Math.log(other.populationCount / entry.populationCount));
     return nearby.sort((a, b) => gap(a) - gap(b))[0];
 }
@@ -142,7 +161,7 @@ const COMPARE_LEVELS = timesLevels([[4, Infinity], [2.5, 4], [1.6, 2.5], [1.25, 
 const COMPARE_DIFFICULT_LEVELS = timesLevels([[2, 2.5], [1.6, 2], [1.35, 1.6], [1.15, 1.35], [1.05, 1.15]]);
 
 // "Which is bigger?" and "Which has more people?" share everything but the measure
-function compareMode(chip, title, question, measure, measureText) {
+function compareMode(chip, title, question, measure, measureText, canAsk) {
     return {
         chip, title, question,
         learnHeading: 'Pairs to learn',
@@ -152,6 +171,7 @@ function compareMode(chip, title, question, measure, measureText) {
         levels: COMPARE_LEVELS,
         difficultLevels: COMPARE_DIFFICULT_LEVELS,
         allPool: entry => entry.rank <= 100,
+        canAsk,
         clues: [],
         answer: (entry, question) => `${entry.name} (${measureText(entry)} vs ${measureText(question.other)})`,
         // Both Countries come from the whole pool; the Level only sets how close they are.
@@ -186,6 +206,16 @@ function compareMode(chip, title, question, measure, measureText) {
 
 // Each choice is one line in the dropdown: what it shows, the names it is found by
 // (lower case, no accents) and the Flag Entry it stands for
+// Each Mode asks only the Flag Entries it has a clear answer for: a capital, a currency,
+// a shape on the World Map, or a settled population
+function hasCapital(entry) {
+    return entry.capitals.length > 0;
+}
+
+function isSettled(entry) {
+    return entry.settled !== false;
+}
+
 const COUNTRY_LEVELS = [
     { type: 'Level 1', fromRank: 1, toRank: 30, points: 1 },
     { type: 'Level 2', fromRank: 31, toRank: 70, points: 2 },
@@ -226,15 +256,13 @@ const MODES = {
         // The 20 best-known Countries are left out, so Level 1 starts at rank 21
         levels: rankLevels(21, 30, [1, 2, 3, 4, 5]),
         clues: [CONTINENT_CLUE, POPULATION_CLUE, COUNTRY_CLUE],
+        canAsk: hasCapital,
         answer: entry => `${capitalText(entry)} (${entry.name})`,
-        choices: FLAG_ENTRIES.filter(entry => entry.kind === 'country').map(entry => ({
-            text: capitalText(entry),
-            searchNames: [...entry.capitals, ...entry.capitalOtherNames].map(normalize),
-            entry
-        }))
+        isRight: (choice, entry) => choice.text === capitalText(entry),
+        choices: capitalChoices()
     },
     // A currency can belong to several Countries, so a choice is right if this Country
-    // uses it, and a Quiz never asks two Countries that share a currency
+    // uses it, and a Quiz limits how often one currency is the answer (see tryBuildQuestions)
     currency: {
         chip: 'Currencies',
         title: 'Name the currency',
@@ -246,6 +274,7 @@ const MODES = {
         learnDetail: (entry, level) => `Currency of ${entry.name} · ${level.type}`,
         levels: rankLevels(1, 20, [1, 2, 3, 4, 5]),
         clues: [CONTINENT_CLUE, COUNTRY_CLUE, SYMBOL_CLUE],
+        canAsk: entry => entry.currencies.length > 0,
         answer: entry => `${currencyText(entry)} (${entry.name})`,
         answerKeys: entry => entry.currencies.map(currency => currency.code),
         isRight: (choice, entry) => entry.currencies.some(currency => currency.code === choice.code),
@@ -273,6 +302,7 @@ const MODES = {
             { choiceCount: 3, lowestMultiple: 2, hint: false }
         ][i] })),
         clues: [CONTINENT_CLUE, COUNTRY_CLUE, SIMILAR_CLUE],
+        canAsk: isSettled,
         answer: entry => populationText(entry.populationCount),
         makeChoices: question => populationChoices(question.entry, question.level).map(choice => ({
             text: populationText(choice.count), count: choice.count, right: choice.right
@@ -320,7 +350,7 @@ const MODES = {
         learnDetail: (entry, level) => `Capital of ${entry.name} · ${level.type}`,
         levels: rankLevels(1, 20, [1, 2, 3, 4, 5]),
         clues: [MAP_CONTINENT_CLUE, COUNTRY_CLUE, OUTLINE_CLUE],
-        canAsk: entry => mapShapes.has(entry.code),
+        canAsk: entry => hasCapital(entry) && mapShapes.has(entry.code),
         answer: entry => `${capitalText(entry)} (${entry.name})`,
         clickOnMap: true,
         isHitOnMap: (entry, lon, lat) => isCapitalHit(entry.capitalPlaces, lon, lat),
@@ -397,9 +427,9 @@ const MODES = {
         choices: []
     },
     biggerLand: compareMode('Bigger land', 'Which is bigger?', 'Which country has more land?',
-                            entry => entry.area, entry => areaText(entry.area)),
+                            entry => entry.area, entry => areaText(entry.area), () => true),
     morePeople: compareMode('More people', 'Which has more people?', 'Which country has more people?',
-                            entry => entry.populationCount, entry => populationText(entry.populationCount))
+                            entry => entry.populationCount, entry => populationText(entry.populationCount), isSettled)
 };
 
 // Where the Questions come from, chosen on the start screen. A continent group asks only
@@ -425,6 +455,7 @@ let difficulty = savedSetting('difficulty', DIFFICULTIES, 'easy');
 let mode = 'country';
 let quizLevels = [], questions = [], questionResults = [], currentQuestion = 0, totalPoints = 0, tries = 0, cluesShown = 0;
 let flagsToLearn = [], quizOver = true, waiting = false, answeredAny = false;
+let questionPoints = [], cluesUsed = 0;  // per Question, and in the whole Quiz, for the badges
 let suggestionItems = [], highlighted = -1;
 
 let timerInterval;
@@ -516,50 +547,73 @@ function splitInto(list, count) {
         list.slice(Math.round(i * list.length / count), Math.round((i + 1) * list.length / count)));
 }
 
+// Territories only offers every Mode on Difficult, but on Easy only the flag Modes
 function modeAllowed(modeName) {
-    return area !== 'territories' || !!MODES[modeName].allowsTerritories;
+    return area !== 'territories' || difficulty === 'difficult' || !!MODES[modeName].allowsTerritories;
 }
 
-// Every Flag Entry the Mode can ask about in the chosen Area, easiest first: Countries by
-// Population Rank, Territories by population
-function areaPool(settings) {
-    if (area === 'territories') {
-        return FLAG_ENTRIES.filter(entry => entry.kind === 'territory')
-                           .sort((a, b) => b.populationCount - a.populationCount);
-    }
-    const canAsk = settings.canAsk || (() => true);
-    if (area === 'all' && !settings.allPool) return settings.levels.flatMap(bandPool).filter(canAsk);
-    const inArea = entry => area === 'all'
-        ? settings.allPool(entry)
-        : AREAS[area].continents.some(continent => entry.continent.includes(continent));
-    return FLAG_ENTRIES.filter(entry => entry.kind === 'country' && inArea(entry) && canAsk(entry))
+function canAsk(settings, entry) {
+    return !settings.canAsk || settings.canAsk(entry);
+}
+
+// A continent group holds its own Countries and Territories; Russia and Turkey are in both
+// Europe and Asia
+function inArea(entry) {
+    return !AREAS[area].continents || AREAS[area].continents.some(continent => entry.continent.includes(continent));
+}
+
+// The Countries the Mode can ask about in the chosen Area, by Population Rank
+function areaCountries(settings) {
+    return FLAG_ENTRIES.filter(entry => entry.kind === 'country' && inArea(entry) && canAsk(settings, entry))
                        .sort((a, b) => a.rank - b.rank);
 }
 
-// The five Levels of this Quiz. Whole world and Easy keeps each Mode's own Levels. Difficult
-// spreads the Mode's Levels 3-5 over five, keeping Territories last; a chosen Area splits its
-// own Flag Entries into five equal Levels, Difficult leaving out the easiest two fifths.
+// The Territories the Mode can ask about in the chosen Area, most people first
+function areaTerritories(settings) {
+    return FLAG_ENTRIES.filter(entry => entry.kind === 'territory' && inArea(entry) && canAsk(settings, entry))
+                       .sort((a, b) => b.populationCount - a.populationCount);
+}
+
+// Every Flag Entry the Mode can ask about in the chosen Area and Difficulty, easiest first.
+// Easy keeps Whole world to each Mode's own Levels and a continent to its Countries;
+// Difficult takes in every Country and Territory with a clear answer.
+function areaPool(settings) {
+    if (area === 'territories') return areaTerritories(settings);
+    if (difficulty === 'difficult') return [...areaCountries(settings), ...areaTerritories(settings)];
+    if (area !== 'all') return areaCountries(settings);
+    if (settings.allPool) return areaCountries(settings).filter(settings.allPool);
+    return settings.levels.flatMap(bandPool).filter(entry => canAsk(settings, entry));
+}
+
+// The five Levels of this Quiz. Whole world and Easy keeps each Mode's own Levels, and a
+// continent splits its Countries into five equal Levels. Difficult splits the Countries from
+// where the Mode's own Level 3 starts (in a continent, all but the best-known two fifths)
+// down to the smallest into Levels 1-4, and Level 5 is the Territories. Territories only
+// splits them into five by population, Difficult leaving out the best-known two fifths.
 function buildLevels() {
     const settings = MODES[mode];
     const base = settings.levels;
-    const named = pools => pools.map((pool, i) => ({
-        ...base[i], type: `Level ${i + 1}`, pool, territories: area === 'all' && !!base[i].territories
+    const named = (pools, territoryLevel) => pools.map((pool, i) => ({
+        ...base[i], type: `Level ${i + 1}`, pool, territories: territoryLevel && i === pools.length - 1
     }));
     if (settings.buildLevelQuestions) {
         const pool = areaPool(settings);
         const timesLevels = difficulty === 'difficult' ? settings.difficultLevels : base;
         return timesLevels.map(level => ({ ...level, pool }));
     }
-    if (area === 'all') {
-        const canAsk = settings.canAsk || (() => true);
-        const pools = base.map(level => bandPool(level).filter(canAsk));
-        if (difficulty === 'easy') return named(pools);
-        const byRank = list => [...list].sort((a, b) => a.rank - b.rank);
-        if (base[4].territories) return named([...splitInto(byRank(pools[2].concat(pools[3])), 4), pools[4]]);
-        return named(splitInto(byRank(pools.slice(2).flat()), 5));
+    if (area === 'territories') {
+        const pool = areaPool(settings);
+        return named(splitInto(difficulty === 'difficult' ? pool.slice(Math.round(pool.length * 0.4)) : pool, 5), false);
     }
-    const pool = areaPool(settings);
-    return named(splitInto(difficulty === 'difficult' ? pool.slice(Math.round(pool.length * 0.4)) : pool, 5));
+    if (difficulty === 'easy') {
+        if (area !== 'all') return named(splitInto(areaPool(settings), 5), false);
+        return named(base.map(level => bandPool(level).filter(entry => canAsk(settings, entry))), !!base[4].territories);
+    }
+    const countries = areaCountries(settings);
+    const harder = area === 'all'
+        ? countries.filter(entry => entry.rank >= base[2].fromRank)
+        : countries.slice(Math.round(countries.length * 0.4));
+    return named([...splitInto(harder, 4), areaTerritories(settings)], true);
 }
 
 // Pairs are matched at random, which can now and then leave a small Area short, so the
@@ -576,7 +630,11 @@ function buildQuestions() {
 function tryBuildQuestions() {
     const settings = MODES[mode];
     const answerKeys = settings.answerKeys;
-    const usedKeys = new Set(), usedEntries = new Set(), timesAsked = new Map();
+    const keyCounts = new Map(), usedEntries = new Set(), timesAsked = new Map();
+    // On Difficult an answer (a currency) may come up three times a Quiz, but never twice in
+    // a Level, so the many places sharing the Euro can still be asked; Easy keeps every
+    // answer different
+    const mostRepeats = difficulty === 'difficult' ? 3 : 1;
     const result = [];
     const pool = areaPool(settings);
     quizLevels.forEach((level, levelIndex) => {
@@ -586,21 +644,28 @@ function tryBuildQuestions() {
             return;
         }
         // A Level short of Flag Entries (e.g. Currencies shared in Europe) borrows from the
-        // harder Levels, then the easier ones, then whatever else the Area has, hardest first
+        // harder Levels, then the easier ones, then whatever else the Area has, hardest first.
+        // A Level of Countries borrows Territories only when nothing else is left.
         const later = quizLevels.slice(levelIndex + 1), earlier = quizLevels.slice(0, levelIndex).reverse();
+        const borrowed = [...later, ...earlier].filter(other => level.territories || !other.territories);
+        const territoryLevels = level.territories ? [] : quizLevels.filter(other => other.territories);
         const inLevels = new Set(quizLevels.flatMap(other => other.pool));
-        const candidates = [level, ...later, ...earlier].flatMap(other => shuffle([...other.pool]))
-            .concat(pool.filter(entry => !inLevels.has(entry)).reverse());
+        const candidates = [level, ...borrowed].flatMap(other => shuffle([...other.pool]))
+            .concat(pool.filter(entry => !inLevels.has(entry)).reverse())
+            .concat(territoryLevels.flatMap(other => shuffle([...other.pool])));
+        const levelKeys = new Set();
         let picked = 0;
         for (const entry of candidates) {
             if (picked === QUESTIONS_PER_LEVEL) break;
             if (usedEntries.has(entry)) continue;
-            // Leave out a Country whose answer an earlier Question already had
             const keys = answerKeys ? answerKeys(entry) : [];
-            if (keys.some(key => usedKeys.has(key))) continue;
+            if (keys.some(key => levelKeys.has(key) || (keyCounts.get(key) || 0) >= mostRepeats)) continue;
             const question = settings.makeQuestion ? settings.makeQuestion(entry, level, pool) : { entry, level };
             if (!question) continue;
-            keys.forEach(key => usedKeys.add(key));
+            keys.forEach(key => {
+                levelKeys.add(key);
+                keyCounts.set(key, (keyCounts.get(key) || 0) + 1);
+            });
             usedEntries.add(entry);
             result.push({ ...question, levelIndex });
             picked++;
@@ -651,6 +716,8 @@ function startQuiz(newMode) {
     displayMaxPoints();
     document.getElementById('totalQuestions').textContent = `${questions.length}`;
     questionResults = [];
+    questionPoints = [];
+    cluesUsed = 0;
     currentQuestion = 0;
     totalPoints = 0;
     flagsToLearn = [];
@@ -1087,6 +1154,7 @@ function answerText() {
 function answeredRight(holdMs) {
     const points = questionWorth();
     totalPoints += points;
+    questionPoints[currentQuestion - 1] = points;
     updatePointsDisplay();
     showMessage(`Correct! +${points} · ${answerText()}`, 'correct');
     questionResults[currentQuestion - 1] = 'correct';
@@ -1128,6 +1196,7 @@ function showClue() {
     if (waiting || quizOver || cluesShown >= MODES[mode].clues.length) return;
     startTimerOnce();
     cluesShown++;
+    cluesUsed++;
     renderClues();
     renderLevelCard();
     const clue = MODES[mode].clues[cluesShown - 1];
@@ -1297,7 +1366,8 @@ function endQuiz() {
         timeData.push(timeElapsed);
         localStorage.setItem(statsKey(mode, 'timeData'), JSON.stringify(timeData));
     }
-    showBadgesEarned(answeredAny ? awardBadges(totalPoints === maxPoints) : []);
+    const perfect = totalPoints === maxPoints;
+    showBadgesEarned(answeredAny ? awardBadges(perfect) : [], perfect);
 
     showTrends(mode);
 }
@@ -1418,7 +1488,8 @@ function displayTimeTrend() {
 function resetStats() {
     Object.keys(MODES).forEach(statsMode => {
         STATS_NAMES.forEach(name => localStorage.removeItem(statsKey(statsMode, name)));
-        Object.keys(DIFFICULTIES).forEach(level => localStorage.removeItem(statsKey(statsMode, `${level}.perfectRun`)));
+        Object.keys(DIFFICULTIES).forEach(level => RUN_NAMES.forEach(name =>
+            localStorage.removeItem(statsKey(statsMode, `${level}.${name}`))));
     });
     showTrends(trendsMode);
     alert('All stats have been reset.');
@@ -1456,70 +1527,185 @@ document.addEventListener('keydown', function(event) {
     if (button && !button.disabled) button.click();
 });
 
-// ---- Start screen: Area, Difficulty and badges ----
+// ---- Badges ----
 
-// A 100% Quiz earns that Mode's Perfect score badge for the Difficulty played (in any Area),
-// and every third 100% Quiz in a row a Hat trick. Badges stay when stats are reset.
+// Badges are earned only in Whole world Quizzes, each Mode's separately for Easy and
+// Difficult, and stay when stats are reset. A Continent or Territories only Quiz neither
+// earns one nor breaks a Hat trick run.
 const BADGES_KEY = STORAGE_PREFIX + 'badges';
+const RIGHT_ANSWERS_KEY = STORAGE_PREFIX + 'rightAnswers';
 const BADGE_KINDS = {
-    perfect: { label: 'Perfect score', icon: ICONS.medal },
-    hatTrick: { label: 'Hat trick', icon: ICONS.hatTrick }
+    perfect: { label: 'Perfect score', icon: ICONS.medal, banner: 'Perfect score!' },
+    hatTrick: { label: 'Hat trick', icon: ICONS.hatTrick, banner: 'Hat trick!' },
+    noClues: { label: 'No clues', icon: ICONS.noClues, banner: 'No clues!' },
+    levelFiveAce: { label: 'Level 5 ace', icon: ICONS.levelFiveAce, banner: 'Level 5 ace!' },
+    record: { label: 'Record holder', icon: ICONS.record, banner: 'New record!' }
 };
+const MILESTONES = [50, 100, 250, 500, 1000, 2500, 5000, 10000];  // right answers in all
+const RECORD_AFTER_QUIZZES = 5;  // a Record needs this many Quizzes played before it
+// Kept per Mode and Difficulty, and cleared with the stats: the 100% run for the Hat trick,
+// the Whole world Quizzes played and the fastest 100% Quiz, for Record holder
+const RUN_NAMES = ['perfectRun', 'wholeWorldQuizzes', 'bestPerfectTime'];
 
 function loadBadges() {
     return JSON.parse(localStorage.getItem(BADGES_KEY)) || {};
 }
 
+function today() {
+    return new Date().toLocaleDateString('en-CA');  // e.g. 2026-11-10, in local time
+}
+
+function dateText(day, withYear) {
+    return new Date(`${day}T00:00`).toLocaleDateString('en-GB', withYear
+        ? { day: 'numeric', month: 'short', year: 'numeric' } : { day: 'numeric', month: 'short' });
+}
+
+function rightAnswersSoFar() {
+    return parseInt(localStorage.getItem(RIGHT_ANSWERS_KEY)) || 0;
+}
+
+// Full points on every Level 5 Question of the Quiz
+function acedLevelFive() {
+    const lastLevel = quizLevels.length - 1;
+    const asked = questions.map((question, i) => ({ question, i })).filter(({ question }) => question.levelIndex === lastLevel);
+    return asked.length > 0 && asked.every(({ question, i }) => questionPoints[i] === question.level.points);
+}
+
+// The modes still missing a Perfect score badge on this Difficulty, for All modes
+function modesWithoutPerfect(badges, level) {
+    return Object.keys(MODES).filter(badgeMode => !badges[`${badgeMode}.${level}.perfect`]);
+}
+
+// All modes and the Milestones, which may also come from badges and right answers counted
+// before they existed
+function awardGoals(badges, earned) {
+    Object.keys(DIFFICULTIES).forEach(level => {
+        if (!badges[`allModes.${level}`] && modesWithoutPerfect(badges, level).length === 0) {
+            badges[`allModes.${level}`] = { first: today() };
+            earned.push({ kind: 'allModes', level });
+        }
+    });
+    const total = rightAnswersSoFar();
+    MILESTONES.filter(count => total >= count && !badges[`milestone.${count}`]).forEach(count => {
+        badges[`milestone.${count}`] = { first: today() };
+        earned.push({ kind: 'milestone', count, total });
+    });
+}
+
 function awardBadges(perfect) {
-    const runKey = statsKey(mode, `${difficulty}.perfectRun`);
-    if (!perfect) {
-        localStorage.setItem(runKey, 0);
-        return [];
-    }
-    const run = (parseInt(localStorage.getItem(runKey)) || 0) + 1;
-    localStorage.setItem(runKey, run);
+    if (area !== 'all') return [];
     const badges = loadBadges();
-    const today = new Date().toLocaleDateString('en-CA');  // e.g. 2026-11-10, in local time
-    const earned = (run % 3 === 0 ? ['hatTrick', 'perfect'] : ['perfect']).map(kind => {
+    const earned = [];
+    const award = (kind, extra = {}) => {
         const key = `${mode}.${difficulty}.${kind}`;
-        const badge = badges[key] || { first: today, count: 0 };
+        const badge = badges[key] || { first: today(), count: 0 };
         badge.count++;
         badges[key] = badge;
-        return { kind, count: badge.count };
-    });
+        earned.push({ kind, count: badge.count, ...extra });
+        return badge;
+    };
+    const runKey = statsKey(mode, `${difficulty}.perfectRun`);
+    const quizzesKey = statsKey(mode, `${difficulty}.wholeWorldQuizzes`);
+    const bestKey = statsKey(mode, `${difficulty}.bestPerfectTime`);
+    const quizzesBefore = parseInt(localStorage.getItem(quizzesKey)) || 0;
+    localStorage.setItem(quizzesKey, quizzesBefore + 1);
+    if (perfect) {
+        const run = (parseInt(localStorage.getItem(runKey)) || 0) + 1;
+        localStorage.setItem(runKey, run);
+        award('perfect');
+        if (run % 3 === 0) award('hatTrick');
+        if (cluesUsed === 0 && MODES[mode].clues.length > 0) award('noClues');
+        // Faster than every earlier 100% Quiz; the first ones only set the time to beat
+        const best = parseFloat(localStorage.getItem(bestKey));
+        if (isNaN(best) || timeElapsed < best) {
+            localStorage.setItem(bestKey, timeElapsed);
+            if (quizzesBefore >= RECORD_AFTER_QUIZZES) {
+                award('record', { time: timeElapsed, beaten: isNaN(best) ? null : best }).best = timeElapsed;
+            }
+        }
+    } else {
+        localStorage.setItem(runKey, 0);
+    }
+    if (acedLevelFive()) award('levelFiveAce');
+    const rightAnswers = questionResults.filter(result => result === 'correct').length;
+    localStorage.setItem(RIGHT_ANSWERS_KEY, rightAnswersSoFar() + rightAnswers);
+    awardGoals(badges, earned);
     localStorage.setItem(BADGES_KEY, JSON.stringify(badges));
     return earned;
 }
 
-function badgeIcon(kind) {
-    const icon = document.createElement('span');
-    icon.className = 'badgeIcon';
-    icon.innerHTML = BADGE_KINDS[kind].icon;
-    return icon;
+// Right answers weren't counted before the Milestones, only each Quiz's percentage of points,
+// so each earlier Quiz counts as that share of 20 right answers, rounded down
+function countEarlierRightAnswers() {
+    if (localStorage.getItem(RIGHT_ANSWERS_KEY) !== null) return;
+    const estimate = Object.keys(MODES).reduce((sum, statsMode) => {
+        const percentages = JSON.parse(localStorage.getItem(statsKey(statsMode, 'progressData'))) || [];
+        return sum + percentages.reduce((modeSum, percentage) => modeSum + Math.floor(percentage / 100 * 20), 0);
+    }, 0);
+    localStorage.setItem(RIGHT_ANSWERS_KEY, estimate);
+    const badges = loadBadges();
+    awardGoals(badges, []);
+    localStorage.setItem(BADGES_KEY, JSON.stringify(badges));
 }
 
-function showBadgesEarned(earned) {
+function badgeIcon(icon) {
+    const span = document.createElement('span');
+    span.className = 'badgeIcon';
+    span.innerHTML = icon;
+    return span;
+}
+
+function badgeText(titleText, detailText) {
+    const text = document.createElement('div');
+    const title = document.createElement('div');
+    title.className = 'badgeTitle';
+    title.textContent = titleText;
+    const detail = document.createElement('div');
+    detail.className = 'learnDetail';
+    detail.textContent = detailText;
+    text.append(title, detail);
+    return text;
+}
+
+function showBadgesEarned(earned, perfect) {
     const banner = document.getElementById('badgeBanner');
     banner.innerHTML = '';
-    banner.hidden = earned.length === 0;
-    earned.forEach(({ kind, count }) => {
+    const what = `${MODES[mode].title} · ${DIFFICULTIES[difficulty]}`;
+    earned.forEach(badge => {
+        let icon, title, detail;
+        if (badge.kind === 'allModes') {
+            [icon, title, detail] = [ICONS.allModes, 'All modes!', `100% in all ${Object.keys(MODES).length} modes · ${DIFFICULTIES[badge.level]}`];
+        } else if (badge.kind === 'milestone') {
+            [icon, title, detail] = [ICONS.milestone, `${badge.count.toLocaleString('en')} right answers!`,
+                                     `Milestone · ${badge.total.toLocaleString('en')} so far`];
+        } else {
+            icon = BADGE_KINDS[badge.kind].icon;
+            title = BADGE_KINDS[badge.kind].banner;
+            detail = {
+                perfect: badge.count === 1 ? `New badge · ${what}` : `${what} · ${badge.count} times now`,
+                hatTrick: `Three 100% quizzes in a row · ${what}`,
+                noClues: `100% without a single clue · ${what}`,
+                levelFiveAce: `Full points on every Level 5 question · ${what}`,
+                record: badge.beaten === null
+                    ? `${formatTime(badge.time)}, your record to beat · ${what}`
+                    : `${formatTime(badge.time)}, beating ${formatTime(badge.beaten)} · ${what}`
+            }[badge.kind];
+        }
         const row = document.createElement('div');
         row.className = 'badgeEarned';
-        const text = document.createElement('div');
-        const title = document.createElement('div');
-        title.className = 'badgeTitle';
-        title.textContent = kind === 'hatTrick' ? 'Hat trick!' : 'Perfect score!';
-        const detail = document.createElement('div');
-        detail.className = 'learnDetail';
-        const what = `${MODES[mode].title} · ${DIFFICULTIES[difficulty]}`;
-        detail.textContent = kind === 'hatTrick'
-            ? `Three 100% quizzes in a row · ${what}`
-            : (count === 1 ? `New badge · ${what}` : `${what} · ${count} times now`);
-        text.append(title, detail);
-        row.append(badgeIcon(kind), text);
+        row.append(badgeIcon(icon), badgeText(title, detail));
         banner.appendChild(row);
     });
+    if (perfect && area !== 'all') {
+        const note = document.createElement('p');
+        note.className = 'mutedText';
+        note.textContent = 'Badges are earned in Whole world quizzes.';
+        banner.appendChild(note);
+    }
+    banner.hidden = banner.children.length === 0;
 }
+
+// ---- Start screen: Area, Difficulty and badges ----
 
 function renderSettingButtons(containerId, options, chosen, label, choose) {
     const container = document.getElementById(containerId);
@@ -1546,6 +1732,7 @@ function chooseDifficulty(value) {
     renderStart();
 }
 
+// Territories only offers the other Modes on Difficult only
 function renderStart() {
     renderSettingButtons('areaButtons', AREAS, area, value => AREAS[value].label, chooseArea);
     renderSettingButtons('difficultyButtons', DIFFICULTIES, difficulty, value => DIFFICULTIES[value], chooseDifficulty);
@@ -1554,43 +1741,99 @@ function renderStart() {
         const allowed = modeAllowed(card.dataset.mode);
         card.disabled = !allowed;
         card.querySelector('.cardNote').hidden = allowed;
-        const pills = card.querySelector('.cardBadges');
-        pills.innerHTML = '';
-        Object.keys(DIFFICULTIES).forEach(level => Object.keys(BADGE_KINDS).forEach(kind => {
-            if (!badges[`${card.dataset.mode}.${level}.${kind}`]) return;
-            const pill = document.createElement('span');
-            pill.className = 'badgePill';
-            pill.title = `${BADGE_KINDS[kind].label} · ${DIFFICULTIES[level]}`;
-            pill.append(badgeIcon(kind), DIFFICULTIES[level]);
-            pills.appendChild(pill);
-        }));
+        card.querySelector('.cardNote').textContent = 'Difficult only';
+        renderCardBadges(card, badges);
     });
     renderBadgeShelf(badges);
 }
 
+// A row of badge icons per Difficulty; tapping one names it instead of opening the Mode
+function renderCardBadges(card, badges) {
+    const container = card.querySelector('.cardBadges');
+    container.innerHTML = '';
+    const caption = document.createElement('span');
+    caption.className = 'cardBadgeName';
+    Object.keys(DIFFICULTIES).forEach(level => {
+        const kinds = Object.keys(BADGE_KINDS).filter(kind => badges[`${card.dataset.mode}.${level}.${kind}`]);
+        if (kinds.length === 0) return;
+        const row = document.createElement('span');
+        row.className = 'badgeRow';
+        const label = document.createElement('span');
+        label.className = 'badgeRowLabel';
+        label.textContent = DIFFICULTIES[level];
+        row.appendChild(label);
+        kinds.forEach(kind => {
+            const badge = badges[`${card.dataset.mode}.${level}.${kind}`];
+            const name = `${BADGE_KINDS[kind].label}${badge.count > 1 ? ` ×${badge.count}` : ''} · ${DIFFICULTIES[level]}`;
+            const icon = badgeIcon(BADGE_KINDS[kind].icon);
+            icon.title = name;
+            icon.setAttribute('role', 'img');
+            icon.setAttribute('aria-label', name);
+            icon.addEventListener('click', event => {
+                event.stopPropagation();
+                caption.textContent = name;
+            });
+            row.appendChild(icon);
+        });
+        container.appendChild(row);
+    });
+    if (container.children.length > 0) container.appendChild(caption);
+}
+
+function badgeItem(icon, title, detail, locked) {
+    const li = document.createElement('li');
+    if (locked) li.className = 'locked';
+    li.append(badgeIcon(icon), badgeText(title, detail));
+    return li;
+}
+
+// Big goals first (All modes and the Milestones, with progress), then each Mode's badges
 function renderBadgeShelf(badges) {
-    const list = document.getElementById('badgeList');
-    list.innerHTML = '';
-    let count = 0;
-    Object.keys(MODES).forEach(badgeMode => Object.keys(DIFFICULTIES).forEach(level => Object.keys(BADGE_KINDS).forEach(kind => {
-        const badge = badges[`${badgeMode}.${level}.${kind}`];
-        if (!badge) return;
-        count++;
-        const li = document.createElement('li');
-        const text = document.createElement('div');
-        const title = document.createElement('div');
-        title.className = 'badgeTitle';
-        title.textContent = BADGE_KINDS[kind].label + (badge.count > 1 ? ` ×${badge.count}` : '');
-        const detail = document.createElement('div');
-        detail.className = 'learnDetail';
-        const first = new Date(`${badge.first}T00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-        detail.textContent = `${MODES[badgeMode].title} · ${DIFFICULTIES[level]} · first ${first}`;
-        text.append(title, detail);
-        li.append(badgeIcon(kind), text);
-        list.appendChild(li);
-    })));
-    document.getElementById('badgeEmpty').hidden = count > 0;
+    const goals = document.getElementById('goalList');
+    goals.innerHTML = '';
+    const modeCount = Object.keys(MODES).length;
+    Object.keys(DIFFICULTIES).forEach(level => {
+        const goal = badges[`allModes.${level}`];
+        const missing = modesWithoutPerfect(badges, level);
+        goals.appendChild(goal
+            ? badgeItem(ICONS.allModes, `All modes · ${DIFFICULTIES[level]}`, `100% in all ${modeCount} modes · ${dateText(goal.first, true)}`)
+            : badgeItem(ICONS.allModes, `All modes · ${DIFFICULTIES[level]}`,
+                        `${modeCount - missing.length} of ${modeCount} · still to go: ${missing.map(badgeMode => MODES[badgeMode].chip).join(', ')}`, true));
+    });
+    const total = rightAnswersSoFar();
+    const reached = MILESTONES.filter(count => badges[`milestone.${count}`]);
+    if (reached.length > 0) {
+        const highest = reached[reached.length - 1];
+        goals.appendChild(badgeItem(ICONS.milestone, `${highest.toLocaleString('en')} right answers`,
+            reached.map(count => `${count.toLocaleString('en')} · ${dateText(badges[`milestone.${count}`].first)}`).join(', ')));
+    }
+    const next = MILESTONES.find(count => !badges[`milestone.${count}`]);
+    if (next) {
+        goals.appendChild(badgeItem(ICONS.milestone, `${next.toLocaleString('en')} right answers`,
+                                    `${total.toLocaleString('en')} of ${next.toLocaleString('en')}`, true));
+    }
+
+    const groups = document.getElementById('badgeGroups');
+    groups.innerHTML = '';
+    Object.keys(MODES).forEach(badgeMode => {
+        const list = document.createElement('ul');
+        list.className = 'badgeList';
+        Object.keys(DIFFICULTIES).forEach(level => Object.keys(BADGE_KINDS).forEach(kind => {
+            const badge = badges[`${badgeMode}.${level}.${kind}`];
+            if (!badge) return;
+            const best = kind === 'record' ? ` · best ${formatTime(badge.best)}` : '';
+            list.appendChild(badgeItem(BADGE_KINDS[kind].icon, BADGE_KINDS[kind].label + (badge.count > 1 ? ` ×${badge.count}` : ''),
+                                       `${DIFFICULTIES[level]} · first ${dateText(badge.first, true)}${best}`));
+        }));
+        if (list.children.length === 0) return;
+        const heading = document.createElement('h3');
+        heading.className = 'badgeGroupHeading';
+        heading.textContent = MODES[badgeMode].title;
+        groups.append(heading, list);
+    });
+    document.getElementById('badgeEmpty').hidden = groups.children.length > 0;
 }
 
 moveOldStats();
+countEarlierRightAnswers();
 renderStart();

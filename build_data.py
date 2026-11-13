@@ -18,7 +18,8 @@ from build_colors import measure_flags
 from build_map import write_world_map
 from overrides import (CAPITAL_OTHER_NAMES, CAPITAL_PLACES, CAPITALS, CURRENCIES, CURRENCY_NAMES,
                        CURRENCY_OTHER_NAMES, DISPLAY_NAMES, EXTRA_COUNTRIES, ISLAND_NEIGHBOURS,
-                       OTHER_NAMES, SAME_FLAG_AS_COUNTRY, TERRITORY_OWNERS)
+                       NO_CLEAR_CAPITAL, NOT_SETTLED, OTHER_NAMES, SAME_FLAG_AS_COUNTRY,
+                       TERRITORY_OWNERS)
 
 SOURCE_URL = "https://raw.githubusercontent.com/egbakou/RESTCountries.NET/main/src/RESTCountries.NET/Services/data.json"
 FLAG_URL = "https://flagcdn.com/{}.svg"
@@ -90,7 +91,8 @@ def main():
                               ("ISLAND_NEIGHBOURS", ISLAND_NEIGHBOURS),
                               ("SAME_FLAG_AS_COUNTRY", SAME_FLAG_AS_COUNTRY), ("CAPITALS", CAPITALS),
                               ("CAPITAL_OTHER_NAMES", CAPITAL_OTHER_NAMES), ("CAPITAL_PLACES", CAPITAL_PLACES),
-                              ("CURRENCIES", CURRENCIES)]:
+                              ("CURRENCIES", CURRENCIES), ("NO_CLEAR_CAPITAL", NO_CLEAR_CAPITAL),
+                              ("NOT_SETTLED", NOT_SETTLED)]:
         for code in table:
             if code not in by_code:
                 problems.append(f"{table_name}: unknown code {code}")
@@ -155,39 +157,43 @@ def main():
             "area": round(c["area"]) if c["area"] >= 10 else c["area"],  # square kilometres
             "neighbour": neighbour,
         }
+        if code in NOT_SETTLED:
+            entry["settled"] = False  # left out of the Modes about how many people live there
+        # A Territory gets a capital and currency too where the source has them, unless it
+        # has no clear capital
+        capitals = [] if code in NO_CLEAR_CAPITAL else CAPITALS.get(code, c.get("capital") or [])
         if is_country(c):
-            capitals = CAPITALS.get(code, c.get("capital") or [])
             if not capitals:
                 problems.append(f"Country {code} ({name}) has no capital - add it to CAPITALS")
             for city in capitals:
                 if city in capital_owner:
                     problems.append(f"{city} is the capital of both {capital_owner[city]} and {code} - keep one in CAPITALS")
                 capital_owner[city] = code
-            capital_names = list(CAPITAL_OTHER_NAMES.get(code, []))
-            for n in capitals + capital_names:
-                capital_names += saint_variants(n)
-            entry["capitals"] = capitals
-            # The source places its first capital, which CAPITALS keeps first (perhaps respelled)
-            source_place = (c.get("capitalInfo") or {}).get("latlng")
-            places = []
-            for i, city in enumerate(capitals):
-                place = CAPITAL_PLACES.get(code, {}).get(city) or (source_place if i == 0 else None)
-                if not place:
-                    problems.append(f"Capital {city} ({code}) has no place - add it to CAPITAL_PLACES")
-                    continue
-                places.append([round(place[1], 2), round(place[0], 2)])
-            entry["capitalPlaces"] = places  # [longitude, latitude], one per capital
-            entry["capitalOtherNames"] = [n for n in dict.fromkeys(capital_names) if n not in capitals]
-            currencies = CURRENCIES.get(code) or [(currency_code, currency["name"], currency.get("symbol", ""))
-                                                  for currency_code, currency in (c.get("currencies") or {}).items()]
-            if not currencies:
-                problems.append(f"Country {code} ({name}) has no currency - add it to CURRENCIES")
-            entry["currencies"] = [{"code": currency_code,
-                                    "name": CURRENCY_NAMES.get(currency_code, currency_name),
-                                    "symbol": symbol.strip(),
-                                    "otherNames": CURRENCY_OTHER_NAMES.get(currency_code, [])}
-                                   for currency_code, currency_name, symbol in currencies]
-            currency_codes.update(currency_code for currency_code, _, _ in currencies)
+        capital_names = list(CAPITAL_OTHER_NAMES.get(code, []))
+        for n in capitals + capital_names:
+            capital_names += saint_variants(n)
+        entry["capitals"] = capitals
+        # The source places its first capital, which CAPITALS keeps first (perhaps respelled)
+        source_place = (c.get("capitalInfo") or {}).get("latlng")
+        places = []
+        for i, city in enumerate(capitals):
+            place = CAPITAL_PLACES.get(code, {}).get(city) or (source_place if i == 0 else None)
+            if not place:
+                problems.append(f"Capital {city} ({code}) has no place - add it to CAPITAL_PLACES")
+                continue
+            places.append([round(place[1], 2), round(place[0], 2)])
+        entry["capitalPlaces"] = places  # [longitude, latitude], one per capital
+        entry["capitalOtherNames"] = [n for n in dict.fromkeys(capital_names) if n not in capitals]
+        currencies = CURRENCIES.get(code) or [(currency_code, currency["name"], currency.get("symbol", ""))
+                                              for currency_code, currency in (c.get("currencies") or {}).items()]
+        if not currencies and is_country(c):
+            problems.append(f"Country {code} ({name}) has no currency - add it to CURRENCIES")
+        entry["currencies"] = [{"code": currency_code,
+                                "name": CURRENCY_NAMES.get(currency_code, currency_name),
+                                "symbol": symbol.strip(),
+                                "otherNames": CURRENCY_OTHER_NAMES.get(currency_code, [])}
+                               for currency_code, currency_name, symbol in currencies]
+        currency_codes.update(currency_code for currency_code, _, _ in currencies)
         entries.append(entry)
 
     for table_name, table in [("CURRENCY_NAMES", CURRENCY_NAMES), ("CURRENCY_OTHER_NAMES", CURRENCY_OTHER_NAMES)]:
@@ -238,10 +244,11 @@ def main():
     territories = sum(e["kind"] == "territory" for e in entries)
     print(f"Wrote countries.js: {len(entries)} Flag Entries ({len(countries)} Countries, {territories} Territories)")
 
-    # Map Mode asks ranks 21-170, and "Find the capital" outlines ranks 1-100
-    country_codes = {e["code"] for e in entries if e["kind"] == "country"}
+    # Easy Map Mode asks ranks 21-170, which must all be on the map; Difficult adds any
+    # smaller Country or Territory the map can draw
+    all_codes = {e["code"] for e in entries}
     asked_codes = {e["code"] for e in entries if e["kind"] == "country" and e["rank"] <= 170}
-    write_world_map(os.path.join(HERE, "world.js"), country_codes, asked_codes, {e["code"] for e in entries})
+    write_world_map(os.path.join(HERE, "world.js"), all_codes, asked_codes, all_codes)
 
 
 if __name__ == "__main__":

@@ -88,9 +88,20 @@ ISLAND_NEIGHBOURS = {
     "TUV": "FJI", "TWN": "CHN", "VCT": "LCA", "VUT": "SLB", "WSM": "TON",
 }
 
+# Territories with no clear, established capital, left out of the capital Modes: none at
+# all, a name few would know (Hong Kong), a base or research station, a capital abandoned
+# after a volcano (Montserrat), one that rotates between atolls (Tokelau), or three islands
+# with no shared capital (Caribbean Netherlands). The US Minor Outlying Islands (left out of
+# the game for flying the US flag) are listed only because the source gives them Washington DC.
+NO_CLEAR_CAPITAL = {"HKG", "MAC", "ATA", "IOT", "ATF", "SGS", "MSR", "TKL", "BES", "UMI"}
+
+# Territories with no settled population of their own (staff, researchers, or a few dozen
+# people), left out of the Modes about how many people live there
+NOT_SETTLED = {"IOT", "SGS", "ATF", "ATA", "PCN"}
+
 # Capitals that differ from the source data, first one is shown first. A Country
 # with two capitals, or a capital and a separate seat of government, lists both.
-# A city may be the Capital of only one Country.
+# A city may be the Capital of only one Country (a Territory may share a name, e.g. Kingston).
 CAPITALS = {
     "BOL": ["Sucre", "La Paz"],
     "NLD": ["Amsterdam", "The Hague"],
@@ -102,6 +113,8 @@ CAPITALS = {
     "PSE": ["Ramallah"],
     "MNG": ["Ulaanbaatar"],
     "GRD": ["Saint George's"],
+    "GGY": ["Saint Peter Port"],
+    "PYF": ["Papeete"],
 }
 
 # Where each Capital is, as (latitude, longitude), for "Find the capital". The source data
@@ -117,6 +130,7 @@ CAPITAL_PLACES = {
     "LKA": {"Colombo": (6.93, 79.86)},
     "MYS": {"Putrajaya": (2.93, 101.69)},
     "SWZ": {"Lobamba": (-26.45, 31.21)},
+    "ESH": {"El Aaiún": (27.15, -13.20)},   # the source swaps latitude and longitude
 }
 
 # Other names a Capital is known by, accepted as answers and searched by the dropdown.
@@ -135,6 +149,10 @@ CAPITAL_OTHER_NAMES = {
     "VNM": ["Ha Noi"],
     "SMR": ["San Marino"],
     "ISL": ["Reykjavík"],
+    "ESH": ["Laayoune", "El Aaiun"],
+    "REU": ["Saint Denis"],
+    "SPM": ["Saint Pierre"],
+    "GUM": ["Agana"],
 }
 
 # Currencies that differ from the source data (code, name, symbol), keyed by Country.
@@ -142,6 +160,7 @@ CURRENCIES = {
     "BGR": [("EUR", "Euro", "€")],                   # Euro since January 2026
     "CUB": [("CUP", "Cuban peso", "$")],             # convertible peso withdrawn in 2021
     "ZWE": [("ZWG", "Zimbabwe Gold", "ZiG")],        # replaced the Zimbabwean dollar in 2024
+    "ESH": [("MAD", "Moroccan dirham", "DH")],       # the currency used in practice
 }
 
 # Currency names that read better than the source data's, keyed by currency code.
@@ -149,6 +168,8 @@ CURRENCY_NAMES = {
     "VES": "Venezuelan bolívar",
     "SLE": "Sierra Leonean leone",
     "MMK": "Myanmar kyat",
+    "DKK": "Danish krone",
+    "GBP": "British pound",
 }
 
 # Other names a currency is known by, accepted as answers and searched by the dropdown.
@@ -167,4 +188,6 @@ CURRENCY_OTHER_NAMES = {
     "ZWG": ["ZiG"],
     "TJS": ["Somoni"],
     "AZN": ["Manat"],
+    "IMP": ["Isle of Man pound"],
+    "FOK": ["Faroese krona"],
 }

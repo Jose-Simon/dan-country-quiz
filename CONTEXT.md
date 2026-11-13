@@ -38,20 +38,20 @@ _Avoid_: Game type, variant
 The player names the Flag Entry. Questions come from every Flag Entry.
 
 **Capital Mode**:
-The player names the Country's capital city. Questions come from the Countries ranked 21–170 by Population Rank, leaving out the 20 best known; Territories are never asked.
+The player names the Country's capital city. On Easy, Questions come from the Countries ranked 21–170 by Population Rank, leaving out the 20 best known; Difficult adds the smallest Countries and every Territory with a Clear Answer. A Territory's capital may share its name with a Country's (Kingston: Jamaica and Norfolk Island); the one name is right for both.
 
 **Currency Mode**:
-The player names the Currency the Country uses. Questions come from the 100 Countries with the best Population Rank, but a Quiz never asks two Countries that share a Currency (e.g. at most one Euro Country).
+The player names the Currency the Country uses. On Easy, Questions come from the 100 Countries with the best Population Rank, and a Quiz never asks two Countries that share a Currency (e.g. at most one Euro Country). Difficult adds the smallest Countries and the Territories, and lets one Currency be the answer up to three times a Quiz, but never twice in the same Level, so places that share the Euro or the US dollar can be asked while the answers stay varied.
 
 **Currency**:
-The money a Country uses (e.g. "Indian rupee", "Euro"). Several Countries may share one Currency, and a Country that uses two (e.g. Cambodia: Cambodian riel and United States dollar) accepts either. Every Currency is offered as one choice, found only by the last word of its name or an Other Name (e.g. "rupee", "Renminbi"), never by the Country's name, so typing "Indian" or "INR" finds nothing; typing "dollar" lists every dollar.
+The money a Country or Territory uses (e.g. "Indian rupee", "Euro"). Several places may share one Currency, and a place that uses two accepts either (e.g. Cambodia: Cambodian riel and United States dollar; Jersey: British pound and Jersey pound). Every Currency is offered as one choice, found only by the last word of its name or an Other Name (e.g. "rupee", "Renminbi"), never by the Country's name, so typing "Indian" or "INR" finds nothing; typing "dollar" lists every dollar.
 _Avoid_: Money, denomination
 
 **Map Mode**:
-The player finds the Country on the World Map by clicking it. Questions come from the same Countries as Capital Mode (ranks 21–170), with Levels worth 1–5 points. A wrong first Try gets a Nudge; a right second Try is worth one point less than a right first Try (so nothing at Level 1).
+The player finds the Country on the World Map by clicking it. Questions come from the same Countries as Capital Mode (ranks 21–170 on Easy), with Levels worth 1–5 points; Difficult adds every smaller Country and Territory the World Map can draw. A wrong first Try gets a Nudge; a right second Try is worth one point less than a right first Try (so nothing at Level 1).
 
 **Capital Map Mode**:
-The player sees only the flag and clicks that Country's Capital on the World Map ("Find the capital"). Questions come from the 100 Countries with the best Population Rank. A click counts if it is within about 150 km of the Capital (any of them, for a Country with more than one). Tries, Nudge and points work as in Map Mode; the Reveal marks the Capital, green or red-orange, with the circle a click had to land in.
+The player sees only the flag and clicks that Country's Capital on the World Map ("Find the capital"). On Easy, Questions come from the 100 Countries with the best Population Rank; Difficult adds the smaller Countries and Territories that have both a Clear Answer and a shape on the World Map. A click counts if it is within about 150 km of the Capital (any of them, for a Country with more than one). Tries, Nudge and points work as in Map Mode; the Reveal marks the Capital, green or red-orange, with the circle a click had to land in.
 _Avoid_: Capital position mode
 
 **Pick the Flag Mode**:
@@ -68,18 +68,31 @@ _Avoid_: Color match (the player matches a color to names, not to flags)
 One of red, orange, yellow, green, blue, white or black. A flag Has a color when at least a tenth of it is that color, and Lacks it when none of it is. A flag with only a trace (e.g. Turkey's white crescent, about 6%) neither Has nor Lacks white, so it is never asked about white. Shades count as their color (Qatar's maroon is red, Argentina's light blue is blue). Purple, brown and grey count as none.
 
 **Bigger Land Mode** / **More People Mode**:
-The player sees two flags, with no names, and picks the Country with more land ("Which is bigger?") or more people ("Which has more people?"). There is only one Try, since there are only two flags. When the Question ends, both flags are named with their area or population. The Level depends on how close the two Countries are: Level 1 is at least 4 times, then 2.5, 1.6, 1.25, and Level 5 is under 1.25 times. Countries closer than 5% are never paired. In Whole World both come from the 100 Countries with the best Population Rank. A Country comes up at most twice in a Quiz.
+The player sees two flags, with no names, and picks the Country with more land ("Which is bigger?") or more people ("Which has more people?"). There is only one Try, since there are only two flags. When the Question ends, both flags are named with their area or population. The Level depends on how close the two Countries are: Level 1 is at least 4 times, then 2.5, 1.6, 1.25, and Level 5 is under 1.25 times. Countries closer than 5% are never paired. In Whole World on Easy both come from the 100 Countries with the best Population Rank; Difficult pairs from every Country and Territory (in More People Mode, every Settled one). A Flag Entry comes up at most twice in a Quiz.
 _Avoid_: Higher or lower
 
 **Area** (setting):
-Where a Quiz's Questions come from, chosen on the start screen: Whole World, Africa, Americas (North and South), Asia & Oceania, Europe, or Territories Only. Each group has at least 20 Countries; Oceania alone is too small, so it joins Asia. Russia and Turkey are in both Europe and Asia. A continent group asks only its Countries, and ignores the Mode's own rank limits (e.g. Capital Mode in Europe also asks the best-known Countries). Territories Only is offered only in Country Mode, Pick the Flag Mode and Flag Color Mode, and orders Territories by population.
+Where a Quiz's Questions come from, chosen on the start screen: Whole World, Africa, Americas (North and South), Asia & Oceania, Europe, or Territories Only. Each group has at least 20 Countries; Oceania alone is too small, so it joins Asia. Russia and Turkey are in both Europe and Asia. A continent group asks only its Countries on Easy, and adds its Territories on Difficult; either way it ignores the Mode's own rank limits (e.g. Capital Mode in Europe also asks the best-known Countries). Territories Only orders Territories by population; on Easy it is offered only in Country Mode, Pick the Flag Mode and Flag Color Mode, and on Difficult in every Mode.
 _Avoid_: Region, continent filter
 
 **Difficulty** (setting):
-Easy or Difficult, chosen on the start screen. In Whole World, Easy keeps each Mode's own Levels. Difficult spreads that Mode's Levels 3–5 over five Levels (e.g. Capital Mode: ranks 81–170 in bands of 18). Where Level 5 is Territories, it stays Territories and ranks 71–197 make Levels 1–4. With a continent group or Territories Only, Easy splits the Area's Flag Entries into five equal Levels, and Difficult leaves out the easiest two fifths first. In Bigger Land and More People Modes, Difficult spreads closeness from 2.5 times down to 5% over the five Levels. Points per Level stay the same.
+Easy or Difficult, chosen on the start screen. In Whole World, Easy keeps each Mode's own Levels. Difficult starts where that Mode's own Level 3 starts and runs to the smallest Country with a Clear Answer, split into Levels 1–4, and Level 5 is every Territory with a Clear Answer (e.g. Capital Mode: ranks 81–197, then the Territories' capitals). A continent group works the same way: Easy splits its Countries into five equal Levels; Difficult leaves out its best-known two fifths, splits the rest into Levels 1–4, and makes its Territories Level 5, topped up with its hardest Countries when it has too few. Territories Only splits its Territories into five Levels, Difficult leaving out the best-known two fifths. In Bigger Land and More People Modes, Difficult spreads closeness from 2.5 times down to 5% over the five Levels. Points per Level stay the same.
+
+**Clear Answer**:
+A Flag Entry is asked in a Mode only if that Mode's own answer for it is clear and established. Places with no capital, a capital few would know, a base or research station, an abandoned or rotating capital, are left out of the capital Modes (e.g. Hong Kong, Antarctica, Montserrat, Tokelau); places that aren't Settled are left out of the Modes about how many people live there. A place left out of one Mode stays in the others where its answer is clear (Pitcairn is asked for its capital and its flag).
+
+**Settled**:
+A Flag Entry with a population that grew there on its own. Antarctica, the British Indian Ocean Territory, South Georgia, the French Southern and Antarctic Lands (staff and researchers only) and Pitcairn (a few dozen people) are not Settled.
 
 **Badge**:
-An award kept on that Mode's start card and in the badge list on the start screen, with the date first earned and how many times. A Perfect Score badge is for a 100% Quiz. A Hat Trick badge is for three 100% Quizzes in a row; every third one in an unbroken run earns another. Both are earned per Mode and Difficulty, in any Area, and a Quiz below 100% in that Mode and Difficulty breaks the run. Resetting stats keeps badges.
+An award for a Quiz in Whole World; a continent group or Territories Only earns none and breaks no run. Each Mode's badges are earned separately for Easy and Difficult, shown as icons on that Mode's start card (one row per Difficulty) and grouped by Mode on the start screen with the date first earned and how many times. Resetting stats keeps badges. The kinds:
+- **Perfect Score**: a 100% Quiz.
+- **Hat Trick**: three 100% Quizzes in a row; every third one in an unbroken run earns another. A Quiz below 100% breaks the run.
+- **No Clues**: a 100% Quiz with no Clue revealed, free ones included. It also counts as a Perfect Score. Bigger Land and More People Modes have no Clues, so no such badge.
+- **Level 5 Ace**: full points on every Level 5 Question of a Quiz (right first time, no paid Clue), whatever the rest of the Quiz.
+- **Record Holder**: a 100% Quiz faster than every earlier 100% Quiz in that Mode and Difficulty, once at least 5 Quizzes have been played there. Each new record earns another and becomes the time to beat.
+- **All Modes** (a Big Goal): a Perfect Score in every Mode, one for Easy and one for Difficult. Shown faded, with the Modes still to go, until earned.
+- **Milestone** (a Big Goal): 50, 100, 250, 500, 1,000, 2,500, 5,000 and 10,000 right answers in all, across Modes and Difficulties; a right second Try counts. Quizzes from before right answers were counted add an estimate from their scores. The next Milestone shows faded, with progress.
 _Avoid_: Achievement, trophy
 
 **World Map**:
@@ -101,7 +114,7 @@ _Avoid_: Target, tolerance
 When a Question ends, the Country's true outline is filled in: green if the player found it, red-orange if they missed twice or Skipped (and the map moves to show it, with the player's clicks marked).
 
 **Population Mode**:
-The player picks the Country's population from five Population Choices. Only the flag is shown. Questions come from the 100 Countries with the best Population Rank.
+The player picks the Country's population from five Population Choices. Only the flag is shown. On Easy, Questions come from the 100 Countries with the best Population Rank; Difficult adds the smaller Countries and every Settled Territory.
 
 **Population Choice**:
 One of the values offered for a Question in Population Mode, shown smallest to largest: five at Levels 1–4, three at Level 5. The Choices are evenly spaced, with the same gap between each pair of neighbours, and one of them is the Country's actual population (rounded) at a random position. Neighbouring Choices always differ by at least a fifth of the larger one, so no two look alike.
@@ -170,7 +183,7 @@ The Flag Colors the right flag Has (e.g. "Red and white"). Free.
 Crosses out one wrong choice.
 
 **Similar Country Clue**:
-Another Country with a population close to this one's, named without its population.
+Another Country with a population close to this one's, named without its population: for a Country, its closer neighbour in Population Rank; for a Territory, the Country closest in population.
 
 **Symbol Clue**:
 The sign of the Country's Currency (e.g. "₹", "€"). Signs such as "$" and "Fr" are shared by many Currencies, so it narrows the answer without giving it away.

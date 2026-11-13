@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dan's Country Quiz</title>
-    <link rel="stylesheet" href="styles.css?v=48aaa018">
+    <link rel="stylesheet" href="styles.css?v=77fafde3">
 </head>
 <body>
 	<header class="topBar">
@@ -47,7 +47,7 @@
 				</span>
 				<span class="modeTitle">Name the country</span>
 				<span class="mutedText">See a flag, name the country it belongs to</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="capital" onclick="startQuiz('capital')">
@@ -56,7 +56,7 @@
 				</span>
 				<span class="modeTitle">Name the capital</span>
 				<span class="mutedText">See a flag, name that country's capital city</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="currency" onclick="startQuiz('currency')">
@@ -65,7 +65,7 @@
 				</span>
 				<span class="modeTitle">Name the currency</span>
 				<span class="mutedText">See a flag, name the money used there</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="population" onclick="startQuiz('population')">
@@ -74,7 +74,7 @@
 				</span>
 				<span class="modeTitle">Guess the population</span>
 				<span class="mutedText">See a flag, pick how many people live there</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="map" onclick="startQuiz('map')">
@@ -83,7 +83,7 @@
 				</span>
 				<span class="modeTitle">Find it on the map</span>
 				<span class="mutedText">See a flag, click that country on a world map</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="capitalMap" onclick="startQuiz('capitalMap')">
@@ -92,7 +92,7 @@
 				</span>
 				<span class="modeTitle">Find the capital</span>
 				<span class="mutedText">See a flag, click its capital city on the map</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="pickFlag" onclick="startQuiz('pickFlag')">
@@ -101,7 +101,7 @@
 				</span>
 				<span class="modeTitle">Pick the flag</span>
 				<span class="mutedText">See a country, pick its flag from four</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="flagColor" onclick="startQuiz('flagColor')">
@@ -110,7 +110,7 @@
 				</span>
 				<span class="modeTitle">Spot the color</span>
 				<span class="mutedText">See a color, pick the country whose flag has it</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="biggerLand" onclick="startQuiz('biggerLand')">
@@ -119,7 +119,7 @@
 				</span>
 				<span class="modeTitle">Which is bigger?</span>
 				<span class="mutedText">See two flags, pick the country with more land</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 			<button class="card modeCard" data-mode="morePeople" onclick="startQuiz('morePeople')">
@@ -128,14 +128,18 @@
 				</span>
 				<span class="modeTitle">Which has more people?</span>
 				<span class="mutedText">See two flags, pick the country where more people live</span>
-				<span class="cardNote" hidden>Countries only</span>
+				<span class="cardNote" hidden>Difficult only</span>
 				<span class="cardBadges"></span>
 			</button>
 		</div>
 		<section class="card badgeShelf">
 			<h2 class="cardHeading">Badges</h2>
-			<p id="badgeEmpty" class="mutedText">Score 100% in any mode to earn a badge. Three 100% quizzes in a row earns a hat trick.</p>
-			<ul id="badgeList" class="badgeList"></ul>
+			<p class="mutedText">Earned in Whole world quizzes, separately for Easy and Difficult.</p>
+			<h3 class="smallHeading">BIG GOALS</h3>
+			<ul id="goalList" class="badgeList"></ul>
+			<h3 class="smallHeading">BY MODE</h3>
+			<p id="badgeEmpty" class="mutedText">Score 100% in any mode to earn its first badge. Three 100% quizzes in a row earns a hat trick; no clues, full points on Level 5 and record times earn more.</p>
+			<div id="badgeGroups" class="badgeGroups"></div>
 		</section>
 	</main>
 
@@ -258,9 +262,9 @@
 	</main>
 
     <script src="lib/chart.umd.min.js?v=71fc34f3"></script>
-    <script src="countries.js?v=8d8ff70c"></script>
-    <script src="world.js?v=ac06145d"></script>
+    <script src="countries.js?v=45b5a6fd"></script>
+    <script src="world.js?v=3515d29b"></script>
     <script src="map.js?v=19264698"></script>
-    <script src="script.js?v=873bba05"></script>
+    <script src="script.js?v=90d5a389"></script>
 </body>
 </html>
